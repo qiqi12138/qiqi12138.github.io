@@ -1,0 +1,647 @@
+<!doctype html>
+<html ⚡ lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+    
+    
+
+    
+    <title>JS - 面向对象</title>
+
+    
+    
+
+
+
+  
+  
+  <meta name="author" content="" />
+  <meta name="description" content="JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力。本文从对面向对象编程的介绍开始，带您探索 JavaScript 的对象模型，最后描述 JavaScript 当中面向对象编程的一些概念。
+面向对象编程 面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它使用先前建立的范例，包括模块化，多态和封装几种技术。今天，许多流行的编程语言（如Java，JavaScript，C＃，C&#43; &#43;，Python，PHP，Ruby和Objective-C）都支持面向对象编程（OOP）。
+相对于「一个程序只是一些函数的集合，或简单的计算机指令列表。」的传统软件设计观念而言，面向对象编程可以看作是使用一系列对象相互协作的软件设计。 在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。
+面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法 1, 它能更直接地分析, 编码和理解复杂的情况和过程。
+术语  Namespace 命名空间  允许开发人员在一个独特，应用相关的名字的名称下捆绑所有功能的容器。
+ Class 类  定义对象的特征。它是对象的属性和方法的模板定义。
+ Object 对象  类的一个实例。
+ Property 属性  对象的特征，比如颜色。
+ Method 方法  对象的能力，比如行走。
+ Constructor 构造函数  对象初始化的瞬间，被调用的方法。通常它的名字与包含它的类一致。
+ Inheritance 继承  一个类可以继承另一个类的特征。
+ Encapsulation 封装  一种把数据和相关的方法绑定在一起使用的方法。
+ Abstraction 抽象  结合复杂的继承，方法，属性的对象能够模拟现实的模型。
+ Polymorphism 多态  多意为「许多」，态意为「形态」。不同类可以定义相同的方法或属性。">
+
+  
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="JS - 面向对象" />
+    <meta name="twitter:description" content="JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力。本文从对面向对象编程的介绍开始，带您探索 JavaScript 的对象模型，最后描述 JavaScript 当中面向对象编程的一些概念。
+面向对象编程 面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它使用先前建立的范例，包括模块化，多态和封装几种技术。今天，许多流行的编程语言（如Java，JavaScript，C＃，C&#43; &#43;，Python，PHP，Ruby和Objective-C）都支持面向对象编程（OOP）。
+相对于「一个程序只是一些函数的集合，或简单的计算机指令列表。」的传统软件设计观念而言，面向对象编程可以看作是使用一系列对象相互协作的软件设计。 在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。
+面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法 1, 它能更直接地分析, 编码和理解复杂的情况和过程。
+术语  Namespace 命名空间  允许开发人员在一个独特，应用相关的名字的名称下捆绑所有功能的容器。
+ Class 类  定义对象的特征。它是对象的属性和方法的模板定义。
+ Object 对象  类的一个实例。
+ Property 属性  对象的特征，比如颜色。
+ Method 方法  对象的能力，比如行走。
+ Constructor 构造函数  对象初始化的瞬间，被调用的方法。通常它的名字与包含它的类一致。
+ Inheritance 继承  一个类可以继承另一个类的特征。
+ Encapsulation 封装  一种把数据和相关的方法绑定在一起使用的方法。
+ Abstraction 抽象  结合复杂的继承，方法，属性的对象能够模拟现实的模型。
+ Polymorphism 多态  多意为「许多」，态意为「形态」。不同类可以定义相同的方法或属性。" />
+    <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
+
+
+
+
+<meta name="generator" content="Hugo 0.57.2" />
+
+
+<link rel="canonical" href="https://qiqi12138.github.io/post/07-js-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+<link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+
+
+
+
+<link rel="icon" href="/img/favicon.ico" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="120x120" href="/img/avatar.jpg">
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-custom>/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}body{font-size:18px;font-weight:300;line-height:1.618;font-family:Roboto,sans-serif;color:#777;background:#fff;text-rendering:optimizeLegibility;-webkit-overflow-scrolling:touch}a{color:#3f9adc;text-decoration:none;font-weight:600}a:focus,a:hover{opacity:.7;outline:none}amp-img{margin:0 auto;box-shadow:2px 20px 40px 10px rgba(0,0,0,.15)}button:hover{cursor:pointer}.main{margin-left:20rem;padding:1rem 2rem;max-width:100%;min-height:100vh;box-sizing:border-box}@media screen and (max-width:1440px){.main{width:calc(100% - 20rem)}}@media (min-width:800px) and (max-width:960px){.main{margin-left:15rem;width:calc(100% - 15rem)}}@media screen and (max-width:800px){.main{margin-left:0;padding:0 1rem 1rem;width:100%;min-height:0;border-left:none;border-right:none;border-top:1px solid #ddd;border-bottom:1px solid #ddd}}.footer{display:none}@media screen and (max-width:800px){.footer{display:block;padding:1rem;font-size:.8rem;text-align:center;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier New,monospace}}.icon{font-style:normal;text-decoration:inherit;width:1em;height:1em;font-variant:normal;text-transform:none;line-height:1em}.icon,.share{display:inline-block;text-align:center}.share{font-weight:400;margin-left:.2rem;border:none;outline:none;color:#fff;width:30px;height:30px;border-radius:50%}.share-twitter{background-color:#55acee}.share-twitter-icon{margin:5px 0 0 1px}.share-facebook{background-color:#3b5998}.header{position:fixed;left:0;top:0;bottom:0;width:20rem;padding:1rem;box-sizing:border-box;text-align:center;background-color:rgba(106,172,14,.9)}@media screen and (max-width:800px){.header{width:100%;position:relative}}@media (min-width:800px) and (max-width:960px){.header{width:15rem}}.logo{margin-top:3rem;border-radius:20%;border:4px solid #fff;transition:all .5s ease-out}.logo:hover{border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.3)}@media screen and (max-width:800px){.logo{position:absolute;top:1rem;left:1rem;width:2rem;height:2rem;margin-top:0;border:2px solid #fff}}.title{font-size:1.5rem;font-family:Roboto,sans-serif;font-weight:600;margin:1rem auto}@media screen and (max-width:800px){.title{margin:0 auto}}.subtitle,.title a{color:#fff}.subtitle{margin-bottom:1rem;opacity:.8}.menu{display:none}@media screen and (min-width:800px){.menu{display:block}}.menu-list{list-style:none;padding:0}.menu-item{padding:1rem 0}.menu-item a{font-weight:100;opacity:.8;color:#fff}.menu-item a:focus,.menu-item a:hover{opacity:1}.menu-item.is-active a{color:#444;opacity:1;font-weight:700}.menu-toggle{border:none;outline:none;font-size:2rem;background-color:transparent;color:#fff;position:absolute;top:1rem;right:1rem}@media screen and (min-width:800px){.menu-toggle{display:none}}.sidebar{background-color:#fff;width:100vw}@media screen and (min-width:640px){.sidebar{width:50vw}}.sidebar-list{list-style:none;padding:0;margin:0}.sidebar-menu{text-align:right;padding:16px}.sidebar-item{font-size:2rem;padding:30px 35px 30px 25px;border-top:1px solid #ddd}.sidebar-item:hover{background-color:#f2f2f2}.sidebar-icon{border:none;outline:none;background-color:transparent;font-family:Roboto,sans-serif;font-weight:100;font-size:2rem}.sidebar-link{color:#000;font-weight:100}.social-list{margin:0;padding:0;list-style:none}@media screen and (min-width:800px){.social-list{position:absolute;bottom:10px;left:0;right:0}}.social-item{display:inline-block;margin:0 .2rem}.social-item a{color:#fff;font-weight:400}.entry-list{background-color:#f2f2f2}@media screen and (max-width:800px){.entry-list{padding-top:30px}}.entry-single{line-height:1.8;margin-bottom:22px;background-color:#fff;box-shadow:0 0 2px 0 rgba(137,146,177,.15),0 3px 10px 0 rgba(137,146,177,.1);border-radius:5px}.entry-single:hover{box-shadow:0 1px 15px 0 rgba(137,146,177,.15),0 10px 20px 0 rgba(137,146,177,.15)}.entry-cover{max-width:100%;border-radius:5px 5px 0 0;-o-object-fit:cover;object-fit:cover;box-shadow:none}.entry-title{margin:0;padding:20px 30px 0}.entry-link{font-size:1.5rem;font-weight:600;color:#262626}.entry-summary{padding:0 30px;text-align:justify;max-height:4rem;overflow:hidden}.entry-footer{margin:0 30px;padding:10px 0;border-top:1px solid #ddd;display:flex;justify-content:space-between}.entry-meta{margin:0;font-size:.8rem;letter-spacing:1px;text-transform:uppercase}.entry-time{color:#444}.entry-time:after{content:"";border-right:1px solid #ddd;margin:0 8px 0 10px}.pagination{display:flex;justify-content:flex-start}.pagination-btn{color:#777;padding:.8rem;background-color:#fff;border:1px solid #ddd;font-size:.8rem;text-transform:uppercase;border-radius:5px}.pagination-btn:focus,.pagination-btn:hover{color:#fff;background-color:#6aac0e;border-color:#6aac0e}.pagination-next{margin-left:auto}.post-header:after{display:block;content:"";border-bottom-width:3px;border-bottom-style:solid;width:60px;padding-top:10px;border-bottom-color:#6aac0e}.post-title{font-size:2rem;color:#262626;line-height:1.5;margin-top:1.5rem;margin-bottom:.5rem}.post-footer{margin:1rem 0;line-height:1.8}.post-tags{margin-top:0;margin-bottom:1rem;padding-left:0}.post-tag{display:inline-block;margin:0 .5rem 0 0;border-radius:3px;padding:5px 10px;background:#f2f2f2;font-size:.8rem}.post-tag:hover{background:#ddd;box-shadow:0 1px 15px 0 rgba(137,146,177,.15),0 10px 20px 0 rgba(137,146,177,.15)}.post-content{line-height:1.8}.post-content h1,.post-content h2,.post-content h3,.post-content h4,.post-content h5,.post-content h6{color:#6cb505;font-weight:700;line-height:1.125}.post-content h1{margin-top:2rem;margin-bottom:1rem;font-size:2rem}.post-content h2{margin-top:1.75rem;margin-bottom:.75rem;font-size:1.5rem}.post-content h3{margin-top:1.5rem;margin-bottom:.5rem;font-size:1.25rem}.post-content h4{margin-top:1.25rem;margin-bottom:.25rem;font-size:1rem}.post-content h5,.post-content h6{margin-top:1rem;margin-bottom:0;font-size:.8rem}.post-content li+li{margin-top:.5rem}.post-content em{color:#777;font-style:italic}.post-content strong{color:#444}.post-content del{color:#777;text-decoration:line-through}.post-content ins{color:#444;text-decoration:underline}.post-content hr{position:relative;margin:2rem auto;border-top:1px dashed #ddd;border-bottom:none}.post-content hr:before{content:"sep line";position:absolute;top:-12px;left:calc(50% - 40px);padding:0 .5rem;background-color:#fff;color:#ddd;font-size:.8rem;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier New,monospace}.post-content p{margin-top:1.5rem;margin-bottom:1.5rem;text-align:justify}.post-content blockquote{background-color:#f2f2f2;border-left:5px solid #ddd;padding:.5rem 1rem;margin:2rem 0}.post-content blockquote p{margin-top:.5rem;margin-bottom:.5rem}.post-content blockquote cite{margin-top:1.5rem;color:#777;font-size:.9rem}.post-content code,.post-content tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:.9em;background-color:#ddd;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier New,monospace}.post-content code:after,.post-content code:before,.post-content tt:after,.post-content tt:before{letter-spacing:-.2em;content:"\00a0"}.post-content kbd{display:inline-block;padding:.25em;background-color:#f2f2f2;border:1px solid #ddd;border-bottom-color:#ddd;border-radius:3px;box-shadow:inset 0 -1px 0 rgba(0,0,0,.05);font-size:.8em;line-height:1.25;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier New,monospace;color:#777}.post-content pre{margin:2rem auto;padding:1rem;overflow-x:auto;border-radius:3px;font-size:.9rem;line-height:1.618;white-space:pre;word-wrap:normal;word-break:normal;background:#ddd;color:#777}.post-content pre code{font-size:.9rem;background-color:transparent}.post-content pre code:after,.post-content pre code:before{content:none}.post-content sub,.post-content sup{font-size:.8rem}.post-content sub a,.post-content sub a:focus,.post-content sub a:hover,.post-content sup a,.post-content sup a:focus,.post-content sup a:hover{border-bottom:none}.post-content ol{margin-left:0;margin-top:2rem;margin-bottom:2rem;padding-left:1.5rem;list-style:decimal outside}.post-content ol ol{margin-top:.5rem;margin-bottom:.5rem;list-style:lower-roman outside}.post-content ol ul{margin-top:.5rem;margin-bottom:.5rem;list-style:disc outside}.post-content ul{margin-left:0;margin-top:2rem;margin-bottom:2rem;padding-left:1.5rem;list-style:disc outside}.post-content ul ul{margin-top:.5rem;margin-bottom:.5rem;list-style:circle outside}.post-content ul ol{margin-top:.5rem;margin-bottom:.5rem;list-style:decimal outside}.post-content dl{margin-top:2rem;margin-bottom:2rem}.post-content dl dt{color:#6aac0e;margin-top:1rem}.post-content dl dt:after{content:":"}.post-content dl dd{text-indent:2rem;margin-left:0;margin-top:.25rem}.post-content figure{display:block;margin:2rem auto}.post-content figure img{max-width:100%;box-shadow:2px 20px 40px 10px rgba(0,0,0,.15)}@media screen and (max-width:800px){.post-content figure img{box-shadow:none}}.post-content figure figcaption h4{color:#ddd;font-size:.9rem;text-align:center}table{background-color:#f2f2f2;color:#444;margin:2rem auto;width:100%;border-collapse:collapse;border-radius:5px}table td,table th{border:1px solid #ddd;border-width:0 0 1px;padding:.5em .75em;vertical-align:center}table th{color:#444}table tr:hover{background-color:#ddd}table thead td,table thead th{border-width:0 0 2px;color:#777}table tfoot td,table tfoot th{border-width:2px 0 0;color:#777}table tbody tr:last-child td,table tbody tr:last-child th{border-bottom-width:0}table tr:first-child th:first-child{border-top-left-radius:5px}table tr:first-child th:last-child{border-top-right-radius:5px}table tr:last-child td:first-child{border-bottom-left-radius:5px}table tr:last-child td:last-child{border-bottom-right-radius:5px}.not-found{margin:5rem auto 0;font-family:Roboto Mono,Menlo,Monaco,Consolas,Courier New,monospace;text-align:center}.error-emoji{color:#444;font-size:3rem}.error-text{font-size:1.25rem}.error-link{margin-top:2rem;font-size:1rem;color:#6aac0e}</style>
+
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-rss" viewBox="0 0 24 24">
+    <title>RSS</title>
+    <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-email" viewBox="0 0 24 24">
+    <title>Email</title>
+    <path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-twitter" viewBox="0 0 24 24">
+    <title>Twitter</title>
+    <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-github" viewBox="0 0 24 24">
+    <title>GitHub</title>
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-dribbble" viewBox="0 0 24 24">
+    <title>Dribbble</title>
+    <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-linkedin" viewBox="0 0 24 24">
+    <title>LinkedIn</title>
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-facebook" viewBox="0 0 60 60">
+    <title>Facebook</title>
+    <path d="M42.8,23.8h-7.4v-4.8c0-1.8,1.2-2.2,2.1-2.2c0.8,0,5.2,0,5.2, 0v-8l-7.2,0c-8,0-9.8,6-9.8,9.8v5.3 h-4.6V32h4.6c0,10.6,0,23.3,0,23.3h9.7c0,0,0-12.9,0-23.3H42L42.8,23.8z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+    <title>Instagram</title>
+    <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-youtube" viewBox="0 0 24 24">
+    <title>YouTube</title>
+    <path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-pinterest" viewBox="0 0 24 24">
+    <title>Pinterest</title>
+    <path d="M8.134 18.748c0-1.6.2-3 .8-4.4.5-1.4 1.2-2.6 2.2-3.6.9-1 2-1.9 3.2-2.6 1.2-.8 2.5-1.3 3.9-1.7 1.5-.4 2.9-.5 4.4-.5 2.2 0 4.3.4 6.2 1.4 1.9.9 3.5 2.3 4.7 4.1 1.2 1.9 1.8 3.9 1.8 6.2 0 1.4-.1 2.7-.4 4-.2 1.3-.7 2.6-1.2 3.8-.6 1.2-1.3 2.3-2.2 3.2-.8.9-1.8 1.7-3.1 2.2-1.2.6-2.5.9-4 .9-1 0-1.9-.3-2.9-.7-.9-.5-1.6-1.1-2-1.9-.1.5-.3 1.4-.6 2.4-.3 1.1-.4 1.7-.5 2-.1.3-.2.9-.4 1.6-.3.7-.4 1.2-.6 1.5-.1.3-.4.7-.7 1.3-.3.6-.6 1.2-1 1.7-.3.5-.7 1.1-1.3 1.8l-.3.1-.2-.2c-.2-2.2-.3-3.6-.3-4 0-1.3.2-2.8.5-4.4.3-1.7.8-3.7 1.4-6.2.6-2.5 1-3.9 1.1-4.4-.5-.9-.7-2.1-.7-3.6 0-1.2.4-2.3 1.1-3.3.8-1.1 1.7-1.6 2.8-1.6.9 0 1.6.3 2.1.9.4.6.7 1.3.7 2.2 0 .9-.3 2.3-1 4.1-.6 1.8-.9 3.1-.9 4 0 .9.3 1.6 1 2.2.6.6 1.4.9 2.3.9.8 0 1.5-.2 2.2-.5.6-.4 1.2-.9 1.6-1.5.5-.6.9-1.3 1.2-2 .4-.8.6-1.5.8-2.4.2-.8.4-1.6.5-2.4.1-.7.1-1.4.1-2.1 0-2.5-.8-4.4-2.3-5.8-1.6-1.4-3.6-2.1-6.1-2.1-2.8 0-5.2 1-7.1 2.8-1.9 1.9-2.9 4.2-2.9 7.1 0 .6.1 1.2.3 1.8.2.6.4 1.1.6 1.4.2.3.4.7.5 1 .2.3.3.5.3.6 0 .4-.1.9-.3 1.6-.2.6-.5 1-.8 1 0 0-.1-.1-.4-.1-.7-.2-1.3-.6-1.9-1.2-.5-.6-1-1.3-1.3-2-.3-.8-.5-1.6-.7-2.4-.2-.7-.2-1.5-.2-2.2z" />
+  </symbol>
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-reddit" viewBox="0 0 24 24">
+    <title>Reddit icon</title>
+    <path d="M2.204 14.049c-.06.276-.091.56-.091.847 0 3.443 4.402 6.249 9.814 6.249 5.41 0 9.812-2.804 9.812-6.249 0-.274-.029-.546-.082-.809l-.015-.032c-.021-.055-.029-.11-.029-.165-.302-1.175-1.117-2.241-2.296-3.103-.045-.016-.088-.039-.126-.07-.026-.02-.045-.042-.067-.064-1.792-1.234-4.356-2.008-7.196-2.008-2.815 0-5.354.759-7.146 1.971-.014.018-.029.033-.049.049-.039.033-.084.06-.13.075-1.206.862-2.042 1.937-2.354 3.123 0 .058-.014.114-.037.171l-.008.015zm9.773 5.441c-1.794 0-3.057-.389-3.863-1.197-.173-.174-.173-.457 0-.632.176-.165.46-.165.635 0 .63.629 1.685.943 3.228.943 1.542 0 2.591-.3 3.219-.929.165-.164.45-.164.629 0 .165.18.165.465 0 .645-.809.808-2.065 1.198-3.862 1.198l.014-.028zm-3.606-7.573c-.914 0-1.677.765-1.677 1.677 0 .91.763 1.65 1.677 1.65s1.651-.74 1.651-1.65c0-.912-.739-1.677-1.651-1.677zm7.233 0c-.914 0-1.678.765-1.678 1.677 0 .91.764 1.65 1.678 1.65s1.651-.74 1.651-1.65c0-.912-.739-1.677-1.651-1.677zm4.548-1.595c1.037.833 1.8 1.821 2.189 2.904.45-.336.719-.864.719-1.449 0-1.002-.815-1.816-1.818-1.816-.399 0-.778.129-1.09.363v-.002zM2.711 9.963c-1.003 0-1.817.816-1.817 1.818 0 .543.239 1.048.644 1.389.401-1.079 1.172-2.053 2.213-2.876-.302-.21-.663-.329-1.039-.329v-.002zm9.217 12.079c-5.906 0-10.709-3.205-10.709-7.142 0-.275.023-.544.068-.809C.494 13.598 0 12.729 0 11.777c0-1.496 1.227-2.713 2.725-2.713.674 0 1.303.246 1.797.682 1.856-1.191 4.357-1.941 7.112-1.992l1.812-5.524.404.095s.016 0 .016.002l4.223.993c.344-.798 1.138-1.36 2.065-1.36 1.229 0 2.231 1.004 2.231 2.234 0 1.232-1.003 2.234-2.231 2.234s-2.23-1.004-2.23-2.23l-3.851-.912-1.467 4.477c2.65.105 5.047.854 6.844 2.021.494-.464 1.144-.719 1.833-.719 1.498 0 2.718 1.213 2.718 2.711 0 .987-.54 1.886-1.378 2.365.029.255.059.494.059.749-.015 3.938-4.806 7.143-10.72 7.143l-.034.009zm8.179-19.187c-.74 0-1.34.599-1.34 1.338 0 .738.6 1.34 1.34 1.34.732 0 1.33-.6 1.33-1.334 0-.733-.598-1.332-1.347-1.332l.017-.012z"/>
+  </symbol>
+</svg>
+
+    <header class="header">
+  <amp-img alt="My New Hugo Site"
+    width="128px"
+    height="128px"
+    class="logo"
+    src=""
+    sizes="(max-width: 800px) 36px, 128px">
+  </amp-img>
+  
+    <h2 class="title"><a href="https://qiqi12138.github.io" title="My New Hugo Site">My New Hugo Site</a></h2>
+  
+  <p class="subtitle"></p>
+  <button class="menu-toggle" type="button" on="tap:sidebar.open">
+    <span class="icon icon-menu"></span>
+  </button>
+
+  
+  <nav class="menu">
+    <ul class="menu-list">
+      
+      
+      
+      
+    </ul>
+  </nav>
+
+  <ul class="social-list">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <li class="social-item">
+    <a href="/index.xml" title="RSS">
+      <svg class="icon" fill="currentColor"><use xlink:href="#icon-rss" /></svg>
+    </a>
+  </li>
+</ul>
+
+</header>
+
+    <amp-sidebar id="sidebar" class="sidebar" layout="nodisplay" side="right">
+  <ul class="sidebar-list">
+    <li class="sidebar-menu"><button class="sidebar-icon" on="tap:sidebar.close">X</button></li>
+    
+    
+    
+    
+  </ul>
+</amp-sidebar>
+
+    
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">JS - 面向对象</h1>
+      <p class="entry-meta"><span class="entry-time">Sep 27, 2017</span> 4 min read</p>
+    </header>
+    
+
+    <article class="post-content">
+
+<p>JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力。本文从对面向对象编程的介绍开始，带您探索 JavaScript 的对象模型，最后描述 JavaScript 当中面向对象编程的一些概念。</p>
+
+<h2 id="面向对象编程">面向对象编程</h2>
+
+<p>面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它使用先前建立的范例，包括模块化，多态和封装几种技术。今天，许多流行的编程语言（如Java，JavaScript，C＃，C+ +，Python，PHP，Ruby和Objective-C）都支持面向对象编程（OOP）。</p>
+
+<p>相对于「一个程序只是一些函数的集合，或简单的计算机指令列表。」的传统软件设计观念而言，面向对象编程可以看作是使用一系列对象相互协作的软件设计。 在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。</p>
+
+<p>面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#cite-1">1</a>, 它能更直接地分析, 编码和理解复杂的情况和过程。</p>
+
+<h2 id="术语">术语</h2>
+
+<ul>
+<li>Namespace 命名空间</li>
+</ul>
+
+<p>允许开发人员在一个独特，应用相关的名字的名称下捆绑所有功能的容器。</p>
+
+<ul>
+<li>Class 类</li>
+</ul>
+
+<p>定义对象的特征。它是对象的属性和方法的模板定义。</p>
+
+<ul>
+<li>Object 对象</li>
+</ul>
+
+<p>类的一个实例。</p>
+
+<ul>
+<li>Property 属性</li>
+</ul>
+
+<p>对象的特征，比如颜色。</p>
+
+<ul>
+<li>Method 方法</li>
+</ul>
+
+<p>对象的能力，比如行走。</p>
+
+<ul>
+<li>Constructor 构造函数</li>
+</ul>
+
+<p>对象初始化的瞬间，被调用的方法。通常它的名字与包含它的类一致。</p>
+
+<ul>
+<li>Inheritance 继承</li>
+</ul>
+
+<p>一个类可以继承另一个类的特征。</p>
+
+<ul>
+<li>Encapsulation 封装</li>
+</ul>
+
+<p>一种把数据和相关的方法绑定在一起使用的方法。</p>
+
+<ul>
+<li>Abstraction 抽象</li>
+</ul>
+
+<p>结合复杂的继承，方法，属性的对象能够模拟现实的模型。</p>
+
+<ul>
+<li>Polymorphism 多态</li>
+</ul>
+
+<p>多意为「许多」，态意为「形态」。不同类可以定义相同的方法或属性。</p>
+
+<p>更多关于面向对象编程的描述，请参照维基百科的 <a href="http://zh.wikipedia.org/wiki/面向对象程序设计">面向对象编程</a> 。</p>
+
+<h2 id="原型编程">原型编程</h2>
+
+<p>基于原型的编程不是面向对象编程中体现的风格，且行为重用（在基于类的语言中也称为继承）是通过装饰它作为原型的现有对象的过程实现的。这种模式也被称为弱类化，原型化，或基于实例的编程。</p>
+
+<p>原始的（也是最典型的）基于原型语言的例子是由大卫·安格尔和兰德尔·史密斯开发的。然而，弱类化的编程风格近来变得越来越流行，并已被诸如JavaScript，Cecil，NewtonScript，IO，MOO，REBOL，Kevo，Squeak（使用框架操纵Morphic组件），和其他几种编程语言采用。</p>
+
+<h2 id="javascript面向对象编程">JavaScript面向对象编程</h2>
+
+<h3 id="命名空间">命名空间</h3>
+
+<p>命名空间是一个容器，它允许开发人员在一个独特的，特定于应用程序的名称下捆绑所有的功能。 <strong>在JavaScript中，命名空间只是另一个包含方法，属性，对象的对象。</strong></p>
+
+<p><strong>注意：</strong>需要认识到重要的一点是：与其他面向对象编程语言不同的是，Javascript中的普通对象和命名空间在语言层面上没有区别。这点可能会让JavaScript初学者感到迷惑。</p>
+
+<p>创造的JavaScript命名空间背后的想法很简单：一个全局对象被创建，所有的变量，方法和功能成为该对象的属性。使用命名空间也最大程度地减少应用程序的名称冲突的可能性。</p>
+
+<p>我们来创建一个全局变量叫做 MYAPP</p>
+
+<pre><code class="language-js">// 全局命名空间
+var MYAPP = MYAPP || {};
+</code></pre>
+
+<p>在上面的代码示例中，我们首先检查MYAPP是否已经被定义（是否在同一文件中或在另一文件）。如果是的话，那么使用现有的MYAPP全局对象，否则，创建一个名为MYAPP的空对象用来封装方法，函数，变量和对象。</p>
+
+<p>我们也可以创建子命名空间：</p>
+
+<pre><code class="language-js">// 子命名空间
+MYAPP.event = {};
+</code></pre>
+
+<p>下面是用于创建命名空间和添加变量，函数和方法的代码写法：</p>
+
+<pre><code class="language-js">// 给普通方法和属性创建一个叫做MYAPP.commonMethod的容器
+MYAPP.commonMethod = {
+  regExForName: &quot;&quot;, // 定义名字的正则验证
+  regExForPhone: &quot;&quot;, // 定义电话的正则验证
+  validateName: function(name){
+    // 对名字name做些操作，你可以通过使用“this.regExForname”
+    // 访问regExForName变量
+  },
+ 
+  validatePhoneNo: function(phoneNo){
+    // 对电话号码做操作
+  }
+}
+
+// 对象和方法一起申明
+MYAPP.event = {
+    addListener: function(el, type, fn) {
+    //  代码
+    },
+   removeListener: function(el, type, fn) {
+    // 代码
+   },
+   getEvent: function(e) {
+   // 代码
+   }
+  
+   // 还可以添加其他的属性和方法
+}
+
+//使用addListener方法的写法:
+MYAPP.event.addListener(&quot;yourel&quot;, &quot;type&quot;, callback);
+</code></pre>
+
+<h3 id="标准内置对象">标准内置对象</h3>
+
+<p>JavaScript有包括在其核心的几个对象，例如，Math，Object，Array和String对象。下面的例子演示了如何使用Math对象的random()方法来获得一个随机数。</p>
+
+<pre><code class="language-js">console.log(Math.random());
+</code></pre>
+
+<p><strong>注意：</strong>这里和接下来的例子都假设名为 <code>console.log</code> 的方法全局有定义。<code>console.log</code> 实际上不是 JavaScript 自带的。</p>
+
+<p>查看 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects">JavaScript 参考：全局对象</a> 了解 JavaScript 内置对象的列表。</p>
+
+<p>JavaScript 中的每个对象都是 <code>Object</code> 对象的实例且继承它所有的属性和方法。</p>
+
+<h3 id="自定义对象">自定义对象</h3>
+
+<h4 id="类">类</h4>
+
+<p>JavaScript是一种基于原型的语言，它没类的声明语句，比如C+ +或Java中用的。这有时会对习惯使用有类申明语句语言的程序员产生困扰。相反，JavaScript可用方法作类。定义一个类跟定义一个函数一样简单。在下面的例子中，我们定义了一个新类Person。</p>
+
+<pre><code class="language-js">function Person() { } 
+// 或
+var Person = function(){ }
+</code></pre>
+
+<h4 id="对象-类的实例">对象（类的实例）</h4>
+
+<p>我们使用 <code>new *obj*</code>创建对象 <em>obj</em> 的新实例, 将结果（*obj 类型*）赋值给一个变量方便稍后调用。</p>
+
+<p>在下面的示例中，我们定义了一个名为<code>Person</code>的类，然后我们创建了两个<code>Person</code>的实例(<code>person1</code> and <code>person2</code>).</p>
+
+<pre><code class="language-js">function Person() { }
+var person1 = new Person();
+var person2 = new Person();
+</code></pre>
+
+<p><strong>注意：</strong>有一种新增的创建未初始化实例的实例化方法，请参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create">Object.create</a> 。</p>
+
+<h4 id="构造器">构造器</h4>
+
+<p>在实例化时构造器被调用 (也就是对象实例被创建时)。构造器是对象中的一个方法。 在JavaScript中函数就可以作为构造器使用，因此不需要特别地定义一个构造器方法，每个声明的函数都可以在实例化后被调用执行。</p>
+
+<p>构造器常用于给对象的属性赋值或者为调用函数做准备。 在本文的后面描述了类中方法既可以在定义时添加，也可以在使用前添加。</p>
+
+<p>在下面的示例中, <code>Person类实例化时构造器调用一个</code> alert函数。</p>
+
+<pre><code class="language-js">function Person() {
+  alert('Person instantiated');
+}
+
+var person1 = new Person();
+var person2 = new Person();
+</code></pre>
+
+<h4 id="属性-对象属性">属性 (对象属性)</h4>
+
+<p>属性就是 类中包含的变量;每一个对象实例有若干个属性. 为了正确的继承，属性应该被定义在类的原型属性 (函数)中。</p>
+
+<p>可以使用 关键字 <code>this</code>调用类中的属性, this是对当前对象的引用。 从外部存取(读/写)其属性的语法是: <code>InstanceName.Property</code>; 这与C++，Java或者许多其他语言中的语法是一样的 (在类中语法 <code>this.Property</code> 常用于set和get属性值)</p>
+
+<p>在下面的示例中，我们为定义<code>Person类定义了一个属性</code> <code>firstName</code> 并在实例化时赋初值。</p>
+
+<pre><code class="language-js">function Person(firstName) {
+  this.firstName = firstName;
+  alert('Person instantiated');
+}
+
+var person1 = new Person('Alice');
+var person2 = new Person('Bob');
+
+// Show the firstName properties of the objects
+alert('person1 is ' + person1.firstName); // alerts &quot;person1 is Alice&quot;
+alert('person2 is ' + person2.firstName); // alerts &quot;person2 is Bob&quot;
+</code></pre>
+
+<h4 id="方法-对象属性">方法（对象属性）</h4>
+
+<p>方法与属性很相似， 不同的是：一个是函数，另一个可以被定义为函数。 调用方法很像存取一个属性,  不同的是add <code>()</code> 在方法名后面很可能带着参数. 为定义一个方法, 需要将一个函数赋值给类的 <code>prototype</code> 属性; 这个赋值给函数的名称就是用来给对象在外部调用它使用的。</p>
+
+<p>在下面的示例中，我们给<code>Person类</code>定义了方法 <code>sayHello()</code>，并调用了它.</p>
+
+<pre><code class="language-js">function Person(firstName) {
+  this.firstName = firstName;
+}
+
+Person.prototype.sayHello = function() {
+  alert(&quot;Hello, I'm &quot; + this.firstName);
+};
+
+var person1 = new Person(&quot;Alice&quot;);
+var person2 = new Person(&quot;Bob&quot;);
+
+// call the Person sayHello method.
+person1.sayHello(); // alerts &quot;Hello, I'm Alice&quot;
+person2.sayHello(); // alerts &quot;Hello, I'm Bob&quot;
+</code></pre>
+
+<p>在JavaScript中方法通常是一个绑定到对象中的普通函数, 这意味着方法可以在其所在context之外被调用。 思考下面示例中的代码:</p>
+
+<pre><code class="language-js">function Person(firstName) {
+  this.firstName = firstName;
+}
+
+Person.prototype.sayHello = function() {
+  alert(&quot;Hello, I'm &quot; + this.firstName);
+};
+
+var person1 = new Person(&quot;Alice&quot;);
+var person2 = new Person(&quot;Bob&quot;);
+var helloFunction = person1.sayHello;
+
+person1.sayHello();                                 // alerts &quot;Hello, I'm Alice&quot;
+person2.sayHello();                                 // alerts &quot;Hello, I'm Bob&quot;
+helloFunction();                                    // alerts &quot;Hello, I'm undefined&quot; (or fails
+                                                    // with a TypeError in strict mode)
+console.log(helloFunction === person1.sayHello);          // logs true
+console.log(helloFunction === Person.prototype.sayHello); // logs true
+helloFunction.call(person1);                        // logs &quot;Hello, I'm Alice&quot;
+</code></pre>
+
+<p>如上例所示, 所有指向<code>sayHello函数的引用</code> ，包括 <code>person1</code>, <code>Person.prototype</code>, 和 <code>helloFunction</code> 等， 均引用了<em>相同的函数</em>.</p>
+
+<p>在调用函数的过程中，this的值取决于我们怎么样调用函数.  在通常情况下，我们通过一个表达式person1.sayHello()来调用函数：即从一个对象的属性中得到所调用的函数。此时this被设置为我们取得函数的对象（即person1）。这就是为什么<code>person1.sayHello()</code> 使用了姓名“Alice”而<code>person2.sayHello()使用了姓名“bob”的原因。</code></p>
+
+<p>然而我们使用不同的调用方法时, <code>this的值也就不同了</code>。当从变量 <code>helloFunction()中调用的时候，</code> <code>this</code>就被设置成了全局对象 (在浏览器中即<code>window</code>)。由于该对象 (非常可能地) 没有<code>firstName</code> 属性, 我们得到的结果便是&rdquo;Hello, I&rsquo;m undefined&rdquo;. (这是松散模式下的结果， 在 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode">严格模式</a>中，结果将不同（此时会产生一个error）。 但是为了避免混淆，我们在这里不涉及细节) 。另外，我们可以像上例末尾那样，使用<code>Function#call</code> (或者<code>Function#apply</code>)显式的设置this的值。</p>
+
+<p>更多有关信息请参考 <a href="https://developer.mozilla.org/zh-CN/JavaScript/Reference/Global_Objects/Function/call">Function#call</a> and <a href="https://developer.mozilla.org/zh-CN/JavaScript/Reference/Global_Objects/Function/apply">Function#apply</a></p>
+
+<h4 id="继承">继承</h4>
+
+<p>创建一个或多个类的专门版本类方式称为继承（Javascript只支持单继承）。 创建的专门版本的类通常叫做子类，另外的类通常叫做父类。 在Javascript中，继承通过赋予子类一个父类的实例并专门化子类来实现。在现代浏览器中你可以使用 <a href="https://developer.mozilla.org/zh-CN/docs/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create">Object.create</a> 实现继承.</p>
+
+<p>JavaScript 并不检测子类的 <code>prototype.constructor</code> (见 <a href="https://developer.mozilla.org/zh-CN/docs/JavaScript/Reference/Global_Objects/Object/prototype">Object.prototype</a>), 所以我们必须手动申明它.</p>
+
+<p>在下面的例子中, 我们定义了 <code>Student类作为</code> <code>Person类的子类</code>. 之后我们重定义了<code>sayHello()</code> 方法并添加了 <code>sayGoodBye() 方法</code>.</p>
+
+<pre><code class="language-js">// 定义Person构造器
+function Person(firstName) {
+  this.firstName = firstName;
+}
+
+// 在Person.prototype中加入方法
+Person.prototype.walk = function(){
+  alert(&quot;I am walking!&quot;);
+};
+Person.prototype.sayHello = function(){
+  alert(&quot;Hello, I'm &quot; + this.firstName);
+};
+
+// 定义Student构造器
+function Student(firstName, subject) {
+  // 调用父类构造器, 确保(使用Function#call)&quot;this&quot; 在调用过程中设置正确
+  Person.call(this, firstName);
+
+  // 初始化Student类特有属性
+  this.subject = subject;
+};
+
+// 建立一个由Person.prototype继承而来的Student.prototype对象.
+// 注意: 常见的错误是使用 &quot;new Person()&quot;来建立Student.prototype.
+// 这样做的错误之处有很多, 最重要的一点是我们在实例化时
+// 不能赋予Person类任何的FirstName参数
+// 调用Person的正确位置如下，我们从Student中来调用它
+Student.prototype = Object.create(Person.prototype); // See note below
+
+// 设置&quot;constructor&quot; 属性指向Student
+Student.prototype.constructor = Student;
+
+// 更换&quot;sayHello&quot; 方法
+Student.prototype.sayHello = function(){
+  console.log(&quot;Hello, I'm &quot; + this.firstName + &quot;. I'm studying &quot; + this.subject + &quot;.&quot;);
+};
+
+// 加入&quot;sayGoodBye&quot; 方法
+Student.prototype.sayGoodBye = function(){
+  console.log(&quot;Goodbye!&quot;);
+};
+
+// 测试实例:
+var student1 = new Student(&quot;Janet&quot;, &quot;Applied Physics&quot;);
+student1.sayHello();   // &quot;Hello, I'm Janet. I'm studying Applied Physics.&quot;
+student1.walk();       // &quot;I am walking!&quot;
+student1.sayGoodBye(); // &quot;Goodbye!&quot;
+
+// Check that instanceof works correctly
+console.log(student1 instanceof Person);  // true 
+console.log(student1 instanceof Student); // true
+</code></pre>
+
+<p>对于“Student.prototype = Object.create(Person.prototype);”这一行，在不支持 <code>Object.create方法的老JavaScript引擎中，可以使用一个</code>&ldquo;polyfill&rdquo;（又名&rdquo;shim&rdquo;，查看文章链接），或者使用一个function来获得相同的返回值，就像下面：</p>
+
+<pre><code class="language-js">function createObject(proto) {
+    function ctor() { }
+    ctor.prototype = proto;
+    return new ctor();
+}
+
+// Usage:
+Student.prototype = createObject(Person.prototype);
+</code></pre>
+
+<p>更多相关信息请参考 <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object/create">Object.create</a>，连接中还有一个老JavaScript引擎的兼容方案（shim）。</p>
+
+<h4 id="封装">封装</h4>
+
+<p>在上一个例子中，Student类虽然不需要知道Person类的walk()方法是如何实现的，但是仍然可以使用这个方法；Student类不需要明确地定义这个方法，除非我们想改变它。 这就叫做<strong>封装</strong>，对于所有继承自父类的方法，只需要在子类中定义那些你想改变的即可。</p>
+
+<h4 id="抽象">抽象</h4>
+
+<p>抽象是允许模拟工作问题中通用部分的一种机制。这可以通过继承（具体化）或组合来实现。
+JavaScript通过继承实现具体化，通过让类的实例是其他对象的属性值来实现组合。</p>
+
+<p>JavaScript Function 类继承自Object类（这是典型的具体化） 。Function.prototype的属性是一个Object实例（这是典型的组合）。</p>
+
+<pre><code class="language-js">var foo = function(){};
+console.log( 'foo is a Function: ' + (foo instanceof Function) );                  // logs &quot;foo is a Function: true&quot;
+console.log( 'foo.prototype is an Object: ' + (foo.prototype instanceof Object) ); // logs &quot;foo.prototype is an Object: true&quot;
+</code></pre>
+
+<h4 id="多态">多态</h4>
+
+<p>就像所有定义在原型属性内部的方法和属性一样，不同的类可以定义具有相同名称的方法;方法是作用于所在的类中。并且这仅在两个类不是父子关系时成立（继承链中，一个类不是继承自其他类）。</p>
+
+<h2 id="注意">注意</h2>
+
+<p>本文中所展示的面向对象编程技术不是唯一的实现方式，在JavaScript中面向对象的实现是非常灵活的。</p>
+
+<p>同样的，文中展示的技术没有使用任何语言hacks，它们也没有模仿其他语言的对象理论实现。</p>
+
+<p>JavaScript中还有其他一些更加先进的面向对象技术，但这些都超出了本文的介绍范围。</p>
+
+<h2 id="参考">参考</h2>
+
+<ol>
+<li>维基百科。「面向对象程序设计」，<a href="http://zh.wikipedia.org/wiki/面向对象程序设计">http://zh.wikipedia.org/wiki/面向对象程序设计</a></li>
+<li>维基百科。“<a href="http://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)">Encapsulation (object-oriented programming)</a>”</li>
+<li>MDN。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript</a></li>
+</ol>
+</article>
+    <footer class="post-footer">
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f07-js-%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f07-js-%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
+  </section>
+
+    <footer class="footer">
+  <p>Copyright © 2018-2019 My New Hugo Site</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/huyb1991/hugo-lamp" title="Hugo LAMP" target="_blank">LAMP</a>.</p>
+</footer>
+
+
+
+
+
+
+  </body>
+</html>
