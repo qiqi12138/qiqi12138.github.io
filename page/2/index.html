@@ -224,14 +224,6 @@ v-enter &amp; v-leave-to
 &lt;div id=&#34;demo&#34;&gt; &lt;button v-on:click=&#34;show = !show&#34;&gt; Toggle &lt;/button&gt; &lt;transition name=&#34;fade&#34;&gt; &lt;p v-if=&#34;show&#34;&gt;hello&lt;/p&gt; &lt;/transition&gt; &lt;/div&gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity .</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 8, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%8a%a8%e7%94%bb&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -250,14 +242,6 @@ import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 
 两种超链接  &lt;a href=&#34;#/login&#34;&gt;登录&lt;/a&gt;  普通的 a 标签会刷新整个页面  &lt;router-link to=&#34;/login&#34; tag=&#34;span&#34;&gt;login&lt;/router-link&gt;  组件路由不会，是直接跳转 tag 属性 tag=“span”: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &lt;router-view/&gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 7, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20Router&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -271,14 +255,6 @@ import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 
   <p class="entry-summary">什么是Vue.js  Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架 (React除了开发网站, 还可以开发手机APP，Vue语法也是用于进行手机App开发的，需要借助于Weex) Vue.js 是前端的主流框架之一，和Angular.js、React.js、一起，并成为三大主流框架！ Vue.js 是一套构建用户界面的框架，只关注视图层，他不仅容易上手，还便于第三方库或既有项目整合。(Vue有配套的第三方类库，可以整合起来做大型项目的开发) 前端的主要工作？ 主要负责MVC中的V这一层；主要工作就是和页面打交道；来制作前端页面效果  为什么要学习流行框架  提高开发效率的发展历程: 原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js/Vue.js (能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不在关心DOM是如何渲染的了】) 在Vue中，一个核心的概念，就是让用户不在操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；  框架和库的区别  框架: 是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。 node中的express!  库(插件): 提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其他库实现需求。  从 Jquery 切换到 Zepto 从 EJS 切换到 art-template  什么是MVC  M(Model数据层) 职能单一，只负责操作数据库，执行对于的 Sql 语句，进行数据的CRUD  C: Create 增加 R: Read 读取 U: update 修改 D: Delete 删除  V(view视图层) 每当用户操作了界面，就需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们的这个请求，就会被后端的App.js监听到 C(Controller逻辑层) 这里分为路由分发处理模块和业务逻辑处理，在这个模块中封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了职能单一，此模块只负责处理业务  什么是MVVM MVVM是前端的视图层的开发分层开发思想，主要吧每个页面分为了M、V 和 VM 其中VM是MVVM的思想核心；因为VM是 M 和 V 之间的调度者</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 6, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e4%bb%80%e4%b9%88%e6%98%afVue&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -297,14 +273,6 @@ const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return 
 const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 5, 2018</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20async%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -319,14 +287,6 @@ const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fs
 语法 基础语法 (参数1, 参数2, …, 参数N) =&gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&gt; {函数声明} 单一参数 =&gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&gt; a &#43; b &#43; c; f(); // 6  描述 参考 “ES6 In Depth: Arrow functions” on hacks.</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 4, 2018</span> 6 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20%e7%ae%ad%e5%a4%b4%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -346,14 +306,6 @@ fetch(&#39;http://example.com/movies.json&#39;) .then(function(response) { retur
 当然它只是一个 HTTP 响应，而不是真的JSON。为了获取JSON的内容，我们需要使用 json()方法（在Bodymixin 中定义，被 Request 和 Response 对象实现）。</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 3, 2018</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Fetch&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -372,14 +324,6 @@ executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数
  pending：初始状态，既不是成功，也不是失败状态 fulfilled：意味着操作成功完成。 rejected：意味着操作失败  pending 状态的 Promise 对象可能会变成为 fuifilled 状态并传递一个值给相应的状态处理方法，也可能变为失败状态 (rejected) 并传递失败信息。当其中任一种情况出现时，Promise 对象的then 方法绑定的处理方法 (handlers) 就会被调用 (then方法包含两个参数: onfulfilled 和 onrejected，他们都是 Function 类型。当 Promise 状态为 fulfilled 时，调用 then 和 onfulfilled 方法，当 Promise 状态为rejected时，调用 then 的 onrejected 方法，所以在异步操作的完成和绑定处理方法之间不存在竞争)。</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Mar 2, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Promise&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -394,14 +338,6 @@ executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数
 事件 鼠标事件    属性 描述 DOM     onclick 当用户点击某个对象时调用的事件句柄。 2   oncontextmenu 在用户点击鼠标右键打开上下文菜单时触发    ondblclick 当用户双击某个对象时调用的事件句柄。 2   onmousedown 鼠标按钮被按下。 2   onmouseenter 当鼠标指针移动到元素上时触发。 2   onmouseleave 当鼠标指针移出元素时触发 2   onmousemove 鼠标被移动。 2   onmouseover 鼠标移到某元素之上。 2   onmouseout 鼠标从某元素移开。 2   onmouseup 鼠标按键被松开。     键盘事件    属性 描述 DOM     onkeydown 某个键盘按键被按下。 2   onkeypress 某个键盘按键被按下并松开。 2   onkeyup 某个键盘按键被松开。 2    框架/对象（Frame/Object）事件    属性 描述 DOM     onabort 图像的加载被中断。 ( ) 2   onbeforeunload 该事件在即将离开页面（刷新或关闭）时触发 2   onerror 在加载文档或图像时发生错误。 ( , 和 )    onhashchange 该事件在当前 URL 的锚部分发生修改时触发。    onload 一张页面或一幅图像完成加载。 2   onpageshow 该事件在用户访问页面时触发    onpagehide 该事件在用户离开当前网页跳转到另外一个页面时触发    onresize 窗口或框架被重新调整大小。 2   onscroll 当文档被滚动时发生的事件。 2   onunload 用户退出页面。 (  和 ) 2    表单事件    属性 描述 DOM     onblur 元素失去焦点时触发 2   onchange 该事件在表单元素的内容改变时触发( input, keygen, select, 和 textarea) 2   onfocus 元素获取焦点时触发 2   onfocusin 元素即将获取焦点时触发 2   onfocusout 元素即将失去焦点时触发 2   oninput 元素获取用户输入时触发 3   onreset 表单重置时触发 2   onsearch 用户向搜索域输入文本时触发 ( input=“search”)    onselect 用户选取文本时触发 ( input 和 textarea) 2   onsubmit 表单提交时触发 2    剪贴板事件    属性 描述 DOM     oncopy 该事件在用户拷贝元素内容时触发    oncut 该事件在用户剪切元素内容时触发    onpaste 该事件在用户粘贴元素内容时触发     打印事件    属性 描述 DOM     onafterprint 该事件在页面已经开始打印，或者打印窗口已经关闭时触发    onbeforeprint 该事件在页面即将开始打印时触发     拖动事件    事件 描述 DOM     ondrag 该事件在元素正在拖动时触发    ondragend 该事件在用户完成元素的拖动时触发    ondragenter 该事件在拖动的元素进入放置目标时触发    ondragleave 该事件在拖动元素离开放置目标时触发    ondragover 该事件在拖动元素在放置目标上时触发    ondragstart 该事件在用户开始拖动元素时触发    ondrop 该事件在拖动元素放置在目标区域时触发     获取属性节点    属性 / 方法 描述     document.</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Oct 2, 2017</span> 5 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e6%96%b9%e6%b3%95%e6%80%bb%e7%bb%93&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -437,14 +373,6 @@ executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数
  NamedNodeMap</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Oct 1, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f11-js-dom%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS-DOM%e5%af%b9%e8%b1%a1&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f11-js-dom%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
@@ -467,14 +395,6 @@ document.getElementById(&#34;header&#34;);  4. Window 尺寸 有三种方法能�
  window.innerHeight - 浏览器窗口的内部高度(包括滚动条) window.</p>
   <footer class="entry-footer">
     <p class="entry-meta"><span class="entry-time">Sep 30, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f10-js-bom%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20BOM%e5%af%b9%e8%b1%a1&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f10-js-bom%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
   </footer>
 </article>
 
