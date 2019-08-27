@@ -10,24 +10,36 @@
     
 
     
-    <title>Page not found</title>
+    <title>Vue.js - 动画</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="动画 实现动画的两组类
+v-enter &amp;amp; v-leave-to
+ v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入 v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了  v-enter-active &amp;amp; v-leave-active
+ v-enter-active [入场动画的时间段] v-leave-active [离场动画的时间段]  单元素/组件的过渡 Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡
+ 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点  这里是一个典型的例子：
+&amp;lt;div id=&amp;quot;demo&amp;quot;&amp;gt; &amp;lt;button v-on:click=&amp;quot;show = !show&amp;quot;&amp;gt; Toggle &amp;lt;/button&amp;gt; &amp;lt;transition name=&amp;quot;fade&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;show&amp;quot;&amp;gt;hello&amp;lt;/p&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/div&amp;gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity .">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="My New Hugo Site" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Vue.js - 动画" />
+    <meta name="twitter:description" content="动画 实现动画的两组类
+v-enter &amp;amp; v-leave-to
+ v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入 v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了  v-enter-active &amp;amp; v-leave-active
+ v-enter-active [入场动画的时间段] v-leave-active [离场动画的时间段]  单元素/组件的过渡 Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡
+ 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点  这里是一个典型的例子：
+&amp;lt;div id=&amp;quot;demo&amp;quot;&amp;gt; &amp;lt;button v-on:click=&amp;quot;show = !show&amp;quot;&amp;gt; Toggle &amp;lt;/button&amp;gt; &amp;lt;transition name=&amp;quot;fade&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;show&amp;quot;&amp;gt;hello&amp;lt;/p&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/div&amp;gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity ." />
+    <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +47,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://qiqi12138.github.io/404.html">
+<link rel="canonical" href="https://qiqi12138.github.io/post/19-vue-%E5%8A%A8%E7%94%BB/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -206,11 +218,223 @@
 </amp-sidebar>
 
     
-  <div class="not-found">
-    <h1 class="error-emoji">\(o_o)/</h1>
-    <p class="error-text">/* 404 page not found. */</p>
-    <p><a class="error-link" href="/" title="404 Page not found">↑ Back Home ↑</a></p>
-  </div>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Vue.js - 动画</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 8, 2018</span> 2 min read</p>
+    </header>
+    
+
+    <article class="post-content">
+
+<h1 id="动画">动画</h1>
+
+<p>实现动画的两组类</p>
+
+<p>v-enter &amp; v-leave-to</p>
+
+<ul>
+<li>v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入</li>
+<li>v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了</li>
+</ul>
+
+<p>v-enter-active &amp; v-leave-active</p>
+
+<ul>
+<li>v-enter-active [入场动画的时间段]</li>
+<li>v-leave-active [离场动画的时间段]</li>
+</ul>
+
+<h2 id="单元素-组件的过渡-https-cn-vuejs-org-v2-guide-transitions-html-单元素-组件的过渡"><a href="https://cn.vuejs.org/v2/guide/transitions.html#单元素-组件的过渡">单元素/组件的过渡</a></h2>
+
+<p>Vue 提供了 <code>transition</code> 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡</p>
+
+<ul>
+<li>条件渲染 (使用 <code>v-if</code>)</li>
+<li>条件展示 (使用 <code>v-show</code>)</li>
+<li>动态组件</li>
+<li>组件根节点</li>
+</ul>
+
+<p>这里是一个典型的例子：</p>
+
+<pre><code class="language-html">&lt;div id=&quot;demo&quot;&gt;
+  &lt;button v-on:click=&quot;show = !show&quot;&gt;
+    Toggle
+  &lt;/button&gt;
+  &lt;transition name=&quot;fade&quot;&gt;
+    &lt;p v-if=&quot;show&quot;&gt;hello&lt;/p&gt;
+  &lt;/transition&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-js">new Vue({
+  el: '#demo',
+  data: {
+    show: true
+  }
+})
+</code></pre>
+
+<pre><code class="language-css">.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</code></pre>
+
+<p>当插入或删除包含在 <code>transition</code> 组件中的元素时，Vue 将会做以下处理：</p>
+
+<ol>
+<li>自动嗅探目标元素是否应用了 CSS 过渡或动画，如果是，在恰当的时机添加/删除 CSS 类名。</li>
+<li>如果过渡组件提供了 <a href="https://cn.vuejs.org/v2/guide/transitions.html#JavaScript-钩子">JavaScript 钩子函数</a>，这些钩子函数将在恰当的时机被调用。</li>
+<li>如果没有找到 JavaScript 钩子并且也没有检测到 CSS 过渡/动画，DOM 操作 (插入/删除) 在下一帧中立即执行。(注意：此指浏览器逐帧动画机制，和 Vue 的 <code>nextTick</code> 概念不同)</li>
+</ol>
+
+<h2 id="钩子">钩子</h2>
+
+<ul>
+<li>beforeEnter
+
+<ul>
+<li>动画入场之前，此时，动画尚未开始，可在 beforeEnter 中，设置开始动画之前的起始样式</li>
+</ul></li>
+<li>enter
+
+<ul>
+<li>enter 表示动画 开始之后的样式，这里可以设置小球完成动画之后，结束状态</li>
+</ul></li>
+<li>afterEnter
+
+<ul>
+<li>动画结束之后调用</li>
+</ul></li>
+</ul>
+
+<p>钩子函数的第一个参数: el，表示 要执行动画的那个 DOM 元素，是个原生的 JS DOM 对象</p>
+
+<pre><code class="language-js"> beforeEnter(el){
+     el.style.transform = 'translate(0, 0)'
+ }
+</code></pre>
+
+<p>钩子函数的第一个参数: done， 这里的 done，其实就是 afterEnter 这个函数的引用</p>
+
+<pre><code class="language-js">enter(el, done){
+    // 这句话，没有实际的作用，但是，如果不写，出不来动画效果;
+    // 可以认为 el.offsetWidth 会强制动画刷新
+    el.offsetWidth
+
+    el.style.transform = 'translate(150px, 450px)'
+    el.style.transition = 'all 1s ease'
+    
+    // 这里的 done，其实就是 afterEnter 这个函数的引用
+    done()
+}
+</code></pre>
+
+<h2 id="钩子-1">钩子</h2>
+
+<p>可以在属性中声明 JavaScript 钩子</p>
+
+<pre><code class="language-html">&lt;transition
+  v-on:before-enter=&quot;beforeEnter&quot;
+  v-on:enter=&quot;enter&quot;
+  v-on:after-enter=&quot;afterEnter&quot;
+  v-on:enter-cancelled=&quot;enterCancelled&quot;
+
+  v-on:before-leave=&quot;beforeLeave&quot;
+  v-on:leave=&quot;leave&quot;
+  v-on:after-leave=&quot;afterLeave&quot;
+  v-on:leave-cancelled=&quot;leaveCancelled&quot;
+&gt;
+  &lt;!-- ... --&gt;
+&lt;/transition&gt;
+</code></pre>
+
+<pre><code class="language-js">// ...
+methods: {
+  // --------
+  // 进入中
+  // --------
+
+  beforeEnter: function (el) {
+    // ...
+  },
+  // 当与 CSS 结合使用时
+  // 回调函数 done 是可选的
+  enter: function (el, done) {
+    // ...
+    done()
+  },
+  afterEnter: function (el) {
+    // ...
+  },
+  enterCancelled: function (el) {
+    // ...
+  },
+
+  // --------
+  // 离开时
+  // --------
+
+  beforeLeave: function (el) {
+    // ...
+  },
+  // 当与 CSS 结合使用时
+  // 回调函数 done 是可选的
+  leave: function (el, done) {
+    // ...
+    done()
+  },
+  afterLeave: function (el) {
+    // ...
+  },
+  // leaveCancelled 只用于 v-show 中
+  leaveCancelled: function (el) {
+    // ...
+  }
+}
+</code></pre>
+
+<p>这些钩子函数可以结合 CSS <code>transitions/animations</code> 使用，也可以单独使用。</p>
+
+<blockquote>
+<p>当只用 JavaScript 过渡的时候，<strong>在 enter 和 leave 中必须使用 done 进行回调</strong>。否则，它们将被同步调用，过渡会立即完成。</p>
+
+<p>推荐对于仅使用 JavaScript 过渡的元素添加 <code>v-bind:css=&quot;false&quot;</code>，Vue 会跳过 CSS 的检测。这也可以避免过渡过程中 CSS 的影响。</p>
+</blockquote>
+
+<h2 id="循环里的动画">循环里的动画</h2>
+
+<ul>
+<li>在实现列表过渡的时候，如果需要过渡的元素，是通过 v-for 循环渲染出来的，不能使用 transition 包裹，需要使用 transitionGroup</li>
+<li>如果要为 v-for 循环创建的元素设置动画，必须为每一个元素 设置 :key 属性
+
+<ul>
+<li><code>li v-for=&quot;(item, i) in list&quot; :key=&quot;item.id&quot;</code></li>
+</ul></li>
+<li>给 transition-group 添加 appear 属性，实现页面刚展示出来的时候，入场的效果</li>
+<li>如果不指定 tag 属性，默认会把<code>transitionGroup</code>渲染为 span 标签
+
+<ul>
+<li><code>&lt;transition-group tag=&quot;ul&quot; appear&gt;</code></li>
+</ul></li>
+</ul>
+</article>
+    <footer class="post-footer">
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%8a%a8%e7%94%bb&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
+  </section>
 
     <footer class="footer">
   <p>Copyright © 2018-2019 My New Hugo Site</p>

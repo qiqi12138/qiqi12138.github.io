@@ -10,24 +10,36 @@
     
 
     
-    <title>Page not found</title>
+    <title>Vue.js - Router</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="vue-router 路由在 web 中有两种
+ 第一种是 hash 前面带# 第二种是 histroy 对象，这种路由不带#  起步 引入vue-router
+npm
+npm install vue-roter  如果在一个模块化工程中使用他，必须要通过 Vue.use() 明确的安装路由功能
+import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 VueRouter 注册到Vue Vue.use(VueRouter)  如果使用全局的 script 标签，则无须如此 (手动安装)
+两种超链接  &amp;lt;a href=&amp;quot;#/login&amp;quot;&amp;gt;登录&amp;lt;/a&amp;gt;  普通的 a 标签会刷新整个页面  &amp;lt;router-link to=&amp;quot;/login&amp;quot; tag=&amp;quot;span&amp;quot;&amp;gt;login&amp;lt;/router-link&amp;gt;  组件路由不会，是直接跳转 tag 属性 tag=&amp;ldquo;span&amp;rdquo;: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &amp;lt;router-view/&amp;gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="My New Hugo Site" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Vue.js - Router" />
+    <meta name="twitter:description" content="vue-router 路由在 web 中有两种
+ 第一种是 hash 前面带# 第二种是 histroy 对象，这种路由不带#  起步 引入vue-router
+npm
+npm install vue-roter  如果在一个模块化工程中使用他，必须要通过 Vue.use() 明确的安装路由功能
+import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 VueRouter 注册到Vue Vue.use(VueRouter)  如果使用全局的 script 标签，则无须如此 (手动安装)
+两种超链接  &amp;lt;a href=&amp;quot;#/login&amp;quot;&amp;gt;登录&amp;lt;/a&amp;gt;  普通的 a 标签会刷新整个页面  &amp;lt;router-link to=&amp;quot;/login&amp;quot; tag=&amp;quot;span&amp;quot;&amp;gt;login&amp;lt;/router-link&amp;gt;  组件路由不会，是直接跳转 tag 属性 tag=&amp;ldquo;span&amp;rdquo;: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &amp;lt;router-view/&amp;gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象" />
+    <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +47,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://qiqi12138.github.io/404.html">
+<link rel="canonical" href="https://qiqi12138.github.io/post/18-vue-router/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -206,11 +218,247 @@
 </amp-sidebar>
 
     
-  <div class="not-found">
-    <h1 class="error-emoji">\(o_o)/</h1>
-    <p class="error-text">/* 404 page not found. */</p>
-    <p><a class="error-link" href="/" title="404 Page not found">↑ Back Home ↑</a></p>
-  </div>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Vue.js - Router</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 7, 2018</span> 2 min read</p>
+    </header>
+    
+
+    <article class="post-content">
+
+<h1 id="vue-router">vue-router</h1>
+
+<p>路由在 web 中有两种</p>
+
+<ul>
+<li>第一种是 hash 前面带#</li>
+<li>第二种是 histroy 对象，这种路由不带#</li>
+</ul>
+
+<h2 id="起步">起步</h2>
+
+<p>引入vue-router</p>
+
+<p>npm</p>
+
+<pre><code class="language-bash">npm install vue-roter
+</code></pre>
+
+<p>如果在一个模块化工程中使用他，必须要通过 <code>Vue.use()</code> 明确的安装路由功能</p>
+
+<pre><code class="language-js">import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+// 把 VueRouter 注册到Vue
+Vue.use(VueRouter)
+</code></pre>
+
+<p>如果使用全局的 script 标签，则无须如此 (手动安装)</p>
+
+<h2 id="两种超链接">两种超链接</h2>
+
+<ul>
+<li><code>&lt;a href=&quot;#/login&quot;&gt;登录&lt;/a&gt;</code>
+
+<ul>
+<li>普通的 a 标签会刷新整个页面</li>
+</ul></li>
+<li><code>&lt;router-link to=&quot;/login&quot; tag=&quot;span&quot;&gt;login&lt;/router-link&gt;</code>
+
+<ul>
+<li>组件路由不会，是直接跳转</li>
+<li>tag 属性</li>
+<li>tag=&ldquo;span&rdquo;: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由</li>
+</ul></li>
+<li><code>&lt;router-view/&gt;</code>
+
+<ul>
+<li>这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去</li>
+<li>所以: 我们可以把 router-view 认为是一个占位符</li>
+</ul></li>
+</ul>
+
+<h2 id="基本使用">基本使用</h2>
+
+<p>第一步 <strong>组件模板对象</strong></p>
+
+<pre><code class="language-js">var login = {
+	template: '&lt;h1&gt;登录组件&lt;/h1&gt;'
+}
+
+var register = {
+	template: '&lt;h1&gt;注册组件&lt;/h1&gt;'
+}
+</code></pre>
+
+<p>第二步 <strong>创建一个路由对象</strong></p>
+
+<ul>
+<li>创建一个路由对象，当导入 vue-router 包之后，在 window 全局对象中，就有了一个路由的构造函数，叫做 VueRouter</li>
+<li>参数1: <code>route</code>
+
+<ul>
+<li>这个配置对象中的 route 表示 路由匹配规则的意思</li>
+<li>每个路由规则，都是一个对象，这个规则对象，身上有两个必须的属性</li>
+<li>属性1: path, 表示监听 哪个路由链接地址</li>
+<li>属性2: component, 表示，如果 路由是前面匹配到的 path, 则展示 component 属性对应的那个组件</li>
+<li>注意 component 的属性值，必须是一个组件模板对象 不能是组件的引用名称</li>
+</ul></li>
+
+<li><p>参数2: <code>linkActiveClass</code></p>
+
+<ul>
+<li><p>用来改变 <code>.router-link-active</code> 类</p>
+
+<pre><code class="language-js">// 在 new 路由对象的时候，可以为构造函数，传递一个配置对象
+var router = new VueRouter({
+routes: [
+// 重定向 这里的 redirect 用来强制展示某一个组件
+{ path: '/', redirect: 'login' }, 
+{ path: '/login', component: login },
+{ path: '/register', component: register },
+],
+linkActiveClass: 'myactive'
+})
+</code></pre></li>
+</ul></li>
+</ul>
+
+<p>第三步 <strong>挂载到vm实例上</strong></p>
+
+<ul>
+<li><p>将路由规则对象，注册到 vm 实例上，用来监听 URL 地址的变化，然后展示对应的组件</p>
+
+<pre><code class="language-js">var vm = new Vue({
+el: '#app',
+data: {},
+methods: {},
+router: routerObj
+})
+</code></pre></li>
+</ul>
+
+<h2 id="传参">传参</h2>
+
+<p>第一种: <code>$route.query</code></p>
+
+<pre><code class="language-html">&lt;router-link to=&quot;/login?id=10&amp;name=zc&quot;&gt;登录&lt;/router-link&gt;
+</code></pre>
+
+<pre><code class="language-js">var login = {
+    template: '&lt;h1&gt;登录 --- {{ $route.query.id }} --- {{ $route.query.name }}&lt;/h1&gt;'
+}
+
+var router = new VueRouter({
+    routes: [
+        { path: '/login', component: login }
+    ]
+})
+</code></pre>
+
+<p>第二种: <code>$route.params</code></p>
+
+<pre><code class="language-html">&lt;router-link to=&quot;/login/10/zs&quot;&gt;登录&lt;/router-link&gt;
+</code></pre>
+
+<pre><code class="language-js">var login = {
+    template: '&lt;h1&gt;登录 --- {{ $route.params.id }} --- {{ $route.params.name }}&lt;/h1&gt;',
+    created(){
+        console.log(this.$route.params.id)
+    }
+}
+
+var router = new VueRouter({
+    routes: [
+        { path: '/login/:id/:name', component: login }
+    ]
+})
+</code></pre>
+
+<h2 id="嵌套">嵌套</h2>
+
+<p>使用 children 属性，实现子路由，同时，子路由的 path 前面，不要带 /，否则永远以根路径开始请求，这样不方便我们用户去理解 URL 地址</p>
+
+<pre><code class="language-js">const router = new VueRouter({
+    routes: [
+        {
+            path: '/account',
+            component: account,
+            children: [
+                // { path: '/account/login', component: login }  X
+                { path: 'login', component: login },
+                { path: 'register', component: register },
+            ]
+        }
+    ]
+})
+</code></pre>
+
+<h2 id="命名">命名</h2>
+
+<pre><code class="language-html">&lt;router-view name=&quot;default&quot;&gt;&lt;/router-view&gt;
+</code></pre>
+
+<pre><code class="language-js">var header = {
+    template: '&lt;h1 class=&quot;header&quot;&gt;Header头部区域&lt;/h1&gt;'
+}
+</code></pre>
+
+<pre><code class="language-js">routes: [
+    {
+        path: '/',
+        components: {
+            'default': header,
+            'left': leftBox,
+            'main': mainBox
+        }
+    }
+]
+</code></pre>
+
+<h2 id="this-router-push-replace-go的区别-https-www-cnblogs-com-hwldyz-p-9204346-html"><a href="https://www.cnblogs.com/hwldyz/p/9204346.html">this.$router.push、replace、go的区别</a></h2>
+
+<h3 id="1-this-router-push">1.this.$router.push()</h3>
+
+<p>描述：跳转到不同的url，但这个方法会向history栈添加一个记录，点击后退会返回到上一个页面。</p>
+
+<p>用法：</p>
+
+<pre><code class="language-js">// 字符串
+router.push('home')
+
+// 对象
+router.push({ path: 'home' })
+
+// 命名的路由
+router.push({ name: 'user', params: {userId: 123}})
+
+// 带查询参数，变成/register?plan=private
+router.push({ path: 'rehister', query: { plan: 'private' } })
+
+</code></pre>
+
+<h3 id="2-this-router-replace">2.this.$router.replace()</h3>
+
+<p>描述：同样是跳转到指定的url，但是这个方法不会向history里面添加新的记录，点击返回，会跳转到上上一个页面。上一个记录是不存在的。</p>
+
+<h3 id="3-this-router-go-n">3.this.$router.go(n)</h3>
+
+<p>相对于当前页面向前或向后跳转多少个页面,类似 <code>window.history.go(n)</code>。n可为正数可为负数。正数返回上一个页面</p>
+</article>
+    <footer class="post-footer">
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20Router&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
+  </section>
 
     <footer class="footer">
   <p>Copyright © 2018-2019 My New Hugo Site</p>

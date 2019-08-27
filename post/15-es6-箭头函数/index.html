@@ -10,24 +10,28 @@
     
 
     
-    <title>Page not found</title>
+    <title>ES6 - 箭头函数</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
+语法 基础语法 (参数1, 参数2, …, 参数N) =&amp;gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&amp;gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&amp;gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&amp;gt; {函数声明} 单一参数 =&amp;gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&amp;gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&amp;gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&amp;gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&amp;gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&amp;gt; a &#43; b &#43; c; f(); // 6  描述 参考 &amp;ldquo;ES6 In Depth: Arrow functions&amp;rdquo; on hacks.">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="My New Hugo Site" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="ES6 - 箭头函数" />
+    <meta name="twitter:description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
+语法 基础语法 (参数1, 参数2, …, 参数N) =&amp;gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&amp;gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&amp;gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&amp;gt; {函数声明} 单一参数 =&amp;gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&amp;gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&amp;gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&amp;gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&amp;gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&amp;gt; a &#43; b &#43; c; f(); // 6  描述 参考 &amp;ldquo;ES6 In Depth: Arrow functions&amp;rdquo; on hacks." />
+    <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +39,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://qiqi12138.github.io/404.html">
+<link rel="canonical" href="https://qiqi12138.github.io/post/15-es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -206,11 +210,462 @@
 </amp-sidebar>
 
     
-  <div class="not-found">
-    <h1 class="error-emoji">\(o_o)/</h1>
-    <p class="error-text">/* 404 page not found. */</p>
-    <p><a class="error-link" href="/" title="404 Page not found">↑ Back Home ↑</a></p>
-  </div>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">ES6 - 箭头函数</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 4, 2018</span> 6 min read</p>
+    </header>
+    
+
+    <article class="post-content">
+
+<p><strong>箭头函数表达式</strong>的语法比<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/function">函数表达式</a>更简洁，并且没有自己的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this">this</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments">arguments</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super">super</a>或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">new.target</a>。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
+
+<h2 id="语法">语法</h2>
+
+<h3 id="基础语法">基础语法</h3>
+
+<pre><code class="language-js">(参数1, 参数2, …, 参数N) =&gt; { 函数声明 }
+
+//相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; }
+(参数1, 参数2, …, 参数N) =&gt; 表达式（单一）
+
+// 当只有一个参数时，圆括号是可选的：
+(单一参数) =&gt; {函数声明}
+单一参数 =&gt; {函数声明}
+
+// 没有参数的函数应该写成一对圆括号。
+() =&gt; {函数声明}
+</code></pre>
+
+<h3 id="高级语法">高级语法</h3>
+
+<pre><code class="language-js">//加括号的函数体返回对象字面表达式：
+参数=&gt; ({foo: bar})
+
+//支持剩余参数和默认参数
+(参数1, 参数2, ...rest) =&gt; {函数声明}
+(参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&gt; {函数声明}
+
+//同样支持参数列表解构
+let f = ([a, b] = [1, 2], {x: c} = {x: a + b}) =&gt; a + b + c;
+f();  // 6
+</code></pre>
+
+<h2 id="描述">描述</h2>
+
+<p>参考 <a href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/">&ldquo;ES6 In Depth: Arrow functions&rdquo; on hacks.mozilla.org</a>.</p>
+
+<p>引入箭头函数有两个方面的作用：更简短的函数并且不绑定<code>this</code>。</p>
+
+<h3 id="更短的函数">更短的函数</h3>
+
+<pre><code class="language-js">var elements = [
+  'Hydrogen',
+  'Helium',
+  'Lithium',
+  'Beryllium'
+];
+
+elements.map(function(element) { 
+  return element.length; 
+}); // 返回数组：[8, 6, 7, 9]
+
+// 上面的普通函数可以改写成如下的箭头函数
+elements.map((element) =&gt; {
+  return element.length;
+}); // [8, 6, 7, 9]
+
+// 当箭头函数只有一个参数时，可以省略参数的圆括号
+elements.map(element =&gt; {
+ return element.length;
+}); // [8, 6, 7, 9]
+
+// 当箭头函数的函数体只有一个 `return` 语句时，可以省略 `return` 关键字和方法体的花括号
+elements.map(element =&gt; element.length); // [8, 6, 7, 9]
+
+// 在这个例子中，因为我们只需要 `length` 属性，所以可以使用参数解构
+// 需要注意的是字符串 `&quot;length&quot;` 是我们想要获得的属性的名称，而 `lengthFooBArX` 则只是个变量名，
+// 可以替换成任意合法的变量名
+elements.map(({ &quot;length&quot;: lengthFooBArX }) =&gt; lengthFooBArX); // [8, 6, 7, 9]
+</code></pre>
+
+<h3 id="不绑定-this">不绑定<code>this</code></h3>
+
+<p>在箭头函数出现之前，每个新定义的函数都有它自己的 <code>this</code>值（在构造函数的情况下是一个新对象，在严格模式的函数调用中为 undefined，如果该函数被作为“对象方法”调用则为基础对象等）。<code>This</code>被证明是令人厌烦的面向对象风格的编程。</p>
+
+<pre><code class="language-js">function Person() {
+  // Person() 构造函数定义 `this`作为它自己的实例.
+  this.age = 0;
+
+  setInterval(function growUp() {
+    // 在非严格模式, growUp()函数定义 `this`作为全局对象, 
+    // 与在 Person()构造函数中定义的 `this`并不相同.
+    this.age++;
+  }, 1000);
+}
+
+var p = new Person();
+</code></pre>
+
+<p>在ECMAScript 3/5中，通过将<code>this</code>值分配给封闭的变量，可以解决<code>this</code>问题。</p>
+
+<pre><code class="language-js">function Person() {
+  var that = this;
+  that.age = 0;
+
+  setInterval(function growUp() {
+    //  回调引用的是`that`变量, 其值是预期的对象. 
+    that.age++;
+  }, 1000);
+}
+</code></pre>
+
+<p>或者，可以创建<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">绑定函数</a>，以便将预先分配的<code>this</code>值传递到绑定的目标函数（上述示例中的<code>growUp()</code>函数）。</p>
+
+<p>箭头函数不会创建自己的<code>this,它只会从自己的作用域链的上一层继承this</code>。因此，在下面的代码中，传递给<code>setInterval</code>的函数内的<code>this</code>与封闭函数中的<code>this</code>值相同：</p>
+
+<pre><code class="language-js">function Person(){
+  this.age = 0;
+
+  setInterval(() =&gt; {
+    this.age++; // |this| 正确地指向 p 实例
+  }, 1000);
+}
+
+var p = new Person();
+</code></pre>
+
+<h4 id="与严格模式的关系">与严格模式的关系</h4>
+
+<p>鉴于 <code>this</code> 是词法层面上的，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode">严格模式</a>中与 <code>this</code> 相关的规则都将被忽略。</p>
+
+<pre><code class="language-js">function Person() {
+  this.age = 0;
+  var closure = &quot;123&quot;
+  setInterval(function growUp() {
+    this.age++;
+    console.log(closure)
+  }, 1000);
+}
+
+var p = new Person();
+
+function PersonX() {
+  'use strict'
+  this.age = 0;
+  var closure = &quot;123&quot;
+  setInterval(()=&gt;{
+    this.age++;
+    console.log(closure)
+  }, 1000);
+}
+
+var px = new PersonX();
+</code></pre>
+
+<p>严格模式的其他规则依然不变.</p>
+
+<h4 id="通过-call-或-apply-调用">通过 call 或 apply 调用</h4>
+
+<p>由于 箭头函数没有自己的this指针，通过 <code>call()</code> <em>或</em> <code>apply()</code> 方法调用一个函数时，只能传递参数（不能绑定this&mdash;译者注），他们的第一个参数会被忽略。（这种现象对于bind方法同样成立&mdash;译者注）</p>
+
+<pre><code class="language-js">var adder = {
+  base : 1,
+    
+  add : function(a) {
+    var f = v =&gt; v + this.base;
+    return f(a);
+  },
+
+  addThruCall: function(a) {
+    var f = v =&gt; v + this.base;
+    var b = {
+      base : 2
+    };
+            
+    return f.call(b, a);
+  }
+};
+
+console.log(adder.add(1));         // 输出 2
+console.log(adder.addThruCall(1)); // 仍然输出 2（而不是3 ——译者注）
+</code></pre>
+
+<h3 id="不绑定-arguments">不绑定<code>arguments</code></h3>
+
+<p>箭头函数不绑定<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments">Arguments 对象</a>。因此，在本示例中，<code>arguments</code>只是引用了封闭作用域内的arguments：</p>
+
+<pre><code class="language-js">var arguments = [1, 2, 3];
+var arr = () =&gt; arguments[0];
+
+arr(); // 1
+
+function foo(n) {
+  var f = () =&gt; arguments[0] + n; // 隐式绑定 foo 函数的 arguments 对象. arguments[0] 是 n,即传给foo函数的第一个参数
+  return f();
+}
+
+foo(1); // 2
+foo(2); // 4
+foo(3); // 6
+foo(3,2);//6
+</code></pre>
+
+<p>在大多数情况下，使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Rest_parameters">剩余参数</a>是相较使用<code>arguments</code>对象的更好选择。</p>
+
+<pre><code class="language-js">function foo(arg) { 
+  var f = (...args) =&gt; args[0]; 
+  return f(arg); 
+}
+foo(1); // 1
+
+function foo(arg1,arg2) { 
+    var f = (...args) =&gt; args[1]; 
+    return f(arg1,arg2); 
+} 
+foo(1,2);  //2
+</code></pre>
+
+<h3 id="像函数一样使用箭头函数">像函数一样使用箭头函数</h3>
+
+<p>如上所述，箭头函数表达式对非方法函数是最合适的。让我们看看当我们试着把它们作为方法时发生了什么。</p>
+
+<pre><code class="language-js">'use strict';
+var obj = {
+  i: 10,
+  b: () =&gt; console.log(this.i, this),
+  c: function() {
+    console.log( this.i, this)
+  }
+}
+obj.b(); 
+// undefined, Window{...}
+obj.c(); 
+// 10, Object {...}
+</code></pre>
+
+<p>箭头函数没有定义this绑定。另一个涉及<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty"><code>Object.defineProperty()</code></a>的示例：</p>
+
+<pre><code class="language-js">'use strict';
+var obj = {
+  a: 10
+};
+
+Object.defineProperty(obj, &quot;b&quot;, {
+  get: () =&gt; {
+    console.log(this.a, typeof this.a, this);
+    return this.a+10; 
+   // 代表全局对象 'Window', 因此 'this.a' 返回 'undefined'
+  }
+});
+
+obj.b; // undefined   &quot;undefined&quot;   Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+</code></pre>
+
+<h3 id="使用-new-操作符">使用 <code>new</code> 操作符</h3>
+
+<p>箭头函数不能用作构造器，和 <code>new</code>一起用会抛出错误。</p>
+
+<pre><code class="language-js">var Foo = () =&gt; {};
+var foo = new Foo(); // TypeError: Foo is not a constructor
+</code></pre>
+
+<h3 id="使用-prototype-属性">使用<code>prototype</code>属性</h3>
+
+<p>箭头函数没有<code>prototype</code>属性。</p>
+
+<pre><code class="language-js">var Foo = () =&gt; {};
+console.log(Foo.prototype); // undefined
+</code></pre>
+
+<h3 id="使用-yield-关键字">使用 <code>yield</code> 关键字</h3>
+
+<p><code>yield</code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作生成器。</p>
+
+<h2 id="函数体">函数体</h2>
+
+<p>箭头函数可以有一个“简写体”或常见的“块体”。</p>
+
+<p>在一个简写体中，只需要一个表达式，并附加一个隐式的返回值。在块体中，必须使用明确的<code>return</code>语句。</p>
+
+<pre><code class="language-js">var func = x =&gt; x * x;                  
+// 简写函数 省略return
+
+var func = (x, y) =&gt; { return x + y; }; 
+//常规编写 明确的返回值
+</code></pre>
+
+<h2 id="返回对象字面量">返回对象字面量</h2>
+
+<p>记住用<code>params =&gt; {object:literal}</code>这种简单的语法返回对象字面量是行不通的。</p>
+
+<pre><code class="language-js">var func = () =&gt; { foo: 1 };               
+// Calling func() returns undefined!
+
+var func = () =&gt; { foo: function() {} };   
+// SyntaxError: function statement requires a name
+</code></pre>
+
+<p>这是因为花括号（<code>{}</code> ）里面的代码被解析为一系列语句（即 <code>foo</code> 被认为是一个标签，而非对象字面量的组成部分）。</p>
+
+<p>所以，记得用圆括号把对象字面量包起来：</p>
+
+<pre><code class="language-js">var func = () =&gt; ({foo: 1});
+</code></pre>
+
+<h2 id="换行">换行</h2>
+
+<p>箭头函数在参数和箭头之间不能换行。</p>
+
+<pre><code class="language-js">var func = ()
+           =&gt; 1; 
+// SyntaxError: expected expression, got '=&gt;'
+</code></pre>
+
+<h2 id="解析顺序">解析顺序</h2>
+
+<p>虽然箭头函数中的箭头不是运算符，但箭头函数具有与常规函数不同的特殊<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">运算符优先级</a>解析规则。</p>
+
+<pre><code class="language-js">let callback;
+
+callback = callback || function() {}; // ok
+
+callback = callback || () =&gt; {};      
+// SyntaxError: invalid arrow-function arguments
+
+callback = callback || (() =&gt; {});    // ok
+</code></pre>
+
+<h2 id="更多示例">更多示例</h2>
+
+<pre><code class="language-js">// 空的箭头函数返回 undefined
+let empty = () =&gt; {};
+
+(() =&gt; 'foobar')(); 
+// Returns &quot;foobar&quot;
+// (这是一个立即执行函数表达式,可参阅 'IIFE'术语表) 
+
+
+var simple = a =&gt; a &gt; 15 ? 15 : a; 
+simple(16); // 15
+simple(10); // 10
+
+let max = (a, b) =&gt; a &gt; b ? a : b;
+
+// Easy array filtering, mapping, ...
+
+var arr = [5, 6, 13, 0, 1, 18, 23];
+
+var sum = arr.reduce((a, b) =&gt; a + b);  
+// 66
+
+var even = arr.filter(v =&gt; v % 2 == 0); 
+// [6, 0, 18]
+
+var double = arr.map(v =&gt; v * 2);       
+// [10, 12, 26, 0, 2, 36, 46]
+
+// 更简明的promise链
+promise.then(a =&gt; {
+  // ...
+}).then(b =&gt; {
+  // ...
+});
+
+// 无参数箭头函数在视觉上容易分析
+setTimeout( () =&gt; {
+  console.log('I happen sooner');
+  setTimeout( () =&gt; {
+    // deeper code
+    console.log('I happen later');
+  }, 1);
+}, 1);
+</code></pre>
+
+<h4 id="箭头函数也可以使用条件-三元-运算符">箭头函数也可以使用条件（三元）运算符：</h4>
+
+<pre><code class="language-js">var simple = a =&gt; a &gt; 15 ? 15 : a;
+simple(16); // 15
+simple(10); // 10
+
+let max = (a, b) =&gt; a &gt; b ? a : b;
+</code></pre>
+
+<blockquote>
+<p>箭头函数内定义的变量及其作用域</p>
+</blockquote>
+
+<pre><code class="language-js">// 常规写法
+var greeting = () =&gt; {let now = new Date(); return (&quot;Good&quot; + ((now.getHours() &gt; 17) ? &quot; evening.&quot; : &quot; day.&quot;));}
+greeting();          //&quot;Good day.&quot;
+console.log(now);    // ReferenceError: now is not defined 标准的let作用域
+
+// 参数括号内定义的变量是局部变量（默认参数）
+var greeting = (now=new Date()) =&gt; &quot;Good&quot; + (now.getHours() &gt; 17 ? &quot; evening.&quot; : &quot; day.&quot;);
+greeting();          //&quot;Good day.&quot;
+console.log(now);    // ReferenceError: now is not defined
+
+// 对比：函数体内{}不使用var定义的变量是全局变量
+var greeting = () =&gt; {now = new Date(); return (&quot;Good&quot; + ((now.getHours() &gt; 17) ? &quot; evening.&quot; : &quot; day.&quot;));}
+greeting();           //&quot;Good day.&quot;
+console.log(now);     // Fri Dec 22 2017 10:01:00 GMT+0800 (中国标准时间)
+
+// 对比：函数体内{} 用var定义的变量是局部变量
+var greeting = () =&gt; {var now = new Date(); return (&quot;Good&quot; + ((now.getHours() &gt; 17) ? &quot; evening.&quot; : &quot; day.&quot;));}
+greeting(); //&quot;Good day.&quot;
+console.log(now);    // ReferenceError: now is not defined
+</code></pre>
+
+<blockquote>
+<h4 id="箭头函数也可以使用闭包">箭头函数也可以使用闭包：</h4>
+</blockquote>
+
+<pre><code class="language-js">// 标准的闭包函数
+function A(){
+      var i=0;
+      return function b(){
+              return (++i);
+      };
+};
+
+var v=A();
+v();    //1
+v();    //2
+
+
+//箭头函数体的闭包（ i=0 是默认参数）
+var Add = (i=0) =&gt; {return (() =&gt; (++i) )};
+var v = Add();
+v();           //1
+v();           //2
+
+//因为仅有一个返回，return 及括号（）也可以省略
+var Add = (i=0)=&gt; ()=&gt; (++i);
+</code></pre>
+
+<blockquote>
+<h4 id="箭头函数递归">箭头函数递归</h4>
+</blockquote>
+
+<pre><code class="language-js">var fact = (x) =&gt; ( x==0 ?  1 : x*fact(x-1) );
+fact(5);       // 120
+</code></pre>
+
+<p>&hellip;</p>
+</article>
+    <footer class="post-footer">
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20%e7%ae%ad%e5%a4%b4%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
+  </section>
 
     <footer class="footer">
   <p>Copyright © 2018-2019 My New Hugo Site</p>

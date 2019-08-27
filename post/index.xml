@@ -6,10 +6,135 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Oct 2017 13:30:34 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Mar 2018 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://qiqi12138.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue.js - vue-cli 3.x</title>
+      <link>https://qiqi12138.github.io/post/21-vue-cli3.9.3/</link>
+      <pubDate>Sat, 10 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/21-vue-cli3.9.3/</guid>
+      <description>Vue-cli 版本 3.9.3
+可以使用下列任一命令安装这个新的包：
+npm install -g @vue/cli # OR yarn global add @vue/cli  安装之后，你就可以在命令行中访问 vue 命令。你可以通过简单运行 vue，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。
+你还可以用这个命令来检查其版本是否正确 (3.x)：
+vue --version  自定义脚手架模板 第一步: 创建项目
+vue create vue-cli-new2  第二步： Manually select features
+第三步：选择依赖
+ 空格选择，回车确定  第四步：是否使用历史路由
+ y&amp;amp;n都可以  第五步： ESLint + Standard config
+第六步：是否保存模板
+第七步： 找到 C:\Users\Lenovo 下的 .vuerc 文件来配置模板
+安装插件 使用 vue add vuetify
+ vuetify是一个ui库 使用 add 命令，使安装的插件完全融入到项目中 正常安装插件还是使用 npm install  配置文件 vue.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js - 导航守卫</title>
+      <link>https://qiqi12138.github.io/post/20-vue-%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/</link>
+      <pubDate>Fri, 09 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/20-vue-%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/</guid>
+      <description>正如其名，vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。有多种机会植入路由导航过程中：全局的, 单个路由独享的, 或者组件级的。
+记住参数或查询的改变并不会触发进入/离开的导航守卫。你可以通过观察 $route 对象来应对这些变化，或使用 beforeRouteUpdate 的组件内守卫。
+全局前置守卫 你可以使用 router.beforeEach 注册一个全局前置守卫：
+const router = new VueRouter({ ... }) router.beforeEach((to, from, next) =&amp;gt; { // ... })  当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 等待中。
+每个守卫方法接收三个参数：
+ to: Route: 即将要进入的目标 路由对象 from: Route: 当前导航正要离开的路由 next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。  next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)。 next(false): 中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址。 next(&amp;lsquo;/&amp;rsquo;) 或者 next({ path: &amp;lsquo;/&amp;rsquo; }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。你可以向 next 传递任意位置对象，且允许设置诸如 replace: true、name: &#39;home&#39; 之类的选项以及任何用在 router-link 的 to prop 或 router.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js - 动画</title>
+      <link>https://qiqi12138.github.io/post/19-vue-%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Thu, 08 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/19-vue-%E5%8A%A8%E7%94%BB/</guid>
+      <description>动画 实现动画的两组类
+v-enter &amp;amp; v-leave-to
+ v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入 v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了  v-enter-active &amp;amp; v-leave-active
+ v-enter-active [入场动画的时间段] v-leave-active [离场动画的时间段]  单元素/组件的过渡 Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡
+ 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点  这里是一个典型的例子：
+&amp;lt;div id=&amp;quot;demo&amp;quot;&amp;gt; &amp;lt;button v-on:click=&amp;quot;show = !show&amp;quot;&amp;gt; Toggle &amp;lt;/button&amp;gt; &amp;lt;transition name=&amp;quot;fade&amp;quot;&amp;gt; &amp;lt;p v-if=&amp;quot;show&amp;quot;&amp;gt;hello&amp;lt;/p&amp;gt; &amp;lt;/transition&amp;gt; &amp;lt;/div&amp;gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity .</description>
+    </item>
+    
+    <item>
+      <title>Vue.js - Router</title>
+      <link>https://qiqi12138.github.io/post/18-vue-router/</link>
+      <pubDate>Wed, 07 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/18-vue-router/</guid>
+      <description>vue-router 路由在 web 中有两种
+ 第一种是 hash 前面带# 第二种是 histroy 对象，这种路由不带#  起步 引入vue-router
+npm
+npm install vue-roter  如果在一个模块化工程中使用他，必须要通过 Vue.use() 明确的安装路由功能
+import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 VueRouter 注册到Vue Vue.use(VueRouter)  如果使用全局的 script 标签，则无须如此 (手动安装)
+两种超链接  &amp;lt;a href=&amp;quot;#/login&amp;quot;&amp;gt;登录&amp;lt;/a&amp;gt;  普通的 a 标签会刷新整个页面  &amp;lt;router-link to=&amp;quot;/login&amp;quot; tag=&amp;quot;span&amp;quot;&amp;gt;login&amp;lt;/router-link&amp;gt;  组件路由不会，是直接跳转 tag 属性 tag=&amp;ldquo;span&amp;rdquo;: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &amp;lt;router-view/&amp;gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象</description>
+    </item>
+    
+    <item>
+      <title>Vue.js - 什么是Vue</title>
+      <link>https://qiqi12138.github.io/post/17-vue-%E8%AE%A4%E8%AF%86vue/</link>
+      <pubDate>Tue, 06 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/17-vue-%E8%AE%A4%E8%AF%86vue/</guid>
+      <description>什么是Vue.js  Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架 (React除了开发网站, 还可以开发手机APP，Vue语法也是用于进行手机App开发的，需要借助于Weex) Vue.js 是前端的主流框架之一，和Angular.js、React.js、一起，并成为三大主流框架！ Vue.js 是一套构建用户界面的框架，只关注视图层，他不仅容易上手，还便于第三方库或既有项目整合。(Vue有配套的第三方类库，可以整合起来做大型项目的开发) 前端的主要工作？ 主要负责MVC中的V这一层；主要工作就是和页面打交道；来制作前端页面效果  为什么要学习流行框架  提高开发效率的发展历程: 原生JS -&amp;gt; Jquery之类的类库 -&amp;gt; 前端模板引擎 -&amp;gt; Angular.js/Vue.js (能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不在关心DOM是如何渲染的了】) 在Vue中，一个核心的概念，就是让用户不在操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；  框架和库的区别  框架: 是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。 node中的express!  库(插件): 提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其他库实现需求。  从 Jquery 切换到 Zepto 从 EJS 切换到 art-template  什么是MVC  M(Model数据层) 职能单一，只负责操作数据库，执行对于的 Sql 语句，进行数据的CRUD  C: Create 增加 R: Read 读取 U: update 修改 D: Delete 删除  V(view视图层) 每当用户操作了界面，就需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们的这个请求，就会被后端的App.js监听到 C(Controller逻辑层) 这里分为路由分发处理模块和业务逻辑处理，在这个模块中封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了职能单一，此模块只负责处理业务  什么是MVVM MVVM是前端的视图层的开发分层开发思想，主要吧每个页面分为了M、V 和 VM 其中VM是MVVM的思想核心；因为VM是 M 和 V 之间的调度者</description>
+    </item>
+    
+    <item>
+      <title>ES6 - async函数</title>
+      <link>https://qiqi12138.github.io/post/16-es6-async%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 05 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/16-es6-async%E5%87%BD%E6%95%B0/</guid>
+      <description>参考：https://es6.ruanyifeng.com/?search=async+&amp;amp;x=7&amp;amp;y=6#docs/async
+ 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+前文有一个 Generator 函数，依次读取两个文件。
+const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
+const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.</description>
+    </item>
+    
+    <item>
+      <title>ES6 - 箭头函数</title>
+      <link>https://qiqi12138.github.io/post/15-es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sun, 04 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/15-es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/</guid>
+      <description>箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
+语法 基础语法 (参数1, 参数2, …, 参数N) =&amp;gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&amp;gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&amp;gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&amp;gt; {函数声明} 单一参数 =&amp;gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&amp;gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&amp;gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&amp;gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&amp;gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a + b}) =&amp;gt; a + b + c; f(); // 6  描述 参考 &amp;ldquo;ES6 In Depth: Arrow functions&amp;rdquo; on hacks.</description>
+    </item>
+    
+    <item>
+      <title>ES6 - Fetch</title>
+      <link>https://qiqi12138.github.io/post/14-es6-fetch/</link>
+      <pubDate>Sat, 03 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/14-es6-fetch/</guid>
+      <description>Fetch Fetch API 提供了一个 JavaScript接口，用于访问和操纵HTTP管道的部分，例如请求和响应。它还提供了一个全局 fetch()方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
+这种功能以前是使用 XMLHttpRequest实现的。Fetch提供了一个更好的替代方法，可以很容易地被其他技术使用，例如 Service Workers。Fetch还提供了单个逻辑位置来定义其他HTTP相关概念，例如CORS和HTTP的扩展。
+请注意，fetch规范与jQuery.ajax()主
+要有两种方式的不同，牢记：
+ 当接收到一个代表错误的 HTTP 状态码时，从 fetch()返回的 Promise 不会被标记为 reject， 即使该 HTTP 响应的状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok 属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。 默认情况下，fetch 不会从服务端发送或接收任何 cookies, 如果站点依赖于用户 session，则会导致未经认证的请求（要发送 cookies，必须设置 credentials 选项）。自从2017年8月25日后，默认的credentials政策变更为same-originFirefox也在61.0b13中改变默认值  进行 fetch 请求 一个基本的 fetch请求设置起来很简单。看看下面的代码：
+fetch(&#39;http://example.com/movies.json&#39;) .then(function(response) { return response.json(); }) .then(function(myJson) { console.log(myJson); });  这里我们通过网络获取一个JSON文件并将其打印到控制台。最简单的用法是只提供一个参数用来指明想fetch()到的资源路径，然后返回一个包含响应结果的promise(一个 Response 对象)。
+当然它只是一个 HTTP 响应，而不是真的JSON。为了获取JSON的内容，我们需要使用 json()方法（在Bodymixin 中定义，被 Request 和 Response 对象实现）。</description>
+    </item>
+    
+    <item>
+      <title>ES6 - Promise</title>
+      <link>https://qiqi12138.github.io/post/13-es6-promise/</link>
+      <pubDate>Fri, 02 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>https://qiqi12138.github.io/post/13-es6-promise/</guid>
+      <description>Promise 语法 new Promsie( function(resolve, reject) { ... } /* executor */ )  参数 executor 执行者
+executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数执行时立即调用 executor 函数，resolve 和 reject 两个函数作为参数传递给 executor (executor函数在Promise构造函数返回所建promise实例对象前被调用。) resolve 和 reject 函数被调用时，
+分别将promise的状态改为 fulfilled (完成) 或rejected (失败)。executor 内部通常会执行一些异步操作，一旦异步操作执行完毕 (可能成功/失败)，要么调用resolve函数来将promise状态改为fulfilled，要么调用 reject 函数将promise状态改为rejected。如果在executor函数中抛出一个错误，那么该promise状态改为rejected。executor函数的返回值被忽略。
+描述 Promise 对象是一个代理对象 (代理一个值)，被代理的值在Promise对象创建时可能是为未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法 (handlers)。这让异步方法可以像同步方法那样返回值，但并不是立即返回最终执行结果，而是一个能代表未来出现的结果的promise对象
+一个 Promise 有以下几种状态
+ pending：初始状态，既不是成功，也不是失败状态 fulfilled：意味着操作成功完成。 rejected：意味着操作失败  pending 状态的 Promise 对象可能会变成为 fuifilled 状态并传递一个值给相应的状态处理方法，也可能变为失败状态 (rejected) 并传递失败信息。当其中任一种情况出现时，Promise 对象的then 方法绑定的处理方法 (handlers) 就会被调用 (then方法包含两个参数: onfulfilled 和 onrejected，他们都是 Function 类型。当 Promise 状态为 fulfilled 时，调用 then 和 onfulfilled 方法，当 Promise 状态为rejected时，调用 then 的 onrejected 方法，所以在异步操作的完成和绑定处理方法之间不存在竞争)。</description>
+    </item>
     
     <item>
       <title>JS - 方法总结</title>
@@ -134,10 +259,10 @@ function fn1 () { var a = 2 var b = &#39;abc&#39; function fn2 () { //执行函�
     
     <item>
       <title>十大算法</title>
-      <link>https://qiqi12138.github.io/post/05-%E7%AE%97%E6%B3%95/</link>
+      <link>https://qiqi12138.github.io/post/05-%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</link>
       <pubDate>Mon, 25 Sep 2017 13:30:34 +0800</pubDate>
       
-      <guid>https://qiqi12138.github.io/post/05-%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://qiqi12138.github.io/post/05-%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/</guid>
       <description>算法一：快速排序算法 快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。
 快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。
 算法步骤：

@@ -10,24 +10,36 @@
     
 
     
-    <title>Page not found</title>
+    <title>ES6 - async函数</title>
 
     
     
 
 
 
-
+  
   
   <meta name="author" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="参考：https://es6.ruanyifeng.com/?search=async&#43;&amp;amp;x=7&amp;amp;y=6#docs/async
+ 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+前文有一个 Generator 函数，依次读取两个文件。
+const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
+const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.">
 
   
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@gohugoio" />
-  <meta name="twitter:title" content="My New Hugo Site" />
-  <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="ES6 - async函数" />
+    <meta name="twitter:description" content="参考：https://es6.ruanyifeng.com/?search=async&#43;&amp;amp;x=7&amp;amp;y=6#docs/async
+ 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+前文有一个 Generator 函数，依次读取两个文件。
+const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
+const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console." />
+    <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
+  
 
 
 
@@ -35,7 +47,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://qiqi12138.github.io/404.html">
+<link rel="canonical" href="https://qiqi12138.github.io/post/16-es6-async%E5%87%BD%E6%95%B0/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -206,11 +218,409 @@
 </amp-sidebar>
 
     
-  <div class="not-found">
-    <h1 class="error-emoji">\(o_o)/</h1>
-    <p class="error-text">/* 404 page not found. */</p>
-    <p><a class="error-link" href="/" title="404 Page not found">↑ Back Home ↑</a></p>
-  </div>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">ES6 - async函数</h1>
+      <p class="entry-meta"><span class="entry-time">Mar 5, 2018</span> 4 min read</p>
+    </header>
+    
+
+    <article class="post-content">
+
+<blockquote>
+<p>参考：<a href="https://es6.ruanyifeng.com/?search=async+&amp;x=7&amp;y=6#docs/async">https://es6.ruanyifeng.com/?search=async+&amp;x=7&amp;y=6#docs/async</a></p>
+</blockquote>
+
+<h2 id="含义">含义</h2>
+
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+
+<p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
+
+<p>前文有一个 Generator 函数，依次读取两个文件。</p>
+
+<pre><code class="language-javascript">const fs = require('fs');
+
+const readFile = function (fileName) {
+  return new Promise(function (resolve, reject) {
+    fs.readFile(fileName, function(error, data) {
+      if (error) return reject(error);
+      resolve(data);
+    });
+  });
+};
+
+const gen = function* () {
+  const f1 = yield readFile('/etc/fstab');
+  const f2 = yield readFile('/etc/shells');
+  console.log(f1.toString());
+  console.log(f2.toString());
+};
+</code></pre>
+
+<p>上面代码的函数<code>gen</code>可以写成<code>async</code>函数，就是下面这样。</p>
+
+<pre><code class="language-javascript">const asyncReadFile = async function () {
+  const f1 = await readFile('/etc/fstab');
+  const f2 = await readFile('/etc/shells');
+  console.log(f1.toString());
+  console.log(f2.toString());
+};
+</code></pre>
+
+<p>一比较就会发现，<code>async</code>函数就是将 Generator 函数的星号（<code>*</code>）替换成<code>async</code>，将<code>yield</code>替换成<code>await</code>，仅此而已。</p>
+
+<p><code>async</code>函数对 Generator 函数的改进，体现在以下四点。</p>
+
+<p>（1）内置执行器。</p>
+
+<p>Generator 函数的执行必须靠执行器，所以才有了<code>co</code>模块，而<code>async</code>函数自带执行器。也就是说，<code>async</code>函数的执行，与普通函数一模一样，只要一行。</p>
+
+<pre><code class="language-javascript">asyncReadFile();
+</code></pre>
+
+<p>上面的代码调用了<code>asyncReadFile</code>函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用<code>next</code>方法，或者用<code>co</code>模块，才能真正执行，得到最后结果。</p>
+
+<p>（2）更好的语义。</p>
+
+<p><code>async</code>和<code>await</code>，比起星号和<code>yield</code>，语义更清楚了。<code>async</code>表示函数里有异步操作，<code>await</code>表示紧跟在后面的表达式需要等待结果。</p>
+
+<p>（3）更广的适用性。</p>
+
+<p><code>co</code>模块约定，<code>yield</code>命令后面只能是 Thunk 函数或 Promise 对象，而<code>async</code>函数的<code>await</code>命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象）。</p>
+
+<p>（4）返回值是 Promise。</p>
+
+<p><code>async</code>函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用<code>then</code>方法指定下一步的操作。</p>
+
+<p>进一步说，<code>async</code>函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而<code>await</code>命令就是内部<code>then</code>命令的语法糖。</p>
+
+<h2 id="基本用法">基本用法</h2>
+
+<p><code>async</code>函数返回一个 Promise 对象，可以使用<code>then</code>方法添加回调函数。当函数执行的时候，一旦遇到<code>await</code>就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。</p>
+
+<p>下面是一个例子。</p>
+
+<pre><code class="language-javascript">async function getStockPriceByName(name) {
+  const symbol = await getStockSymbol(name);
+  const stockPrice = await getStockPrice(symbol);
+  return stockPrice;
+}
+
+getStockPriceByName('goog').then(function (result) {
+  console.log(result);
+});
+</code></pre>
+
+<p>上面代码是一个获取股票报价的函数，函数前面的<code>async</code>关键字，表明该函数内部有异步操作。调用该函数时，会立即返回一个<code>Promise</code>对象。</p>
+
+<p>下面是另一个例子，指定多少毫秒后输出一个值。</p>
+
+<pre><code class="language-javascript">function timeout(ms) {
+  return new Promise((resolve) =&gt; {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint('hello world', 50);
+</code></pre>
+
+<p>上面代码指定 50 毫秒以后，输出<code>hello world</code>。</p>
+
+<p>由于<code>async</code>函数返回的是 Promise 对象，可以作为<code>await</code>命令的参数。所以，上面的例子也可以写成下面的形式。</p>
+
+<pre><code class="language-javascript">async function timeout(ms) {
+  await new Promise((resolve) =&gt; {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint('hello world', 50);
+</code></pre>
+
+<p>async 函数有多种使用形式。</p>
+
+<pre><code class="language-javascript">// 函数声明
+async function foo() {}
+
+// 函数表达式
+const foo = async function () {};
+
+// 对象的方法
+let obj = { async foo() {} };
+obj.foo().then(...)
+
+// Class 的方法
+class Storage {
+  constructor() {
+    this.cachePromise = caches.open('avatars');
+  }
+
+  async getAvatar(name) {
+    const cache = await this.cachePromise;
+    return cache.match(`/avatars/${name}.jpg`);
+  }
+}
+
+const storage = new Storage();
+storage.getAvatar('jake').then(…);
+
+// 箭头函数
+const foo = async () =&gt; {};
+</code></pre>
+
+<h2 id="语法">语法</h2>
+
+<p><code>async</code>函数的语法规则总体上比较简单，难点是错误处理机制。</p>
+
+<h3 id="返回-promise-对象">返回 Promise 对象</h3>
+
+<p><code>async</code>函数返回一个 Promise 对象。</p>
+
+<p><code>async</code>函数内部<code>return</code>语句返回的值，会成为<code>then</code>方法回调函数的参数。</p>
+
+<pre><code class="language-javascript">async function f() {
+  return 'hello world';
+}
+
+f().then(v =&gt; console.log(v))
+// &quot;hello world&quot;
+</code></pre>
+
+<p>上面代码中，函数<code>f</code>内部<code>return</code>命令返回的值，会被<code>then</code>方法回调函数接收到。</p>
+
+<p><code>async</code>函数内部抛出错误，会导致返回的 Promise 对象变为<code>reject</code>状态。抛出的错误对象会被<code>catch</code>方法回调函数接收到。</p>
+
+<pre><code class="language-javascript">async function f() {
+  throw new Error('出错了');
+}
+
+f().then(
+  v =&gt; console.log(v),
+  e =&gt; console.log(e)
+)
+// Error: 出错了
+</code></pre>
+
+<h3 id="promise-对象的状态变化">Promise 对象的状态变化</h3>
+
+<p><code>async</code>函数返回的 Promise 对象，必须等到内部所有<code>await</code>命令后面的 Promise 对象执行完，才会发生状态改变，除非遇到<code>return</code>语句或者抛出错误。也就是说，只有<code>async</code>函数内部的异步操作执行完，才会执行<code>then</code>方法指定的回调函数。</p>
+
+<p>下面是一个例子。</p>
+
+<pre><code class="language-javascript">async function getTitle(url) {
+  let response = await fetch(url);
+  let html = await response.text();
+  return html.match(/&lt;title&gt;([\s\S]+)&lt;\/title&gt;/i)[1];
+}
+getTitle('https://tc39.github.io/ecma262/').then(console.log)
+// &quot;ECMAScript 2017 Language Specification&quot;
+</code></pre>
+
+<p>上面代码中，函数<code>getTitle</code>内部有三个操作：抓取网页、取出文本、匹配页面标题。只有这三个操作全部完成，才会执行<code>then</code>方法里面的<code>console.log</code>。</p>
+
+<h3 id="await-命令">await 命令</h3>
+
+<p>正常情况下，<code>await</code>命令后面是一个 Promise 对象，返回该对象的结果。如果不是 Promise 对象，就直接返回对应的值。</p>
+
+<pre><code class="language-javascript">async function f() {
+  // 等同于
+  // return 123;
+  return await 123;
+}
+
+f().then(v =&gt; console.log(v))
+// 123
+</code></pre>
+
+<p>上面代码中，<code>await</code>命令的参数是数值<code>123</code>，这时等同于<code>return 123</code>。</p>
+
+<p>另一种情况是，<code>await</code>命令后面是一个<code>thenable</code>对象（即定义<code>then</code>方法的对象），那么<code>await</code>会将其等同于 Promise 对象。</p>
+
+<pre><code class="language-javascript">class Sleep {
+  constructor(timeout) {
+    this.timeout = timeout;
+  }
+  then(resolve, reject) {
+    const startTime = Date.now();
+    setTimeout(
+      () =&gt; resolve(Date.now() - startTime),
+      this.timeout
+    );
+  }
+}
+
+(async () =&gt; {
+  const sleepTime = await new Sleep(1000);
+  console.log(sleepTime);
+})();
+// 1000
+</code></pre>
+
+<p>上面代码中，<code>await</code>命令后面是一个<code>Sleep</code>对象的实例。这个实例不是 Promise 对象，但是因为定义了<code>then</code>方法，<code>await</code>会将其视为<code>Promise</code>处理。</p>
+
+<p>这个例子还演示了如何实现休眠效果。JavaScript 一直没有休眠的语法，但是借助<code>await</code>命令就可以让程序停顿指定的时间。下面给出了一个简化的<code>sleep</code>实现。</p>
+
+<pre><code class="language-javascript">function sleep(interval) {
+  return new Promise(resolve =&gt; {
+    setTimeout(resolve, interval);
+  })
+}
+
+// 用法
+async function one2FiveInAsync() {
+  for(let i = 1; i &lt;= 5; i++) {
+    console.log(i);
+    await sleep(1000);
+  }
+}
+
+one2FiveInAsync();
+</code></pre>
+
+<p><code>await</code>命令后面的 Promise 对象如果变为<code>reject</code>状态，则<code>reject</code>的参数会被<code>catch</code>方法的回调函数接收到。</p>
+
+<pre><code class="language-javascript">async function f() {
+  await Promise.reject('出错了');
+}
+
+f()
+.then(v =&gt; console.log(v))
+.catch(e =&gt; console.log(e))
+// 出错了
+</code></pre>
+
+<p>注意，上面代码中，<code>await</code>语句前面没有<code>return</code>，但是<code>reject</code>方法的参数依然传入了<code>catch</code>方法的回调函数。这里如果在<code>await</code>前面加上<code>return</code>，效果是一样的。</p>
+
+<p>任何一个<code>await</code>语句后面的 Promise 对象变为<code>reject</code>状态，那么整个<code>async</code>函数都会中断执行。</p>
+
+<pre><code class="language-javascript">async function f() {
+  await Promise.reject('出错了');
+  await Promise.resolve('hello world'); // 不会执行
+}
+</code></pre>
+
+<p>上面代码中，第二个<code>await</code>语句是不会执行的，因为第一个<code>await</code>语句状态变成了<code>reject</code>。</p>
+
+<p>有时，我们希望即使前一个异步操作失败，也不要中断后面的异步操作。这时可以将第一个<code>await</code>放在<code>try...catch</code>结构里面，这样不管这个异步操作是否成功，第二个<code>await</code>都会执行。</p>
+
+<pre><code class="language-javascript">async function f() {
+  try {
+    await Promise.reject('出错了');
+  } catch(e) {
+  }
+  return await Promise.resolve('hello world');
+}
+
+f()
+.then(v =&gt; console.log(v))
+// hello world
+</code></pre>
+
+<p>另一种方法是<code>await</code>后面的 Promise 对象再跟一个<code>catch</code>方法，处理前面可能出现的错误。</p>
+
+<pre><code class="language-javascript">async function f() {
+  await Promise.reject('出错了')
+    .catch(e =&gt; console.log(e));
+  return await Promise.resolve('hello world');
+}
+
+f()
+.then(v =&gt; console.log(v))
+// 出错了
+// hello world
+</code></pre>
+
+<h3 id="错误处理">错误处理</h3>
+
+<p>如果<code>await</code>后面的异步操作出错，那么等同于<code>async</code>函数返回的 Promise 对象被<code>reject</code>。</p>
+
+<pre><code class="language-javascript">async function f() {
+  await new Promise(function (resolve, reject) {
+    throw new Error('出错了');
+  });
+}
+
+f()
+.then(v =&gt; console.log(v))
+.catch(e =&gt; console.log(e))
+// Error：出错了
+</code></pre>
+
+<p>上面代码中，<code>async</code>函数<code>f</code>执行后，<code>await</code>后面的 Promise 对象会抛出一个错误对象，导致<code>catch</code>方法的回调函数被调用，它的参数就是抛出的错误对象。具体的执行机制，可以参考后文的“async 函数的实现原理”。</p>
+
+<p>防止出错的方法，也是将其放在<code>try...catch</code>代码块之中。</p>
+
+<pre><code class="language-javascript">async function f() {
+  try {
+    await new Promise(function (resolve, reject) {
+      throw new Error('出错了');
+    });
+  } catch(e) {
+  }
+  return await('hello world');
+}
+</code></pre>
+
+<p>如果有多个<code>await</code>命令，可以统一放在<code>try...catch</code>结构中。</p>
+
+<pre><code class="language-javascript">async function main() {
+  try {
+    const val1 = await firstStep();
+    const val2 = await secondStep(val1);
+    const val3 = await thirdStep(val1, val2);
+
+    console.log('Final: ', val3);
+  }
+  catch (err) {
+    console.error(err);
+  }
+}
+</code></pre>
+
+<p>下面的例子使用<code>try...catch</code>结构，实现多次重复尝试。</p>
+
+<pre><code class="language-javascript">const superagent = require('superagent');
+const NUM_RETRIES = 3;
+
+async function test() {
+  let i;
+  for (i = 0; i &lt; NUM_RETRIES; ++i) {
+    try {
+      await superagent.get('http://google.com/this-throws-an-error');
+      break;
+    } catch(err) {}
+  }
+  console.log(i); // 3
+}
+
+test();
+</code></pre>
+
+<p>上面代码中，如果<code>await</code>操作成功，就会使用<code>break</code>语句退出循环；如果失败，会被<code>catch</code>语句捕捉，然后进入下一轮循环。</p>
+</article>
+    <footer class="post-footer">
+      
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20async%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
+  </section>
 
     <footer class="footer">
   <p>Copyright © 2018-2019 My New Hugo Site</p>
