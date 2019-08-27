@@ -10,13 +10,7 @@
     
 
     
-    <title>
-  
-    
-    
-  
-   | My New Hugo Site
-</title>
+    <title>Node.js - Express</title>
 
     
     
@@ -26,14 +20,22 @@
   
   
   <meta name="author" content="" />
-  <meta name="description" content="">
+  <meta name="description" content="Express 原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。
+在 Node 中，有很多 Web 开发框架，这里我们以学习 express 为主。
+ http://expressjs.com/  1 起步 1.1 安装: npm install --save express  1.2 hello world var express = require(&#39;express&#39;) var app = express() app.get(&#39;/&#39;,() =&amp;gt; console.log(&#39;Hello world!&#39;)) app.listen(3000, () =&amp;gt; console.log(&#39;Example app listening on port 3000!&#39;))  1.3 基本路由 路由器
+ 请求方法 请求路径 请求处理函数  get:
+// 当你以 GET 方法请求 / 的时候，执行对应的处理函数 app.get(&#39;/&#39;,function (req, res) { res.send(&#39;Hello world!&#39;) })  post:">
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Node.js - Express" />
+    <meta name="twitter:description" content="Express 原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。
+在 Node 中，有很多 Web 开发框架，这里我们以学习 express 为主。
+ http://expressjs.com/  1 起步 1.1 安装: npm install --save express  1.2 hello world var express = require(&#39;express&#39;) var app = express() app.get(&#39;/&#39;,() =&amp;gt; console.log(&#39;Hello world!&#39;)) app.listen(3000, () =&amp;gt; console.log(&#39;Example app listening on port 3000!&#39;))  1.3 基本路由 路由器
+ 请求方法 请求路径 请求处理函数  get:
+// 当你以 GET 方法请求 / 的时候，执行对应的处理函数 app.get(&#39;/&#39;,function (req, res) { res.send(&#39;Hello world!&#39;) })  post:" />
     <meta name="twitter:image" content="https://qiqi12138.github.io/img/avatar.jpg" />
   
 
@@ -43,7 +45,7 @@
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-<link rel="canonical" href="https://qiqi12138.github.io/post/">
+<link rel="canonical" href="https://qiqi12138.github.io/post/27-node.js-express/">
 <link rel="alternative" href="/index.xml" title="My New Hugo Site" type="application/atom+xml">
 
 
@@ -214,279 +216,177 @@
 </amp-sidebar>
 
     
-  <section class="main entry-list">
-    <header class="list-header">
-      
-      
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Node.js - Express</h1>
+      <p class="entry-meta"><span class="entry-time">Oct 6, 2018</span> 2 min read</p>
     </header>
     
+
+    <article class="post-content">
+
+<h1 id="express">Express</h1>
+
+<p>原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。</p>
+
+<p>在 Node 中，有很多 Web 开发框架，这里我们以学习 <code>express</code> 为主。</p>
+
+<ul>
+<li><a href="http://expressjs.com/">http://expressjs.com/</a></li>
+</ul>
+
+<h2 id="1-起步">1 起步</h2>
+
+<h3 id="1-1-安装">1.1 安装:</h3>
+
+<pre><code class="language-shell">npm install --save express
+</code></pre>
+
+<h3 id="1-2-hello-world">1.2 hello world</h3>
+
+<pre><code class="language-js">var express = require('express')
+var app = express()
+
+app.get('/',() =&gt; console.log('Hello world!'))
+
+app.listen(3000, () =&gt; console.log('Example app listening on port 3000!'))
+</code></pre>
+
+<h3 id="1-3-基本路由">1.3 基本路由</h3>
+
+<p>路由器</p>
+
+<ul>
+<li>请求方法</li>
+<li>请求路径</li>
+<li>请求处理函数</li>
+</ul>
+
+<p>get:</p>
+
+<pre><code class="language-js">// 当你以 GET 方法请求 / 的时候，执行对应的处理函数
+app.get('/',function (req, res) {
+    res.send('Hello world!')
+})
+</code></pre>
+
+<p>post:</p>
+
+<pre><code class="language-js">// 当你以 POST 方法请求 / 的时候，指定对应的处理函数
+app.post('/',function (req, res) {
+    res.send('Got a POST request')
+})
+</code></pre>
+
+<h3 id="1-4-静态服务">1.4 静态服务</h3>
+
+<pre><code class="language-js">// /public资源
+app.use(expres.static('public'))
+
+// /files资源
+app.use(expres.static('files'))
+
+// /publick/xxx
+app.use('/public', express.static('public'))
+
+// /static/xxx
+app.use('/static', express.static('public'))
+
+app.use('/static', express.static(path.join(_dirname, 'public')))
+</code></pre>
+
+<h2 id="2-在-express-中配置使用-art-template-模板引擎">2 在 Express 中配置使用 <code>art-template</code> 模板引擎</h2>
+
+<ul>
+<li><a href="https://github.com/aui/art-template">art-template - GitHub仓库</a></li>
+<li><a href="http://aui.github.io/art-template/">art-template - 官方文档</a></li>
+</ul>
+
+<p>安装:</p>
+
+<pre><code class="language-shell">npm install --save art-template
+npm install --save express-art-template
+
+npm install --save art-template express-art-template
+</code></pre>
+
+<p>配置:</p>
+
+<pre><code class="language-js">app.engine('html', require('express-art-template'))
+</code></pre>
+
+<p>使用:</p>
+
+<pre><code class="language-js">app.get('/', function (req, res) {
+    // express 默认会去项目中的 views 目录找 index.html
     
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/29-node.js-mongoose/" title="mongoose" class="entry-link">mongoose</a></h3>
-  </header>
+    res.render('index.html', {
+        title: 'hello world'
+    })
+})
+</code></pre>
 
-  <p class="entry-summary">mongoose  官网：http://mongoosejs.com/ 官方指南：http://mongoosejs.com/docs/guide.html 官方API文档：http://mongoosejs.com/docs/api.html  1.MongoDB 数据库的基本概念  可以有多个数据库 一个数据库中可以有多个集合 (表) collections 一个集合中可以有多个文档 (表记录) 文档结构很灵活，没有任何限制 MongoDB 非常灵活，不需要像 MySQL 一样先创建数据库、表、设计表结构
- 在这里只需要：当你需要插入数据的时候，只需要指定往哪个数据库的哪个集合操作就可以了 一切都由 MongoDB 来帮你自动完成建库建表这件事儿
-{ qq: { users: [ {name: &#34;张三&#34;, age: 15}, {name: &#34;李四&#34;, age: 15}, {name: &#34;王五&#34;, age: 15}, {name: &#34;张三123&#34;, age: 15}, {name: &#34;张三321&#34;, age: 18}, ... ], products: [ ], ... }, taobao: { }, baidu: { } }    2.起步 安装:</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Nov 21, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f29-node.js-mongoose%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=mongoose&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f29-node.js-mongoose%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
+<p>如果希望修改默认的 <code>view</code> 视图渲染存储目录，可以:</p>
+
+<pre><code class="language-js">// 注意: 第一个参数 views 千万不要写错
+app.set('veiws', 目录路径)
+</code></pre>
+
+<h2 id="3-在-express-获取表单-get-请求体数据">3 在 Express 获取表单 GET 请求体数据</h2>
+
+<p>Express 内置了一个 API，可以直接通过 <code>req.query</code> 来获取</p>
+
+<pre><code class="language-js">req.query
+</code></pre>
+
+<h2 id="4-在-express-获取表单-post-请求体数据">4 在 Express 获取表单 POST 请求体数据</h2>
+
+<p>在 Express 中没有内置获取表单 POST 请求体的 API，这里我们需要使用一个第三方包: <code>body-parser</code></p>
+
+<p>安装:</p>
+
+<pre><code class="language-shell">npm install --save body-parser
+</code></pre>
+
+<p>配置:</p>
+
+<pre><code class="language-js">var express = require('express')
+// 0.引包
+var bodyParser = require('body-parser')
+
+var app = express()
+
+// 配置 body-parser
+// 只要加入这个配置，则在 req 请求对象上会多出来一个属性: body
+// 也就是说你就可以直接通过 req.body 来获取表单 POST 请求体数据了
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
+</code></pre>
+
+<p>使用:</p>
+
+<pre><code class="language-js">app.use(function (req, res){
+    res.setHeader('Content-Type', 'text/plain')
+    res.write('you posted:\n')
+    // 可以通过 req.body 来获取表单 POST 请求体数据
+    res.end(JSON.stringify(req.body, null, 2))
+})
+</code></pre>
 </article>
-
+    <footer class="post-footer">
       
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/28-node.js-%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Node.js - 使用Node操作数据库" class="entry-link">Node.js - 使用Node操作数据库</a></h3>
-  </header>
-
-  <p class="entry-summary">关系型数据库和非关系型数据库 表就是关系
-或者说表与表之间存在关系。
- 所有的关系数据库都需要通过 sql 语言来操作 所有的关系型数据库在操作之前都需要设计表结构 而且数据表还支持约束  唯一的 主键 默认值 非空  非关系型型数据库非常的灵活 有的非关系型数据库就是 key-value 对儿 但是 MongoDB 是长得最像关系型数据库的非关系型数据库  数据库 -》数据库 数据表 -》集合（数组） 表记录 -》（文档对象）  MongoDB 不需要设计表结构 也就是你可以任意的往里面存数据，没有结构性这么一说  操作 MongoDB 数据库 启动和关闭数据库 启动：
-# mongDB 默认使用执行 mongod 命令所处盘符根目录下的 /data/db 作为自己的数据存储目录 # 所以在第一次执行该命令之前先自己手动新建一个 /data/db mongod  如果想要修改默认的数据存储目录，可以：
-mongod --dbpath=数据存储目录路径  停止：
-在开启服务的控制台，直接 ctrl&#43;c 即可停止。 或者直接关闭开启服务的控制台也可以。  连接数据库 # 该命令默认连接本机的 mongoDB 服务 mongo  退出</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 7, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f28-node.js-%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bd%bf%e7%94%a8Node%e6%93%8d%e4%bd%9c%e6%95%b0%e6%8d%ae%e5%ba%93&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f28-node.js-%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/27-node.js-express/" title="Node.js - Express" class="entry-link">Node.js - Express</a></h3>
-  </header>
-
-  <p class="entry-summary">Express 原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。
-在 Node 中，有很多 Web 开发框架，这里我们以学习 express 为主。
- http://expressjs.com/  1 起步 1.1 安装: npm install --save express  1.2 hello world var express = require(&#39;express&#39;) var app = express() app.get(&#39;/&#39;,() =&gt; console.log(&#39;Hello world!&#39;)) app.listen(3000, () =&gt; console.log(&#39;Example app listening on port 3000!&#39;))  1.3 基本路由 路由器
- 请求方法 请求路径 请求处理函数  get:
-// 当你以 GET 方法请求 / 的时候，执行对应的处理函数 app.get(&#39;/&#39;,function (req, res) { res.send(&#39;Hello world!&#39;) })  post:</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 6, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20Express&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/26-node.js-npm/" title="Node.js - Npm" class="entry-link">Node.js - Npm</a></h3>
-  </header>
-
-  <p class="entry-summary">npm  node package manager  1. npm 网站  npmjs.com
- 2. npm 命令行工具 npm 的第二层含义就是一个命令行工具，只要你安装了 node 就已经安装了 npm
-npm 也有版本这个概念
-可以通过命令行中输出
-npm --version  升级 npm (自己升级自己):
-npm install --global npm  3. npm常用命令  npm init  npm init -y 可以跳过向导，快速生成  npm install  一次性把 dependencies 选项中的依赖项全部安装 npm i  npm install 包名  只下载 npm i 包名  npm install –save 包名  下载并保存依赖项 (package.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 5, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f26-node.js-npm%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20Npm&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f26-node.js-npm%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/25-node.js-%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F/" title="Node.js - 模块系统" class="entry-link">Node.js - 模块系统</a></h3>
-  </header>
-
-  <p class="entry-summary">Node 中的模块系统 使用 Node 编写应用程序主要就是在使用:
- EcmaScript 语言  和浏览器不一样、在 Node 中没有 BOM、DOM  核心模块  文件操作的 fs http 服务的 http url 路径操作模块 path 路径处理模块 os 操作系统信息  第三方模块  art-template 必须通过 npm 来下载才可以使用  咱们自己写的模块  自己创建的文件   1 什么是模块化  文件作用域  变量与变量不会相互污染  通信规则  加载 require 导出 exports   2 CommonJS 模块规范 在 Node 中的 JavaScript 还有一个很重要的概念，模块系统
- 模块作用域 使用 require 方法来加载模块 使用 exports 接口对象用来导出模块中的成员  2.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 4, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f25-node.js-%25E6%25A8%25A1%25E5%259D%2597%25E7%25B3%25BB%25E7%25BB%259F%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e6%a8%a1%e5%9d%97%e7%b3%bb%e7%bb%9f&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f25-node.js-%25E6%25A8%25A1%25E5%259D%2597%25E7%25B3%25BB%25E7%25BB%259F%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/24-node.js-%E4%BD%BF%E7%94%A8node%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Node.js - 使用 Node 搭建一个服务器" class="entry-link">Node.js - 使用 Node 搭建一个服务器</a></h3>
-  </header>
-
-  <p class="entry-summary">使用 Node 搭建一个服务器  在 Node 中专门提供了一个核心模块http
- http这个模块的职责就是帮你创建编写服务器的
-  第一步 加载 http 模块 var http = require(&#39;http&#39;);
-第二步 创建 Server var server = http.createServer();
- 使用 http.createServer() 方法创建一个 web 服务器
- 该方法返回一个 Server 实例
-  第三步 监听 request 响应事件,设置请求处理函数 server.on(&#39;request&#39;, function (request, response) { console.log(&#39;收到客户端的请求了, 请求路径是:&#39; &#43; request.url) // 发送请求头 用来解决中文乱码 response.writeHead(200, { &#39;Content-Type&#39;: &#39;text/plain;charset=utf-8&#39; }) // 给客户端发送一条响应数据 response.write(&#39;hello NodeJS&#39;) // 告诉客户端 我的话说完了可以呈现给客户端了 response.end() })   request 请求事件处理函数,需要接收两个参数  Request 请求对象 请求对象可以用来获取客户端的一些请求信息.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 3, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f24-node.js-%25E4%25BD%25BF%25E7%2594%25A8node%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%2580%25E4%25B8%25AA%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bd%bf%e7%94%a8%20Node%20%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%9c%8d%e5%8a%a1%e5%99%a8&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f24-node.js-%25E4%25BD%25BF%25E7%2594%25A8node%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%2580%25E4%25B8%25AA%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/23-node.js-%E8%B5%B7%E6%AD%A5/" title="Node.js - 起步" class="entry-link">Node.js - 起步</a></h3>
-  </header>
-
-  <p class="entry-summary">安装 Node 环境  查看当前 Node 环境的版本号 下载: https://nodejs.org/en/ 安装  傻瓜式的一路 next 就可以了 对于已经安装过的，重新安装就会升级  确认 Node 环境是否安装成功  打开命令行，输入 node --version 或者 node -v
-  环境变量  Hello World  解析执行 JavaScript
- 创建编写 JavaScript 脚本文件 打开终端，定位到脚本文件的所属目录 输入 node 文件名 执行对应的文件   注意: 文件名不要使用 node.js 来命名，也就是说除了这个名字随便起，而且最好不要使用中文。
- 读写文件
- 文件读取
-// 1.使用 require 方法加载 fs 核心模块 var fs = require(&#39;fs&#39;) // 2.读取文件 fs.readFile(&#39;./data/hello.txt&#39;, function (error, data) { // 在这里就可以通过判断 error 来确认是否有错误发生 if (error) { console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 2, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f23-node.js-%25E8%25B5%25B7%25E6%25AD%25A5%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e8%b5%b7%e6%ad%a5&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f23-node.js-%25E8%25B5%25B7%25E6%25AD%25A5%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/22-node.js-%E4%BB%8B%E7%BB%8D/" title="Node.js - 介绍" class="entry-link">Node.js - 介绍</a></h3>
-  </header>
-
-  <p class="entry-summary">Node.js 介绍 1.1Node.js 是什么  Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.  Node.js 不是一门语言 Node.js 不是库、不是框架 Node.js 是一个 JavaScript 运行时的环境 简单点来讲就是 Node.js 可以解析和执行 JavaScript 代码 以前只有浏览器可以解析 JavaScript 代码 也就是说现在 JavaScript 可以完全脱离浏览器来运行，一切都归功于: Node.js  浏览器中的 JavaScript  EcmaScript BOM DOM  Node.js中的 JavaScript  没有 BOM、DOM EcmaScript 在 Node.js 这个 JavaScript 执行环境中为 JavaScript 提供了一些服务器级别的操作 API 例如文件读写 网络服务的构建 网络通信 http 服务器 等处理。。。  构建于 Chrome 的 V8 引擎之上  代码只是具有特定格式的字符串而已 引擎可以认识他，引擎可以帮你去解析和执行 Google Chrome 的 V8 引擎是目前公认的解析执行 JavaScript 代码最快的 Node.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 1, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f22-node.js-%25E4%25BB%258B%25E7%25BB%258D%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bb%8b%e7%bb%8d&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f22-node.js-%25E4%25BB%258B%25E7%25BB%258D%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/21-vue-cli3.9.3/" title="Vue.js - vue-cli 3.x" class="entry-link">Vue.js - vue-cli 3.x</a></h3>
-  </header>
-
-  <p class="entry-summary">Vue-cli 版本 3.9.3
-可以使用下列任一命令安装这个新的包：
-npm install -g @vue/cli # OR yarn global add @vue/cli  安装之后，你就可以在命令行中访问 vue 命令。你可以通过简单运行 vue，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。
-你还可以用这个命令来检查其版本是否正确 (3.x)：
-vue --version  自定义脚手架模板 第一步: 创建项目
-vue create vue-cli-new2  第二步： Manually select features
-第三步：选择依赖
- 空格选择，回车确定  第四步：是否使用历史路由
- y&amp;n都可以  第五步： ESLint &#43; Standard config
-第六步：是否保存模板
-第七步： 找到 C:\Users\Lenovo 下的 .vuerc 文件来配置模板
-安装插件 使用 vue add vuetify
- vuetify是一个ui库 使用 add 命令，使安装的插件完全融入到项目中 正常安装插件还是使用 npm install  配置文件 vue.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 10, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f21-vue-cli3.9.3%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20vue-cli%203.x&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f21-vue-cli3.9.3%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/20-vue-%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB/" title="Vue.js - 导航守卫" class="entry-link">Vue.js - 导航守卫</a></h3>
-  </header>
-
-  <p class="entry-summary">正如其名，vue-router 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。有多种机会植入路由导航过程中：全局的, 单个路由独享的, 或者组件级的。
-记住参数或查询的改变并不会触发进入/离开的导航守卫。你可以通过观察 $route 对象来应对这些变化，或使用 beforeRouteUpdate 的组件内守卫。
-全局前置守卫 你可以使用 router.beforeEach 注册一个全局前置守卫：
-const router = new VueRouter({ ... }) router.beforeEach((to, from, next) =&gt; { // ... })  当一个导航触发时，全局前置守卫按照创建顺序调用。守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于 等待中。
-每个守卫方法接收三个参数：
- to: Route: 即将要进入的目标 路由对象 from: Route: 当前导航正要离开的路由 next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。  next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)。 next(false): 中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址。 next(‘/’) 或者 next({ path: ‘/’ }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。你可以向 next 传递任意位置对象，且允许设置诸如 replace: true、name: &#39;home&#39; 之类的选项以及任何用在 router-link 的 to prop 或 router.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 9, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f20-vue-%25E5%25AF%25BC%25E8%2588%25AA%25E5%25AE%2588%25E5%258D%25AB%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%af%bc%e8%88%aa%e5%ae%88%e5%8d%ab&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f20-vue-%25E5%25AF%25BC%25E8%2588%25AA%25E5%25AE%2588%25E5%258D%25AB%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-    
-    
-      <nav class="pagination">
-        
-        
-          <a class="pagination-btn pagination-next" href="/post/page/2/">Older Posts →</a>
-        
-      </nav>
-    
+      <div class="sharing">
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Facebook">
+          <svg class="icon icon-facebook" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+        </a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20Express&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Twitter">
+          <svg class="icon icon-twitter" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+        </a>
+      </div>
+    </footer>
   </section>
 
     <footer class="footer">

@@ -213,6 +213,202 @@
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/19-vue-%E5%8A%A8%E7%94%BB/" title="Vue.js - 动画" class="entry-link">Vue.js - 动画</a></h3>
+  </header>
+
+  <p class="entry-summary">动画 实现动画的两组类
+v-enter &amp; v-leave-to
+ v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入 v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了  v-enter-active &amp; v-leave-active
+ v-enter-active [入场动画的时间段] v-leave-active [离场动画的时间段]  单元素/组件的过渡 Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡
+ 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点  这里是一个典型的例子：
+&lt;div id=&#34;demo&#34;&gt; &lt;button v-on:click=&#34;show = !show&#34;&gt; Toggle &lt;/button&gt; &lt;transition name=&#34;fade&#34;&gt; &lt;p v-if=&#34;show&#34;&gt;hello&lt;/p&gt; &lt;/transition&gt; &lt;/div&gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity .</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 8, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%8a%a8%e7%94%bb&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/18-vue-router/" title="Vue.js - Router" class="entry-link">Vue.js - Router</a></h3>
+  </header>
+
+  <p class="entry-summary">vue-router 路由在 web 中有两种
+ 第一种是 hash 前面带# 第二种是 histroy 对象，这种路由不带#  起步 引入vue-router
+npm
+npm install vue-roter  如果在一个模块化工程中使用他，必须要通过 Vue.use() 明确的安装路由功能
+import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 VueRouter 注册到Vue Vue.use(VueRouter)  如果使用全局的 script 标签，则无须如此 (手动安装)
+两种超链接  &lt;a href=&#34;#/login&#34;&gt;登录&lt;/a&gt;  普通的 a 标签会刷新整个页面  &lt;router-link to=&#34;/login&#34; tag=&#34;span&#34;&gt;login&lt;/router-link&gt;  组件路由不会，是直接跳转 tag 属性 tag=“span”: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &lt;router-view/&gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 7, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20Router&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/17-vue-%E8%AE%A4%E8%AF%86vue/" title="Vue.js - 什么是Vue" class="entry-link">Vue.js - 什么是Vue</a></h3>
+  </header>
+
+  <p class="entry-summary">什么是Vue.js  Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架 (React除了开发网站, 还可以开发手机APP，Vue语法也是用于进行手机App开发的，需要借助于Weex) Vue.js 是前端的主流框架之一，和Angular.js、React.js、一起，并成为三大主流框架！ Vue.js 是一套构建用户界面的框架，只关注视图层，他不仅容易上手，还便于第三方库或既有项目整合。(Vue有配套的第三方类库，可以整合起来做大型项目的开发) 前端的主要工作？ 主要负责MVC中的V这一层；主要工作就是和页面打交道；来制作前端页面效果  为什么要学习流行框架  提高开发效率的发展历程: 原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js/Vue.js (能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不在关心DOM是如何渲染的了】) 在Vue中，一个核心的概念，就是让用户不在操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；  框架和库的区别  框架: 是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。 node中的express!  库(插件): 提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其他库实现需求。  从 Jquery 切换到 Zepto 从 EJS 切换到 art-template  什么是MVC  M(Model数据层) 职能单一，只负责操作数据库，执行对于的 Sql 语句，进行数据的CRUD  C: Create 增加 R: Read 读取 U: update 修改 D: Delete 删除  V(view视图层) 每当用户操作了界面，就需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们的这个请求，就会被后端的App.js监听到 C(Controller逻辑层) 这里分为路由分发处理模块和业务逻辑处理，在这个模块中封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了职能单一，此模块只负责处理业务  什么是MVVM MVVM是前端的视图层的开发分层开发思想，主要吧每个页面分为了M、V 和 VM 其中VM是MVVM的思想核心；因为VM是 M 和 V 之间的调度者</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 6, 2018</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e4%bb%80%e4%b9%88%e6%98%afVue&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/16-es6-async%E5%87%BD%E6%95%B0/" title="ES6 - async函数" class="entry-link">ES6 - async函数</a></h3>
+  </header>
+
+  <p class="entry-summary">参考：https://es6.ruanyifeng.com/?search=async&#43;&amp;x=7&amp;y=6#docs/async
+ 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+前文有一个 Generator 函数，依次读取两个文件。
+const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
+const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 5, 2018</span> 4 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20async%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/15-es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" title="ES6 - 箭头函数" class="entry-link">ES6 - 箭头函数</a></h3>
+  </header>
+
+  <p class="entry-summary">箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
+语法 基础语法 (参数1, 参数2, …, 参数N) =&gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&gt; {函数声明} 单一参数 =&gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&gt; a &#43; b &#43; c; f(); // 6  描述 参考 “ES6 In Depth: Arrow functions” on hacks.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 4, 2018</span> 6 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20%e7%ae%ad%e5%a4%b4%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/14-es6-fetch/" title="ES6 - Fetch" class="entry-link">ES6 - Fetch</a></h3>
+  </header>
+
+  <p class="entry-summary">Fetch Fetch API 提供了一个 JavaScript接口，用于访问和操纵HTTP管道的部分，例如请求和响应。它还提供了一个全局 fetch()方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
+这种功能以前是使用 XMLHttpRequest实现的。Fetch提供了一个更好的替代方法，可以很容易地被其他技术使用，例如 Service Workers。Fetch还提供了单个逻辑位置来定义其他HTTP相关概念，例如CORS和HTTP的扩展。
+请注意，fetch规范与jQuery.ajax()主
+要有两种方式的不同，牢记：
+ 当接收到一个代表错误的 HTTP 状态码时，从 fetch()返回的 Promise 不会被标记为 reject， 即使该 HTTP 响应的状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok 属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。 默认情况下，fetch 不会从服务端发送或接收任何 cookies, 如果站点依赖于用户 session，则会导致未经认证的请求（要发送 cookies，必须设置 credentials 选项）。自从2017年8月25日后，默认的credentials政策变更为same-originFirefox也在61.0b13中改变默认值  进行 fetch 请求 一个基本的 fetch请求设置起来很简单。看看下面的代码：
+fetch(&#39;http://example.com/movies.json&#39;) .then(function(response) { return response.json(); }) .then(function(myJson) { console.log(myJson); });  这里我们通过网络获取一个JSON文件并将其打印到控制台。最简单的用法是只提供一个参数用来指明想fetch()到的资源路径，然后返回一个包含响应结果的promise(一个 Response 对象)。
+当然它只是一个 HTTP 响应，而不是真的JSON。为了获取JSON的内容，我们需要使用 json()方法（在Bodymixin 中定义，被 Request 和 Response 对象实现）。</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 3, 2018</span> 3 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Fetch&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/13-es6-promise/" title="ES6 - Promise" class="entry-link">ES6 - Promise</a></h3>
+  </header>
+
+  <p class="entry-summary">Promise 语法 new Promsie( function(resolve, reject) { ... } /* executor */ )  参数 executor 执行者
+executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数执行时立即调用 executor 函数，resolve 和 reject 两个函数作为参数传递给 executor (executor函数在Promise构造函数返回所建promise实例对象前被调用。) resolve 和 reject 函数被调用时，
+分别将promise的状态改为 fulfilled (完成) 或rejected (失败)。executor 内部通常会执行一些异步操作，一旦异步操作执行完毕 (可能成功/失败)，要么调用resolve函数来将promise状态改为fulfilled，要么调用 reject 函数将promise状态改为rejected。如果在executor函数中抛出一个错误，那么该promise状态改为rejected。executor函数的返回值被忽略。
+描述 Promise 对象是一个代理对象 (代理一个值)，被代理的值在Promise对象创建时可能是为未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法 (handlers)。这让异步方法可以像同步方法那样返回值，但并不是立即返回最终执行结果，而是一个能代表未来出现的结果的promise对象
+一个 Promise 有以下几种状态
+ pending：初始状态，既不是成功，也不是失败状态 fulfilled：意味着操作成功完成。 rejected：意味着操作失败  pending 状态的 Promise 对象可能会变成为 fuifilled 状态并传递一个值给相应的状态处理方法，也可能变为失败状态 (rejected) 并传递失败信息。当其中任一种情况出现时，Promise 对象的then 方法绑定的处理方法 (handlers) 就会被调用 (then方法包含两个参数: onfulfilled 和 onrejected，他们都是 Function 类型。当 Promise 状态为 fulfilled 时，调用 then 和 onfulfilled 方法，当 Promise 状态为rejected时，调用 then 的 onrejected 方法，所以在异步操作的完成和绑定处理方法之间不存在竞争)。</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Mar 2, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Promise&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/12-js-%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="JS - 方法总结" class="entry-link">JS - 方法总结</a></h3>
+  </header>
+
+  <p class="entry-summary">浏览器 内核 ie trident Chrome webkit/blink firefox Gecko Opera presto Safari webkit
+事件 鼠标事件    属性 描述 DOM     onclick 当用户点击某个对象时调用的事件句柄。 2   oncontextmenu 在用户点击鼠标右键打开上下文菜单时触发    ondblclick 当用户双击某个对象时调用的事件句柄。 2   onmousedown 鼠标按钮被按下。 2   onmouseenter 当鼠标指针移动到元素上时触发。 2   onmouseleave 当鼠标指针移出元素时触发 2   onmousemove 鼠标被移动。 2   onmouseover 鼠标移到某元素之上。 2   onmouseout 鼠标从某元素移开。 2   onmouseup 鼠标按键被松开。     键盘事件    属性 描述 DOM     onkeydown 某个键盘按键被按下。 2   onkeypress 某个键盘按键被按下并松开。 2   onkeyup 某个键盘按键被松开。 2    框架/对象（Frame/Object）事件    属性 描述 DOM     onabort 图像的加载被中断。 ( ) 2   onbeforeunload 该事件在即将离开页面（刷新或关闭）时触发 2   onerror 在加载文档或图像时发生错误。 ( , 和 )    onhashchange 该事件在当前 URL 的锚部分发生修改时触发。    onload 一张页面或一幅图像完成加载。 2   onpageshow 该事件在用户访问页面时触发    onpagehide 该事件在用户离开当前网页跳转到另外一个页面时触发    onresize 窗口或框架被重新调整大小。 2   onscroll 当文档被滚动时发生的事件。 2   onunload 用户退出页面。 (  和 ) 2    表单事件    属性 描述 DOM     onblur 元素失去焦点时触发 2   onchange 该事件在表单元素的内容改变时触发( input, keygen, select, 和 textarea) 2   onfocus 元素获取焦点时触发 2   onfocusin 元素即将获取焦点时触发 2   onfocusout 元素即将失去焦点时触发 2   oninput 元素获取用户输入时触发 3   onreset 表单重置时触发 2   onsearch 用户向搜索域输入文本时触发 ( input=“search”)    onselect 用户选取文本时触发 ( input 和 textarea) 2   onsubmit 表单提交时触发 2    剪贴板事件    属性 描述 DOM     oncopy 该事件在用户拷贝元素内容时触发    oncut 该事件在用户剪切元素内容时触发    onpaste 该事件在用户粘贴元素内容时触发     打印事件    属性 描述 DOM     onafterprint 该事件在页面已经开始打印，或者打印窗口已经关闭时触发    onbeforeprint 该事件在页面即将开始打印时触发     拖动事件    事件 描述 DOM     ondrag 该事件在元素正在拖动时触发    ondragend 该事件在用户完成元素的拖动时触发    ondragenter 该事件在拖动的元素进入放置目标时触发    ondragleave 该事件在拖动元素离开放置目标时触发    ondragover 该事件在拖动元素在放置目标上时触发    ondragstart 该事件在用户开始拖动元素时触发    ondrop 该事件在拖动元素放置在目标区域时触发     获取属性节点    属性 / 方法 描述     document.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 2, 2017</span> 5 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e6%96%b9%e6%b3%95%e6%80%bb%e7%bb%93&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/11-js-dom%E5%AF%B9%E8%B1%A1/" title="JS-DOM对象" class="entry-link">JS-DOM对象</a></h3>
   </header>
 
@@ -276,235 +472,6 @@ document.getElementById(&#34;header&#34;);  4. Window 尺寸 有三种方法能�
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20BOM%e5%af%b9%e8%b1%a1&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f10-js-bom%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/09-js-%E4%BD%9C%E7%94%A8%E5%9F%9F/" title="JS - 作用域" class="entry-link">JS - 作用域</a></h3>
-  </header>
-
-  <p class="entry-summary">作用域  作用域是可访问变量的集合
- JavaScript 作用域  在 JavaScript 中, 对象和函数同样也是变量。 在 JavaScript 中, 作用域为可访问变量，对象，函数的集合。 JavaScript 函数作用域: 作用域在函数内修改。  JavaScript 局部作用域  变量在函数内声明，变量为局部作用域。 局部变量：只能在函数内部访问。
-// 此处不能调用 carName 变量 function myFunction() { var carName = &#34;Volvo&#34;; // 函数内可调用 carName 变量 }   因为局部变量只作用于函数内，所以不同的函数可以使用相同名称的变量。
-局部变量在函数开始执行时创建，函数执行完后局部变量会自动销毁。
-JavaScript 全局变量  变量在函数外定义，即为全局变量。 全局变量有 全局作用域: 网页中所有脚本和函数均可使用。
-var carName = &#34; Volvo&#34;; // 此处可调用 carName 变量 function myFunction() { // 函数内可调用 carName 变量 }   如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 29, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f09-js-%25E4%25BD%259C%25E7%2594%25A8%25E5%259F%259F%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e4%bd%9c%e7%94%a8%e5%9f%9f&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f09-js-%25E4%25BD%259C%25E7%2594%25A8%25E5%259F%259F%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/08-js-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="JS - 数据类型" class="entry-link">JS - 数据类型</a></h3>
-  </header>
-
-  <p class="entry-summary">数据类型 基本数据类型 基本类型（基本数值、基本数据类型）是一种既非对象也无方法的数据。在 JavaScript 中，共有7种基本类型：string，number，bigint，boolean，null，undefined，symbol (ECMAScript2016新增)。
-多数情况下，基本类型直接代表了最底层的语言实现。
-所有基本类型的值都是不可改变的。但需要注意的是，基本类型本身和一个赋值为基本类型的变量的区别。变量会被赋予一个新值，而原值不能像数组、对象以及函数那样被改变。
-JavaScript 中的基本类型包装对象 除了 null 和 undefined之外，所有基本类型都有其对应的包装对象：
- String 为字符串基本类型。 Number 为数值基本类型。 Boolean 为布尔基本类型。 Symbol 为字面量基本类型。  这个包裹对象的valueOf()方法返回基本类型值。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 28, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f08-js-%25E6%2595%25B0%25E6%258D%25AE%25E7%25B1%25BB%25E5%259E%258B%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f08-js-%25E6%2595%25B0%25E6%258D%25AE%25E7%25B1%25BB%25E5%259E%258B%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/07-js-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" title="JS - 面向对象" class="entry-link">JS - 面向对象</a></h3>
-  </header>
-
-  <p class="entry-summary">JavaScript 的核心是支持面向对象的，同时它也提供了强大灵活的 OOP 语言能力。本文从对面向对象编程的介绍开始，带您探索 JavaScript 的对象模型，最后描述 JavaScript 当中面向对象编程的一些概念。
-面向对象编程 面向对象编程是用抽象方式创建基于现实世界模型的一种编程模式。它使用先前建立的范例，包括模块化，多态和封装几种技术。今天，许多流行的编程语言（如Java，JavaScript，C＃，C&#43; &#43;，Python，PHP，Ruby和Objective-C）都支持面向对象编程（OOP）。
-相对于「一个程序只是一些函数的集合，或简单的计算机指令列表。」的传统软件设计观念而言，面向对象编程可以看作是使用一系列对象相互协作的软件设计。 在 OOP 中，每个对象能够接收消息，处理数据和发送消息给其他对象。每个对象都可以被看作是一个拥有清晰角色或责任的独立小机器。
-面向对象程序设计的目的是在编程中促进更好的灵活性和可维护性，在大型软件工程中广为流行。凭借其对模块化的重视，面向对象的代码开发更简单，更容易理解，相比非模块化编程方法 1, 它能更直接地分析, 编码和理解复杂的情况和过程。
-术语  Namespace 命名空间  允许开发人员在一个独特，应用相关的名字的名称下捆绑所有功能的容器。
- Class 类  定义对象的特征。它是对象的属性和方法的模板定义。
- Object 对象  类的一个实例。
- Property 属性  对象的特征，比如颜色。
- Method 方法  对象的能力，比如行走。
- Constructor 构造函数  对象初始化的瞬间，被调用的方法。通常它的名字与包含它的类一致。
- Inheritance 继承  一个类可以继承另一个类的特征。
- Encapsulation 封装  一种把数据和相关的方法绑定在一起使用的方法。
- Abstraction 抽象  结合复杂的继承，方法，属性的对象能够模拟现实的模型。
- Polymorphism 多态  多意为「许多」，态意为「形态」。不同类可以定义相同的方法或属性。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 27, 2017</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f07-js-%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f07-js-%25E9%259D%25A2%25E5%2590%2591%25E5%25AF%25B9%25E8%25B1%25A1%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/06-js-%E9%97%AD%E5%8C%85/" title="JS - 闭包" class="entry-link">JS - 闭包</a></h3>
-  </header>
-
-  <p class="entry-summary">闭包 1. 如何产生闭包？  当内部函数被保存到外部时，将会生成闭包。闭包会导致原有作用域链不释放，造成内存泄露 内存泄露: 内存占用的越多，剩余内存会越来越少 (像泄露出去一样，可以用的东西越来越少)  2. 闭包到底是什么？  使用 chrome 调试查看 理解一: 闭包是嵌套函数的内部函数 (绝大多数人) 理解二: 包含被引用变量 (函数) 的对象 (极少数人) 注意: 闭包存在于嵌套的内部函数中  3. 产生闭包的条件  函数嵌套 内部函数引用了外部函数的数据 (变量/函数)
-function fn1 () { var a = 2 var b = &#39;abc&#39; function fn2 () { //执行函数定义就会产生闭包(不用调用内部函数) console.log(a) } //fn2() } fn1()   4. 闭包的作用  使用函数内部的变量在函数执行完后，仍然存活在内存中(延长了局部变量的声明周期)
- 让函数外部可以操作 (读写) 到函数内部的数据(变量/函数)
-  问题
- 函数执行完后，函数内部声明的局部变量是否还存在？ 一般是不存在，存在于闭包才可能存在 在函数外部能直接访问函数内部的局部变量吗？ 但是可以通过闭包让外部操作他  5.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 26, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f06-js-%25E9%2597%25AD%25E5%258C%2585%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e9%97%ad%e5%8c%85&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f06-js-%25E9%2597%25AD%25E5%258C%2585%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/05-%E5%8D%81%E5%A4%A7%E7%AE%97%E6%B3%95/" title="十大算法" class="entry-link">十大算法</a></h3>
-  </header>
-
-  <p class="entry-summary">算法一：快速排序算法 快速排序是由东尼·霍尔所发展的一种排序算法。在平均状况下，排序 n 个项目要Ο(n log n)次比较。在最坏状况下则需要Ο(n2)次比较，但这种状况并不常见。事实上，快速排序通常明显比其他Ο(n log n) 算法更快，因为它的内部循环（inner loop）可以在大部分的架构上很有效率地被实现出来。
-快速排序使用分治法（Divide and conquer）策略来把一个串行（list）分为两个子串行（sub-lists）。
-算法步骤：
-1 从数列中挑出一个元素，称为 “基准”（pivot），
-2 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。
-3 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。
-递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，但是这个算法总会退出，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。
-算法二：堆排序算法 堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。
-堆排序的平均时间复杂度为Ο(nlogn) 。
-算法步骤：
-创建一个堆H[0..n-1]
-把堆首（最大值）和堆尾互换
-\3. 把堆的尺寸缩小1，并调用shift_down(0),目的是把新的数组顶端数据调整到相应位置
-\4. 重复步骤2，直到堆的尺寸为1
-算法三：归并排序 归并排序（Merge sort，台湾译作：合并排序）是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
-算法步骤：
-\1. 申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列
-\2. 设定两个指针，最初位置分别为两个已经排序序列的起始位置
-\3. 比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置
-\4. 重复步骤3直到某一指针达到序列尾
-\5. 将另一序列剩下的所有元素直接复制到合并序列尾
-算法四：二分查找算法 二分查找算法是一种在有序数组中查找某一特定元素的搜索算法。搜素过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜 素过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组 为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。折半搜索每次把搜索区域减少一半，时间复杂度为Ο(logn) 。
-算法五：BFPRT(线性查找算法) BFPRT算法解决的问题十分经典，即从某n个元素的序列中选出第k大（第k小）的元素，通过巧妙的分 析，BFPRT可以保证在最坏情况下仍为线性时间复杂度。该算法的思想与快速排序思想相似，当然，为使得算法在最坏情况下，依然能达到o(n)的时间复杂 度，五位算法作者做了精妙的处理。
-算法步骤：
-\1. 将n个元素每5个一组，分成n/5(上界)组。
-\2. 取出每一组的中位数，任意排序方法，比如插入排序。
-\3. 递归的调用selection算法查找上一步中所有中位数的中位数，设为x，偶数个中位数的情况下设定为选取中间小的一个。
-\4. 用x来分割数组，设小于等于x的个数为k，大于x的个数即为n-k。
-\5. 若i==k，返回x；若ik，在大于x的元素中递归查找第i-k小的元素。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Sep 25, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f05-%25E5%258D%2581%25E5%25A4%25A7%25E7%25AE%2597%25E6%25B3%2595%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=%e5%8d%81%e5%a4%a7%e7%ae%97%e6%b3%95&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f05-%25E5%258D%2581%25E5%25A4%25A7%25E7%25AE%2597%25E6%25B3%2595%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/04-http%E7%8A%B6%E6%80%81%E7%A0%81/" title="HTTP状态码" class="entry-link">HTTP状态码</a></h3>
-  </header>
-
-  <p class="entry-summary"> HTTP状态码 当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。
-HTTP状态码的英文为HTTP Status Code。
-下面是常见的HTTP状态码：
- 200 - 请求成功 301 - 资源（网页等）被永久转移到其它URL 404 - 请求的资源（网页等）不存在 500 - 内部服务器错误  HTTP状态码分类 HTTP状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型，后两个数字没有分类的作用。HTTP状态码共分为5种类型：
-   分类 分类描述     1** 信息，服务器收到请求，需要请求者继续执行操作   2** 成功，操作被成功接收并处理   3** 重定向，需要进一步的操作以完成请求   4** 客户端错误，请求包含语法错误或无法完成请求   5** 服务器错误，服务器在处理请求的过程中发生了错误    HTTP状态码列表:    状态码 状态码英文名称 中文描述     100 Continue 继续。客户端应继续其请求   101 Switching Protocols 切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议        200 OK 请求成功。一般用于GET与POST请求   201 Created 已创建。成功请求并创建了新的资源   202 Accepted 已接受。已经接受请求，但未处理完成   203 Non-Authoritative Information 非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本   204 No Content 无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档   205 Reset Content 重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域   206 Partial Content 部分内容。服务器成功处理了部分GET请求        300 Multiple Choices 多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择   301 Moved Permanently 永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替   302 Found 临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI   303 See Other 查看其它地址。与301类似。使用GET和POST请求查看   304 Not Modified 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源   305 Use Proxy 使用代理。所请求的资源必须通过代理访问   306 Unused 已经被废弃的HTTP状态码   307 Temporary Redirect 临时重定向。与302类似。使用GET请求重定向        400 Bad Request 客户端请求的语法错误，服务器无法理解   401 Unauthorized 请求要求用户的身份认证   402 Payment Required 保留，将来使用   403 Forbidden 服务器理解请求客户端的请求，但是拒绝执行此请求   404 Not Found 服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面   405 Method Not Allowed 客户端请求中的方法被禁止   406 Not Acceptable 服务器无法根据客户端请求的内容特性完成请求   407 Proxy Authentication Required 请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权   408 Request Time-out 服务器等待客户端发送的请求时间过长，超时   409 Conflict 服务器完成客户端的 PUT 请求时可能返回此代码，服务器处理请求时发生了冲突   410 Gone 客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置   411 Length Required 服务器无法处理客户端发送的不带Content-Length的请求信息   412 Precondition Failed 客户端请求信息的先决条件错误   413 Request Entity Too Large 由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息   414 Request-URI Too Large 请求的URI过长（URI通常为网址），服务器无法处理   415 Unsupported Media Type 服务器无法处理请求附带的媒体格式   416 Requested range not satisfiable 客户端请求的范围无效   417 Expectation Failed 服务器无法满足Expect的请求头信息        500 Internal Server Error 服务器内部错误，无法完成请求   501 Not Implemented 服务器不支持请求的功能，无法完成请求   502 Bad Gateway 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应   503 Service Unavailable 由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中   504 Gateway Time-out 充当网关或代理的服务器，未及时从远端服务器获取请求   505 HTTP Version not supported 服务器不支持请求的HTTP协议的版本，无法完成处理    </p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 26, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f04-http%25E7%258A%25B6%25E6%2580%2581%25E7%25A0%2581%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=HTTP%e7%8a%b6%e6%80%81%e7%a0%81&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f04-http%25E7%258A%25B6%25E6%2580%2581%25E7%25A0%2581%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/03-http%E5%93%8D%E5%BA%94%E5%A4%B4%E4%BF%A1%E6%81%AF/" title="HTTP响应头信息" class="entry-link">HTTP响应头信息</a></h3>
-  </header>
-
-  <p class="entry-summary">HTTP 响应头信息 HTTP请求头提供了关于请求，响应或者其他的发送实体的信息。
-在本章节中我们将具体来介绍HTTP响应头信息。
-   应答头 说明     Allow 服务器支持哪些请求方法（如GET、POST等）。   Content-Encoding 文档的编码（Encode）方法。只有在解码之后才可以得到Content-Type头指定的内容类型。利用gzip压缩文档能够显著地减少HTML文档的下载时间。Java的GZIPOutputStream可以很方便地进行gzip压缩，但只有Unix上的Netscape和Windows上的IE 4、IE 5才支持它。因此，Servlet应该通过查看Accept-Encoding头（即request.getHeader(“Accept-Encoding”)）检查浏览器是否支持gzip，为支持gzip的浏览器返回经gzip压缩的HTML页面，为其他浏览器返回普通页面。   Content-Length 表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。如果你想要利用持久连接的优势，可以把输出文档写入 ByteArrayOutputStream，完成后查看其大小，然后把该值放入Content-Length头，最后通过byteArrayStream.writeTo(response.getOutputStream()发送内容。   Content-Type 表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。由于经常要设置Content-Type，因此HttpServletResponse提供了一个专用的方法setContentType。   Date 当前的GMT时间。你可以用setDateHeader来设置这个头以避免转换时间格式的麻烦。   Expires 应该在什么时候认为文档已经过期，从而不再缓存它？   Last-Modified 文档的最后改动时间。客户可以通过If-Modified-Since请求头提供一个日期，该请求将被视为一个条件GET，只有改动时间迟于指定时间的文档才会返回，否则返回一个304（Not Modified）状态。Last-Modified也可用setDateHeader方法来设置。   Location 表示客户应当到哪里去提取文档。Location通常不是直接设置的，而是通过HttpServletResponse的sendRedirect方法，该方法同时设置状态代码为302。   Refresh 表示浏览器应该在多少时间之后刷新文档，以秒计。除了刷新当前文档之外，你还可以通过setHeader(“Refresh”, “5; URL=http://host/path&#34;)让浏览器读取指定的页面。 注意这种功能通常是通过设置HTML页面HEAD区的＜META HTTP-EQUIV=“Refresh” CONTENT=“5;URL=http://host/path&#34;＞实现，这是因为，自动刷新或重定向对于那些不能使用CGI或Servlet的HTML编写者十分重要。但是，对于Servlet来说，直接设置Refresh头更加方便。 注意Refresh的意义是”N秒之后刷新本页面或访问指定页面”，而不是”每隔N秒刷新本页面或访问指定页面”。因此，连续刷新要求每次都发送一个Refresh头，而发送204状态代码则可以阻止浏览器继续刷新，不管是使用Refresh头还是＜META HTTP-EQUIV=“Refresh” …＞。 注意Refresh头不属于HTTP 1.1正式规范的一部分，而是一个扩展，但Netscape和IE都支持它。   Server 服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。   Set-Cookie 设置和页面关联的Cookie。Servlet不应使用response.setHeader(“Set-Cookie”, …)，而是应使用HttpServletResponse提供的专用方法addCookie。参见下文有关Cookie设置的讨论。   WWW-Authenticate 客户应该在Authorization头中提供什么类型的授权信息？在包含401（Unauthorized）状态行的应答中这个头是必需的。例如，response.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 26, 2017</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f03-http%25E5%2593%258D%25E5%25BA%2594%25E5%25A4%25B4%25E4%25BF%25A1%25E6%2581%25AF%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=HTTP%e5%93%8d%e5%ba%94%e5%a4%b4%e4%bf%a1%e6%81%af&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f03-http%25E5%2593%258D%25E5%25BA%2594%25E5%25A4%25B4%25E4%25BF%25A1%25E6%2581%25AF%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/01-http_content-type/" title="HTTP content-type" class="entry-link">HTTP content-type</a></h3>
-  </header>
-
-  <p class="entry-summary">HTTP content-type Content-Type，内容类型，一般是指网页中存在的Content-Type，用于定义网络文件的类型和网页的编码，决定浏览器将以什么形式、什么编码读取这个文件，这就是经常看到一些Asp网页点击的结果却是下载到的一个文件或一张图片的原因。
-HTTP content-type 对照表    文件扩展名 Content-Type(Mime-Type) 文件扩展名 Content-Type(Mime-Type)     .*（ 二进制流，不知道下载文件类型） application/octet-stream .tif image/tiff   .001 application/x-001 .301 application/x-301   .323 text/h323 .906 application/x-906   .907 drawing/907 .a11 application/x-a11   .acp audio/x-mei-aac .ai application/postscript   .aif audio/aiff .aifc audio/aiff   .aiff audio/aiff .anv application/x-anv   .asa text/asa .asf video/x-ms-asf   .asp text/asp .asx video/x-ms-asf   .</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Aug 26, 2017</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f01-http_content-type%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=HTTP%20content-type&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f01-http_content-type%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>

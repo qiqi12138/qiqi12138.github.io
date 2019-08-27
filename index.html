@@ -213,6 +213,203 @@
         <article class="entry-single">
   
   <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/29-node.js-mongoose/" title="mongoose" class="entry-link">mongoose</a></h3>
+  </header>
+
+  <p class="entry-summary">mongoose  官网：http://mongoosejs.com/ 官方指南：http://mongoosejs.com/docs/guide.html 官方API文档：http://mongoosejs.com/docs/api.html  1.MongoDB 数据库的基本概念  可以有多个数据库 一个数据库中可以有多个集合 (表) collections 一个集合中可以有多个文档 (表记录) 文档结构很灵活，没有任何限制 MongoDB 非常灵活，不需要像 MySQL 一样先创建数据库、表、设计表结构
+ 在这里只需要：当你需要插入数据的时候，只需要指定往哪个数据库的哪个集合操作就可以了 一切都由 MongoDB 来帮你自动完成建库建表这件事儿
+{ qq: { users: [ {name: &#34;张三&#34;, age: 15}, {name: &#34;李四&#34;, age: 15}, {name: &#34;王五&#34;, age: 15}, {name: &#34;张三123&#34;, age: 15}, {name: &#34;张三321&#34;, age: 18}, ... ], products: [ ], ... }, taobao: { }, baidu: { } }    2.起步 安装:</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Nov 21, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f29-node.js-mongoose%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=mongoose&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f29-node.js-mongoose%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/28-node.js-%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Node.js - 使用Node操作数据库" class="entry-link">Node.js - 使用Node操作数据库</a></h3>
+  </header>
+
+  <p class="entry-summary">关系型数据库和非关系型数据库 表就是关系
+或者说表与表之间存在关系。
+ 所有的关系数据库都需要通过 sql 语言来操作 所有的关系型数据库在操作之前都需要设计表结构 而且数据表还支持约束  唯一的 主键 默认值 非空  非关系型型数据库非常的灵活 有的非关系型数据库就是 key-value 对儿 但是 MongoDB 是长得最像关系型数据库的非关系型数据库  数据库 -》数据库 数据表 -》集合（数组） 表记录 -》（文档对象）  MongoDB 不需要设计表结构 也就是你可以任意的往里面存数据，没有结构性这么一说  操作 MongoDB 数据库 启动和关闭数据库 启动：
+# mongDB 默认使用执行 mongod 命令所处盘符根目录下的 /data/db 作为自己的数据存储目录 # 所以在第一次执行该命令之前先自己手动新建一个 /data/db mongod  如果想要修改默认的数据存储目录，可以：
+mongod --dbpath=数据存储目录路径  停止：
+在开启服务的控制台，直接 ctrl&#43;c 即可停止。 或者直接关闭开启服务的控制台也可以。  连接数据库 # 该命令默认连接本机的 mongoDB 服务 mongo  退出</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 7, 2018</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f28-node.js-%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bd%bf%e7%94%a8Node%e6%93%8d%e4%bd%9c%e6%95%b0%e6%8d%ae%e5%ba%93&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f28-node.js-%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/27-node.js-express/" title="Node.js - Express" class="entry-link">Node.js - Express</a></h3>
+  </header>
+
+  <p class="entry-summary">Express 原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。
+在 Node 中，有很多 Web 开发框架，这里我们以学习 express 为主。
+ http://expressjs.com/  1 起步 1.1 安装: npm install --save express  1.2 hello world var express = require(&#39;express&#39;) var app = express() app.get(&#39;/&#39;,() =&gt; console.log(&#39;Hello world!&#39;)) app.listen(3000, () =&gt; console.log(&#39;Example app listening on port 3000!&#39;))  1.3 基本路由 路由器
+ 请求方法 请求路径 请求处理函数  get:
+// 当你以 GET 方法请求 / 的时候，执行对应的处理函数 app.get(&#39;/&#39;,function (req, res) { res.send(&#39;Hello world!&#39;) })  post:</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 6, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20Express&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f27-node.js-express%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/26-node.js-npm/" title="Node.js - Npm" class="entry-link">Node.js - Npm</a></h3>
+  </header>
+
+  <p class="entry-summary">npm  node package manager  1. npm 网站  npmjs.com
+ 2. npm 命令行工具 npm 的第二层含义就是一个命令行工具，只要你安装了 node 就已经安装了 npm
+npm 也有版本这个概念
+可以通过命令行中输出
+npm --version  升级 npm (自己升级自己):
+npm install --global npm  3. npm常用命令  npm init  npm init -y 可以跳过向导，快速生成  npm install  一次性把 dependencies 选项中的依赖项全部安装 npm i  npm install 包名  只下载 npm i 包名  npm install –save 包名  下载并保存依赖项 (package.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 5, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f26-node.js-npm%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20Npm&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f26-node.js-npm%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/25-node.js-%E6%A8%A1%E5%9D%97%E7%B3%BB%E7%BB%9F/" title="Node.js - 模块系统" class="entry-link">Node.js - 模块系统</a></h3>
+  </header>
+
+  <p class="entry-summary">Node 中的模块系统 使用 Node 编写应用程序主要就是在使用:
+ EcmaScript 语言  和浏览器不一样、在 Node 中没有 BOM、DOM  核心模块  文件操作的 fs http 服务的 http url 路径操作模块 path 路径处理模块 os 操作系统信息  第三方模块  art-template 必须通过 npm 来下载才可以使用  咱们自己写的模块  自己创建的文件   1 什么是模块化  文件作用域  变量与变量不会相互污染  通信规则  加载 require 导出 exports   2 CommonJS 模块规范 在 Node 中的 JavaScript 还有一个很重要的概念，模块系统
+ 模块作用域 使用 require 方法来加载模块 使用 exports 接口对象用来导出模块中的成员  2.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 4, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f25-node.js-%25E6%25A8%25A1%25E5%259D%2597%25E7%25B3%25BB%25E7%25BB%259F%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e6%a8%a1%e5%9d%97%e7%b3%bb%e7%bb%9f&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f25-node.js-%25E6%25A8%25A1%25E5%259D%2597%25E7%25B3%25BB%25E7%25BB%259F%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/24-node.js-%E4%BD%BF%E7%94%A8node%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="Node.js - 使用 Node 搭建一个服务器" class="entry-link">Node.js - 使用 Node 搭建一个服务器</a></h3>
+  </header>
+
+  <p class="entry-summary">使用 Node 搭建一个服务器  在 Node 中专门提供了一个核心模块http
+ http这个模块的职责就是帮你创建编写服务器的
+  第一步 加载 http 模块 var http = require(&#39;http&#39;);
+第二步 创建 Server var server = http.createServer();
+ 使用 http.createServer() 方法创建一个 web 服务器
+ 该方法返回一个 Server 实例
+  第三步 监听 request 响应事件,设置请求处理函数 server.on(&#39;request&#39;, function (request, response) { console.log(&#39;收到客户端的请求了, 请求路径是:&#39; &#43; request.url) // 发送请求头 用来解决中文乱码 response.writeHead(200, { &#39;Content-Type&#39;: &#39;text/plain;charset=utf-8&#39; }) // 给客户端发送一条响应数据 response.write(&#39;hello NodeJS&#39;) // 告诉客户端 我的话说完了可以呈现给客户端了 response.end() })   request 请求事件处理函数,需要接收两个参数  Request 请求对象 请求对象可以用来获取客户端的一些请求信息.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 3, 2018</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f24-node.js-%25E4%25BD%25BF%25E7%2594%25A8node%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%2580%25E4%25B8%25AA%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bd%bf%e7%94%a8%20Node%20%e6%90%ad%e5%bb%ba%e4%b8%80%e4%b8%aa%e6%9c%8d%e5%8a%a1%e5%99%a8&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f24-node.js-%25E4%25BD%25BF%25E7%2594%25A8node%25E6%2590%25AD%25E5%25BB%25BA%25E4%25B8%2580%25E4%25B8%25AA%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/23-node.js-%E8%B5%B7%E6%AD%A5/" title="Node.js - 起步" class="entry-link">Node.js - 起步</a></h3>
+  </header>
+
+  <p class="entry-summary">安装 Node 环境  查看当前 Node 环境的版本号 下载: https://nodejs.org/en/ 安装  傻瓜式的一路 next 就可以了 对于已经安装过的，重新安装就会升级  确认 Node 环境是否安装成功  打开命令行，输入 node --version 或者 node -v
+  环境变量  Hello World  解析执行 JavaScript
+ 创建编写 JavaScript 脚本文件 打开终端，定位到脚本文件的所属目录 输入 node 文件名 执行对应的文件   注意: 文件名不要使用 node.js 来命名，也就是说除了这个名字随便起，而且最好不要使用中文。
+ 读写文件
+ 文件读取
+// 1.使用 require 方法加载 fs 核心模块 var fs = require(&#39;fs&#39;) // 2.读取文件 fs.readFile(&#39;./data/hello.txt&#39;, function (error, data) { // 在这里就可以通过判断 error 来确认是否有错误发生 if (error) { console.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 2, 2018</span> 1 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f23-node.js-%25E8%25B5%25B7%25E6%25AD%25A5%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e8%b5%b7%e6%ad%a5&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f23-node.js-%25E8%25B5%25B7%25E6%25AD%25A5%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
+    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/22-node.js-%E4%BB%8B%E7%BB%8D/" title="Node.js - 介绍" class="entry-link">Node.js - 介绍</a></h3>
+  </header>
+
+  <p class="entry-summary">Node.js 介绍 1.1Node.js 是什么  Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine.  Node.js 不是一门语言 Node.js 不是库、不是框架 Node.js 是一个 JavaScript 运行时的环境 简单点来讲就是 Node.js 可以解析和执行 JavaScript 代码 以前只有浏览器可以解析 JavaScript 代码 也就是说现在 JavaScript 可以完全脱离浏览器来运行，一切都归功于: Node.js  浏览器中的 JavaScript  EcmaScript BOM DOM  Node.js中的 JavaScript  没有 BOM、DOM EcmaScript 在 Node.js 这个 JavaScript 执行环境中为 JavaScript 提供了一些服务器级别的操作 API 例如文件读写 网络服务的构建 网络通信 http 服务器 等处理。。。  构建于 Chrome 的 V8 引擎之上  代码只是具有特定格式的字符串而已 引擎可以认识他，引擎可以帮你去解析和执行 Google Chrome 的 V8 引擎是目前公认的解析执行 JavaScript 代码最快的 Node.</p>
+  <footer class="entry-footer">
+    <p class="entry-meta"><span class="entry-time">Oct 1, 2018</span> 2 min read</p>
+    <div class="sharing">
+      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f22-node.js-%25E4%25BB%258B%25E7%25BB%258D%2f" title="Share on Facebook">
+        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
+      </a>
+      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Node.js%20-%20%e4%bb%8b%e7%bb%8d&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f22-node.js-%25E4%25BB%258B%25E7%25BB%258D%2f" title="Share on Twitter">
+        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
+      </a>
+    </div>
+  </footer>
+</article>
+
+      
+        <article class="entry-single">
+  
+  <header class="entry-header">
     <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/21-vue-cli3.9.3/" title="Vue.js - vue-cli 3.x" class="entry-link">Vue.js - vue-cli 3.x</a></h3>
   </header>
 
@@ -262,202 +459,6 @@ const router = new VueRouter({ ... }) router.beforeEach((to, from, next) =&gt; {
         <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
       </a>
       <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%af%bc%e8%88%aa%e5%ae%88%e5%8d%ab&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f20-vue-%25E5%25AF%25BC%25E8%2588%25AA%25E5%25AE%2588%25E5%258D%25AB%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/19-vue-%E5%8A%A8%E7%94%BB/" title="Vue.js - 动画" class="entry-link">Vue.js - 动画</a></h3>
-  </header>
-
-  <p class="entry-summary">动画 实现动画的两组类
-v-enter &amp; v-leave-to
- v-enter [这是一个时间点] 是进入之前元素的起始状态，此时还没有开始进入 v-leave-to [这是一个时间点] 是动画离开之后，离开的终止状态，此时，元素动画已经结束了  v-enter-active &amp; v-leave-active
- v-enter-active [入场动画的时间段] v-leave-active [离场动画的时间段]  单元素/组件的过渡 Vue 提供了 transition 的封装组件，在下列情形中，可以给任何元素和组件添加进入/离开过渡
- 条件渲染 (使用 v-if) 条件展示 (使用 v-show) 动态组件 组件根节点  这里是一个典型的例子：
-&lt;div id=&#34;demo&#34;&gt; &lt;button v-on:click=&#34;show = !show&#34;&gt; Toggle &lt;/button&gt; &lt;transition name=&#34;fade&#34;&gt; &lt;p v-if=&#34;show&#34;&gt;hello&lt;/p&gt; &lt;/transition&gt; &lt;/div&gt;  new Vue({ el: &#39;#demo&#39;, data: { show: true } })  .fade-enter-active, .fade-leave-active { transition: opacity .</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 8, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e5%8a%a8%e7%94%bb&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f19-vue-%25E5%258A%25A8%25E7%2594%25BB%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/18-vue-router/" title="Vue.js - Router" class="entry-link">Vue.js - Router</a></h3>
-  </header>
-
-  <p class="entry-summary">vue-router 路由在 web 中有两种
- 第一种是 hash 前面带# 第二种是 histroy 对象，这种路由不带#  起步 引入vue-router
-npm
-npm install vue-roter  如果在一个模块化工程中使用他，必须要通过 Vue.use() 明确的安装路由功能
-import Vue from &#39;vue&#39; import VueRouter from &#39;vue-router&#39; // 把 VueRouter 注册到Vue Vue.use(VueRouter)  如果使用全局的 script 标签，则无须如此 (手动安装)
-两种超链接  &lt;a href=&#34;#/login&#34;&gt;登录&lt;/a&gt;  普通的 a 标签会刷新整个页面  &lt;router-link to=&#34;/login&#34; tag=&#34;span&#34;&gt;login&lt;/router-link&gt;  组件路由不会，是直接跳转 tag 属性 tag=“span”: 此时 a 标签变成了 span，不管给他绑定什么标签都会实现路由  &lt;router-view/&gt;  这是 vue-router 提供的元素，专门用来当做占位符的，将来，路由规则，匹配到的组件，就会展示到这个 router-view 中去 所以: 我们可以把 router-view 认为是一个占位符   基本使用 第一步 组件模板对象</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 7, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20Router&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f18-vue-router%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/17-vue-%E8%AE%A4%E8%AF%86vue/" title="Vue.js - 什么是Vue" class="entry-link">Vue.js - 什么是Vue</a></h3>
-  </header>
-
-  <p class="entry-summary">什么是Vue.js  Vue.js 是目前最火的一个前端框架，React是最流行的一个前端框架 (React除了开发网站, 还可以开发手机APP，Vue语法也是用于进行手机App开发的，需要借助于Weex) Vue.js 是前端的主流框架之一，和Angular.js、React.js、一起，并成为三大主流框架！ Vue.js 是一套构建用户界面的框架，只关注视图层，他不仅容易上手，还便于第三方库或既有项目整合。(Vue有配套的第三方类库，可以整合起来做大型项目的开发) 前端的主要工作？ 主要负责MVC中的V这一层；主要工作就是和页面打交道；来制作前端页面效果  为什么要学习流行框架  提高开发效率的发展历程: 原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js/Vue.js (能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不在关心DOM是如何渲染的了】) 在Vue中，一个核心的概念，就是让用户不在操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；  框架和库的区别  框架: 是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。 node中的express!  库(插件): 提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其他库实现需求。  从 Jquery 切换到 Zepto 从 EJS 切换到 art-template  什么是MVC  M(Model数据层) 职能单一，只负责操作数据库，执行对于的 Sql 语句，进行数据的CRUD  C: Create 增加 R: Read 读取 U: update 修改 D: Delete 删除  V(view视图层) 每当用户操作了界面，就需要进行业务的处理，都会通过网络请求，去请求后端的服务器，此时，我们的这个请求，就会被后端的App.js监听到 C(Controller逻辑层) 这里分为路由分发处理模块和业务逻辑处理，在这个模块中封装了一些具体业务逻辑处理的逻辑代码，但是，也是为了职能单一，此模块只负责处理业务  什么是MVVM MVVM是前端的视图层的开发分层开发思想，主要吧每个页面分为了M、V 和 VM 其中VM是MVVM的思想核心；因为VM是 M 和 V 之间的调度者</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 6, 2018</span> 1 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Vue.js%20-%20%e4%bb%80%e4%b9%88%e6%98%afVue&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f17-vue-%25E8%25AE%25A4%25E8%25AF%2586vue%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/16-es6-async%E5%87%BD%E6%95%B0/" title="ES6 - async函数" class="entry-link">ES6 - async函数</a></h3>
-  </header>
-
-  <p class="entry-summary">参考：https://es6.ruanyifeng.com/?search=async&#43;&amp;x=7&amp;y=6#docs/async
- 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
-async 函数是什么？一句话，它就是 Generator 函数的语法糖。
-前文有一个 Generator 函数，依次读取两个文件。
-const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
-const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 5, 2018</span> 4 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20async%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f16-es6-async%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/15-es6-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/" title="ES6 - 箭头函数" class="entry-link">ES6 - 箭头函数</a></h3>
-  </header>
-
-  <p class="entry-summary">箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
-语法 基础语法 (参数1, 参数2, …, 参数N) =&gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&gt; {函数声明} 单一参数 =&gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&gt; a &#43; b &#43; c; f(); // 6  描述 参考 “ES6 In Depth: Arrow functions” on hacks.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 4, 2018</span> 6 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20%e7%ae%ad%e5%a4%b4%e5%87%bd%e6%95%b0&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f15-es6-%25E7%25AE%25AD%25E5%25A4%25B4%25E5%2587%25BD%25E6%2595%25B0%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/14-es6-fetch/" title="ES6 - Fetch" class="entry-link">ES6 - Fetch</a></h3>
-  </header>
-
-  <p class="entry-summary">Fetch Fetch API 提供了一个 JavaScript接口，用于访问和操纵HTTP管道的部分，例如请求和响应。它还提供了一个全局 fetch()方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
-这种功能以前是使用 XMLHttpRequest实现的。Fetch提供了一个更好的替代方法，可以很容易地被其他技术使用，例如 Service Workers。Fetch还提供了单个逻辑位置来定义其他HTTP相关概念，例如CORS和HTTP的扩展。
-请注意，fetch规范与jQuery.ajax()主
-要有两种方式的不同，牢记：
- 当接收到一个代表错误的 HTTP 状态码时，从 fetch()返回的 Promise 不会被标记为 reject， 即使该 HTTP 响应的状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok 属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。 默认情况下，fetch 不会从服务端发送或接收任何 cookies, 如果站点依赖于用户 session，则会导致未经认证的请求（要发送 cookies，必须设置 credentials 选项）。自从2017年8月25日后，默认的credentials政策变更为same-originFirefox也在61.0b13中改变默认值  进行 fetch 请求 一个基本的 fetch请求设置起来很简单。看看下面的代码：
-fetch(&#39;http://example.com/movies.json&#39;) .then(function(response) { return response.json(); }) .then(function(myJson) { console.log(myJson); });  这里我们通过网络获取一个JSON文件并将其打印到控制台。最简单的用法是只提供一个参数用来指明想fetch()到的资源路径，然后返回一个包含响应结果的promise(一个 Response 对象)。
-当然它只是一个 HTTP 响应，而不是真的JSON。为了获取JSON的内容，我们需要使用 json()方法（在Bodymixin 中定义，被 Request 和 Response 对象实现）。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 3, 2018</span> 3 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Fetch&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f14-es6-fetch%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/13-es6-promise/" title="ES6 - Promise" class="entry-link">ES6 - Promise</a></h3>
-  </header>
-
-  <p class="entry-summary">Promise 语法 new Promsie( function(resolve, reject) { ... } /* executor */ )  参数 executor 执行者
-executor是带有 resolve 和 reject 两个参数的函数。Promise构造函数执行时立即调用 executor 函数，resolve 和 reject 两个函数作为参数传递给 executor (executor函数在Promise构造函数返回所建promise实例对象前被调用。) resolve 和 reject 函数被调用时，
-分别将promise的状态改为 fulfilled (完成) 或rejected (失败)。executor 内部通常会执行一些异步操作，一旦异步操作执行完毕 (可能成功/失败)，要么调用resolve函数来将promise状态改为fulfilled，要么调用 reject 函数将promise状态改为rejected。如果在executor函数中抛出一个错误，那么该promise状态改为rejected。executor函数的返回值被忽略。
-描述 Promise 对象是一个代理对象 (代理一个值)，被代理的值在Promise对象创建时可能是为未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法 (handlers)。这让异步方法可以像同步方法那样返回值，但并不是立即返回最终执行结果，而是一个能代表未来出现的结果的promise对象
-一个 Promise 有以下几种状态
- pending：初始状态，既不是成功，也不是失败状态 fulfilled：意味着操作成功完成。 rejected：意味着操作失败  pending 状态的 Promise 对象可能会变成为 fuifilled 状态并传递一个值给相应的状态处理方法，也可能变为失败状态 (rejected) 并传递失败信息。当其中任一种情况出现时，Promise 对象的then 方法绑定的处理方法 (handlers) 就会被调用 (then方法包含两个参数: onfulfilled 和 onrejected，他们都是 Function 类型。当 Promise 状态为 fulfilled 时，调用 then 和 onfulfilled 方法，当 Promise 状态为rejected时，调用 then 的 onrejected 方法，所以在异步操作的完成和绑定处理方法之间不存在竞争)。</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Mar 2, 2018</span> 2 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=ES6%20-%20Promise&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f13-es6-promise%2f" title="Share on Twitter">
-        <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
-      </a>
-    </div>
-  </footer>
-</article>
-
-      
-        <article class="entry-single">
-  
-  <header class="entry-header">
-    <h3 class="entry-title"><a href="https://qiqi12138.github.io/post/12-js-%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" title="JS - 方法总结" class="entry-link">JS - 方法总结</a></h3>
-  </header>
-
-  <p class="entry-summary">浏览器 内核 ie trident Chrome webkit/blink firefox Gecko Opera presto Safari webkit
-事件 鼠标事件    属性 描述 DOM     onclick 当用户点击某个对象时调用的事件句柄。 2   oncontextmenu 在用户点击鼠标右键打开上下文菜单时触发    ondblclick 当用户双击某个对象时调用的事件句柄。 2   onmousedown 鼠标按钮被按下。 2   onmouseenter 当鼠标指针移动到元素上时触发。 2   onmouseleave 当鼠标指针移出元素时触发 2   onmousemove 鼠标被移动。 2   onmouseover 鼠标移到某元素之上。 2   onmouseout 鼠标从某元素移开。 2   onmouseup 鼠标按键被松开。     键盘事件    属性 描述 DOM     onkeydown 某个键盘按键被按下。 2   onkeypress 某个键盘按键被按下并松开。 2   onkeyup 某个键盘按键被松开。 2    框架/对象（Frame/Object）事件    属性 描述 DOM     onabort 图像的加载被中断。 ( ) 2   onbeforeunload 该事件在即将离开页面（刷新或关闭）时触发 2   onerror 在加载文档或图像时发生错误。 ( , 和 )    onhashchange 该事件在当前 URL 的锚部分发生修改时触发。    onload 一张页面或一幅图像完成加载。 2   onpageshow 该事件在用户访问页面时触发    onpagehide 该事件在用户离开当前网页跳转到另外一个页面时触发    onresize 窗口或框架被重新调整大小。 2   onscroll 当文档被滚动时发生的事件。 2   onunload 用户退出页面。 (  和 ) 2    表单事件    属性 描述 DOM     onblur 元素失去焦点时触发 2   onchange 该事件在表单元素的内容改变时触发( input, keygen, select, 和 textarea) 2   onfocus 元素获取焦点时触发 2   onfocusin 元素即将获取焦点时触发 2   onfocusout 元素即将失去焦点时触发 2   oninput 元素获取用户输入时触发 3   onreset 表单重置时触发 2   onsearch 用户向搜索域输入文本时触发 ( input=“search”)    onselect 用户选取文本时触发 ( input 和 textarea) 2   onsubmit 表单提交时触发 2    剪贴板事件    属性 描述 DOM     oncopy 该事件在用户拷贝元素内容时触发    oncut 该事件在用户剪切元素内容时触发    onpaste 该事件在用户粘贴元素内容时触发     打印事件    属性 描述 DOM     onafterprint 该事件在页面已经开始打印，或者打印窗口已经关闭时触发    onbeforeprint 该事件在页面即将开始打印时触发     拖动事件    事件 描述 DOM     ondrag 该事件在元素正在拖动时触发    ondragend 该事件在用户完成元素的拖动时触发    ondragenter 该事件在拖动的元素进入放置目标时触发    ondragleave 该事件在拖动元素离开放置目标时触发    ondragover 该事件在拖动元素在放置目标上时触发    ondragstart 该事件在用户开始拖动元素时触发    ondrop 该事件在拖动元素放置在目标区域时触发     获取属性节点    属性 / 方法 描述     document.</p>
-  <footer class="entry-footer">
-    <p class="entry-meta"><span class="entry-time">Oct 2, 2017</span> 5 min read</p>
-    <div class="sharing">
-      <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Facebook">
-        <svg class="icon" fill="currentColor"><use xlink:href="#icon-facebook" /></svg>
-      </a>
-      <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=JS%20-%20%e6%96%b9%e6%b3%95%e6%80%bb%e7%bb%93&amp;url=https%3a%2f%2fqiqi12138.github.io%2fpost%2f12-js-%25E6%2596%25B9%25E6%25B3%2595%25E6%2580%25BB%25E7%25BB%2593%2f" title="Share on Twitter">
         <svg class="icon share-twitter-icon" fill="currentColor"><use xlink:href="#icon-twitter" /></svg>
       </a>
     </div>
