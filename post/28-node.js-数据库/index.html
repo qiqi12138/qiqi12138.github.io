@@ -1,68 +1,50 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>
-      
-      Node.js - 使用Node操作数据库 - qiqi12138
-      
-		</title>
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js - 使用Node操作数据库 - qiqi12138</title>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <meta name="description" content="关系型数据库和非关系型数据库 表就是关系
+或者说表与表之间存在关系。
+ 所有的关系数据库都需要通过 sql 语言来操作 所有的关系型数据库在操作之前都需要设计表结构 而且数据表还支持约束  唯一的 主键 默认值 非空  非关系型型数据库非常的灵活 有的非关系型数据库就是 key-value 对儿 但是 MongoDB 是长得最像关系型数据库的非关系型数据库  数据库 -》数据库 数据表 -》集合（数组） 表记录 -》（文档对象）  MongoDB 不需要设计表结构 也就是你可以任意的往里面存数据，没有结构性这么一说  操作 MongoDB 数据库 启动和关闭数据库 启动：
+# mongDB 默认使用执行 mongod 命令所处盘符根目录下的 /data/db 作为自己的数据存储目录 # 所以在第一次执行该命令之前先自己手动新建一个 /data/db mongod  如果想要修改默认的数据存储目录，可以：
+mongod --dbpath=数据存储目录路径  停止：
+在开启服务的控制台，直接 ctrl&#43;c 即可停止。 或者直接关闭开启服务的控制台也可以。  连接数据库 # 该命令默认连接本机的 mongoDB 服务 mongo  退出">
+    <meta name="author" content="">
     
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/style.css" rel="stylesheet">
     
-
+    <link rel="apple-touch-icon" href="https://qiqi12138.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://qiqi12138.github.io/favicon.ico">
     
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
-    <script type="text/javascript">
-        $.bigfoot();
-    </script>
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://qiqi12138.github.io/index.xml" title="qiqi12138">
     
     
-</head>
-
-    <body class="post-template">
-        <header class="main-header">
-	<div class="main-header-content">
-		<h1 class="blog-title">
-			<a href="/">
-				
-           qiqi12138
-				
-			</a>
-		</h1>
-		<h2 class="blog-description"></h2>
-	</div>
-
-	<div class="nav">
-    
-		
-	</div>
-</header>
-
+  </head>
+  <body class="single">
+    <header class="header">
+      <nav class="nav">
         
-<main class="content" role="main">
-  <article class="post">
-    <header class="post-header">
-      
-      <h2 class="post-title">Node.js - 使用Node操作数据库</h2>
-      <section class="post-meta">
-        <time class="post-date">October 07, 2018</time>
-      </section>
+        <p class="logo"><a href="https://qiqi12138.github.io">qiqi12138</a></p>
+        
+        
+      </nav>
     </header>
-    <section class="post-content">
-      
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Node.js - 使用Node操作数据库</h1>
+    <div class="post-meta">October 7, 2018</div>
+  </header>
+  <div class="post-content">
 
 <h2 id="关系型数据库和非关系型数据库">关系型数据库和非关系型数据库</h2>
 
@@ -216,23 +198,24 @@ connection.query('SELECT * FROM `sheet1` WHERE id=1', function (error, results, 
 // 4. 关闭数据库
 connection.end();
 </code></pre>
+</div>
+  
+  
+  
+  
+  
+</article>
 
-    </section>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
 </main>
-
-        <footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  
-  
-  <section class="copyright">&copy; 2019 qiqi12138</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://qiqi12138.github.io">qiqi12138</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-
-
-
-    </body>
+<script src="https://qiqi12138.github.io/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
+

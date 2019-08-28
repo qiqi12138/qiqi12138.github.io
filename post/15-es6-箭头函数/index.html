@@ -1,68 +1,46 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>
-      
-      ES6 - 箭头函数 - qiqi12138
-      
-		</title>
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 - 箭头函数 - qiqi12138</title>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <meta name="description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。
+语法 基础语法 (参数1, 参数2, …, 参数N) =&gt; { 函数声明 } //相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; } (参数1, 参数2, …, 参数N) =&gt; 表达式（单一） // 当只有一个参数时，圆括号是可选的： (单一参数) =&gt; {函数声明} 单一参数 =&gt; {函数声明} // 没有参数的函数应该写成一对圆括号。 () =&gt; {函数声明}  高级语法 //加括号的函数体返回对象字面表达式： 参数=&gt; ({foo: bar}) //支持剩余参数和默认参数 (参数1, 参数2, ...rest) =&gt; {函数声明} (参数1 = 默认值1,参数2, …, 参数N = 默认值N) =&gt; {函数声明} //同样支持参数列表解构 let f = ([a, b] = [1, 2], {x: c} = {x: a &#43; b}) =&gt; a &#43; b &#43; c; f(); // 6  描述 参考 &ldquo;ES6 In Depth: Arrow functions&rdquo; on hacks.">
+    <meta name="author" content="">
     
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/style.css" rel="stylesheet">
     
-
+    <link rel="apple-touch-icon" href="https://qiqi12138.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://qiqi12138.github.io/favicon.ico">
     
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
-    <script type="text/javascript">
-        $.bigfoot();
-    </script>
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://qiqi12138.github.io/index.xml" title="qiqi12138">
     
     
-</head>
-
-    <body class="post-template">
-        <header class="main-header">
-	<div class="main-header-content">
-		<h1 class="blog-title">
-			<a href="/">
-				
-           qiqi12138
-				
-			</a>
-		</h1>
-		<h2 class="blog-description"></h2>
-	</div>
-
-	<div class="nav">
-    
-		
-	</div>
-</header>
-
+  </head>
+  <body class="single">
+    <header class="header">
+      <nav class="nav">
         
-<main class="content" role="main">
-  <article class="post">
-    <header class="post-header">
-      
-      <h2 class="post-title">ES6 - 箭头函数</h2>
-      <section class="post-meta">
-        <time class="post-date">March 04, 2018</time>
-      </section>
+        <p class="logo"><a href="https://qiqi12138.github.io">qiqi12138</a></p>
+        
+        
+      </nav>
     </header>
-    <section class="post-content">
-      
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">ES6 - 箭头函数</h1>
+    <div class="post-meta">March 4, 2018</div>
+  </header>
+  <div class="post-content">
 
 <p><strong>箭头函数表达式</strong>的语法比<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/function">函数表达式</a>更简洁，并且没有自己的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this">this</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments">arguments</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super">super</a>或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">new.target</a>。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
 
@@ -498,23 +476,24 @@ fact(5);       // 120
 </code></pre>
 
 <p>&hellip;</p>
+</div>
+  
+  
+  
+  
+  
+</article>
 
-    </section>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
 </main>
-
-        <footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  
-  
-  <section class="copyright">&copy; 2019 qiqi12138</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://qiqi12138.github.io">qiqi12138</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-
-
-
-    </body>
+<script src="https://qiqi12138.github.io/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
+

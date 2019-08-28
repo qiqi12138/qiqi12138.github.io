@@ -1,68 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>
-      
-      ES6 - Fetch - qiqi12138
-      
-		</title>
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 - Fetch - qiqi12138</title>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <meta name="description" content="Fetch Fetch API 提供了一个 JavaScript接口，用于访问和操纵HTTP管道的部分，例如请求和响应。它还提供了一个全局 fetch()方法，该方法提供了一种简单，合理的方式来跨网络异步获取资源。
+这种功能以前是使用 XMLHttpRequest实现的。Fetch提供了一个更好的替代方法，可以很容易地被其他技术使用，例如 Service Workers。Fetch还提供了单个逻辑位置来定义其他HTTP相关概念，例如CORS和HTTP的扩展。
+请注意，fetch规范与jQuery.ajax()主
+要有两种方式的不同，牢记：
+ 当接收到一个代表错误的 HTTP 状态码时，从 fetch()返回的 Promise 不会被标记为 reject， 即使该 HTTP 响应的状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok 属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。 默认情况下，fetch 不会从服务端发送或接收任何 cookies, 如果站点依赖于用户 session，则会导致未经认证的请求（要发送 cookies，必须设置 credentials 选项）。自从2017年8月25日后，默认的credentials政策变更为same-originFirefox也在61.0b13中改变默认值  进行 fetch 请求 一个基本的 fetch请求设置起来很简单。看看下面的代码：
+fetch(&#39;http://example.com/movies.json&#39;) .then(function(response) { return response.json(); }) .then(function(myJson) { console.log(myJson); });  这里我们通过网络获取一个JSON文件并将其打印到控制台。最简单的用法是只提供一个参数用来指明想fetch()到的资源路径，然后返回一个包含响应结果的promise(一个 Response 对象)。
+当然它只是一个 HTTP 响应，而不是真的JSON。为了获取JSON的内容，我们需要使用 json()方法（在Bodymixin 中定义，被 Request 和 Response 对象实现）。">
+    <meta name="author" content="">
     
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/style.css" rel="stylesheet">
     
-
+    <link rel="apple-touch-icon" href="https://qiqi12138.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://qiqi12138.github.io/favicon.ico">
     
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
-    <script type="text/javascript">
-        $.bigfoot();
-    </script>
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://qiqi12138.github.io/index.xml" title="qiqi12138">
     
     
-</head>
-
-    <body class="post-template">
-        <header class="main-header">
-	<div class="main-header-content">
-		<h1 class="blog-title">
-			<a href="/">
-				
-           qiqi12138
-				
-			</a>
-		</h1>
-		<h2 class="blog-description"></h2>
-	</div>
-
-	<div class="nav">
-    
-		
-	</div>
-</header>
-
+  </head>
+  <body class="single">
+    <header class="header">
+      <nav class="nav">
         
-<main class="content" role="main">
-  <article class="post">
-    <header class="post-header">
-      
-      <h2 class="post-title">ES6 - Fetch</h2>
-      <section class="post-meta">
-        <time class="post-date">March 03, 2018</time>
-      </section>
+        <p class="logo"><a href="https://qiqi12138.github.io">qiqi12138</a></p>
+        
+        
+      </nav>
     </header>
-    <section class="post-content">
-      
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">ES6 - Fetch</h1>
+    <div class="post-meta">March 3, 2018</div>
+  </header>
+  <div class="post-content">
 
 <h1 id="fetch">Fetch</h1>
 
@@ -264,23 +247,24 @@ try {
   }
 });
 </code></pre>
+</div>
+  
+  
+  
+  
+  
+</article>
 
-    </section>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
 </main>
-
-        <footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  
-  
-  <section class="copyright">&copy; 2019 qiqi12138</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://qiqi12138.github.io">qiqi12138</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-
-
-
-    </body>
+<script src="https://qiqi12138.github.io/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
+

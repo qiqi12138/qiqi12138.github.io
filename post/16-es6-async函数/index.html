@@ -1,68 +1,50 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>
-      
-      ES6 - async函数 - qiqi12138
-      
-		</title>
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ES6 - async函数 - qiqi12138</title>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <meta name="description" content="参考：https://es6.ruanyifeng.com/?search=async&#43;&amp;x=7&amp;y=6#docs/async
+ 含义 ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async 函数是什么？一句话，它就是 Generator 函数的语法糖。
+前文有一个 Generator 函数，依次读取两个文件。
+const fs = require(&#39;fs&#39;); const readFile = function (fileName) { return new Promise(function (resolve, reject) { fs.readFile(fileName, function(error, data) { if (error) return reject(error); resolve(data); }); }); }; const gen = function* () { const f1 = yield readFile(&#39;/etc/fstab&#39;); const f2 = yield readFile(&#39;/etc/shells&#39;); console.log(f1.toString()); console.log(f2.toString()); };  上面代码的函数gen可以写成async函数，就是下面这样。
+const asyncReadFile = async function () { const f1 = await readFile(&#39;/etc/fstab&#39;); const f2 = await readFile(&#39;/etc/shells&#39;); console.">
+    <meta name="author" content="">
     
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/style.css" rel="stylesheet">
     
-
+    <link rel="apple-touch-icon" href="https://qiqi12138.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://qiqi12138.github.io/favicon.ico">
     
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
-    <script type="text/javascript">
-        $.bigfoot();
-    </script>
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://qiqi12138.github.io/index.xml" title="qiqi12138">
     
     
-</head>
-
-    <body class="post-template">
-        <header class="main-header">
-	<div class="main-header-content">
-		<h1 class="blog-title">
-			<a href="/">
-				
-           qiqi12138
-				
-			</a>
-		</h1>
-		<h2 class="blog-description"></h2>
-	</div>
-
-	<div class="nav">
-    
-		
-	</div>
-</header>
-
+  </head>
+  <body class="single">
+    <header class="header">
+      <nav class="nav">
         
-<main class="content" role="main">
-  <article class="post">
-    <header class="post-header">
-      
-      <h2 class="post-title">ES6 - async函数</h2>
-      <section class="post-meta">
-        <time class="post-date">March 05, 2018</time>
-      </section>
+        <p class="logo"><a href="https://qiqi12138.github.io">qiqi12138</a></p>
+        
+        
+      </nav>
     </header>
-    <section class="post-content">
-      
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">ES6 - async函数</h1>
+    <div class="post-meta">March 5, 2018</div>
+  </header>
+  <div class="post-content">
 
 <blockquote>
 <p>参考：<a href="https://es6.ruanyifeng.com/?search=async+&amp;x=7&amp;y=6#docs/async">https://es6.ruanyifeng.com/?search=async+&amp;x=7&amp;y=6#docs/async</a></p>
@@ -445,23 +427,24 @@ test();
 </code></pre>
 
 <p>上面代码中，如果<code>await</code>操作成功，就会使用<code>break</code>语句退出循环；如果失败，会被<code>catch</code>语句捕捉，然后进入下一轮循环。</p>
+</div>
+  
+  
+  
+  
+  
+</article>
 
-    </section>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
 </main>
-
-        <footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  
-  
-  <section class="copyright">&copy; 2019 qiqi12138</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://qiqi12138.github.io">qiqi12138</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-
-
-
-    </body>
+<script src="https://qiqi12138.github.io/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
+

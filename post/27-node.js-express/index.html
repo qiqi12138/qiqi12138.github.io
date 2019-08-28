@@ -1,68 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>
-      
-      Node.js - Express - qiqi12138
-      
-		</title>
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js - Express - qiqi12138</title>
     
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <meta name="description" content="Express 原生的 http 在某些方面表现不足以应对我们的开发需求，所以我们就需要使用框架来加快我们的开发效率，框架的目的就是提高效率，让我们的代码更高度统一。
+在 Node 中，有很多 Web 开发框架，这里我们以学习 express 为主。
+ http://expressjs.com/  1 起步 1.1 安装: npm install --save express  1.2 hello world var express = require(&#39;express&#39;) var app = express() app.get(&#39;/&#39;,() =&gt; console.log(&#39;Hello world!&#39;)) app.listen(3000, () =&gt; console.log(&#39;Example app listening on port 3000!&#39;))  1.3 基本路由 路由器
+ 请求方法 请求路径 请求处理函数  get:
+// 当你以 GET 方法请求 / 的时候，执行对应的处理函数 app.get(&#39;/&#39;,function (req, res) { res.send(&#39;Hello world!&#39;) })  post:">
+    <meta name="author" content="">
     
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/an-old-hope.min.css" rel="stylesheet">
+    <link href="https://qiqi12138.github.io/style.css" rel="stylesheet">
     
-
+    <link rel="apple-touch-icon" href="https://qiqi12138.github.io/apple-touch-icon.png">
+    <link rel="icon" href="https://qiqi12138.github.io/favicon.ico">
     
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
-    <script type="text/javascript">
-        $.bigfoot();
-    </script>
+    <meta name="generator" content="Hugo 0.57.2" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://qiqi12138.github.io/index.xml" title="qiqi12138">
     
     
-</head>
-
-    <body class="post-template">
-        <header class="main-header">
-	<div class="main-header-content">
-		<h1 class="blog-title">
-			<a href="/">
-				
-           qiqi12138
-				
-			</a>
-		</h1>
-		<h2 class="blog-description"></h2>
-	</div>
-
-	<div class="nav">
-    
-		
-	</div>
-</header>
-
+  </head>
+  <body class="single">
+    <header class="header">
+      <nav class="nav">
         
-<main class="content" role="main">
-  <article class="post">
-    <header class="post-header">
-      
-      <h2 class="post-title">Node.js - Express</h2>
-      <section class="post-meta">
-        <time class="post-date">October 06, 2018</time>
-      </section>
+        <p class="logo"><a href="https://qiqi12138.github.io">qiqi12138</a></p>
+        
+        
+      </nav>
     </header>
-    <section class="post-content">
-      
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Node.js - Express</h1>
+    <div class="post-meta">October 6, 2018</div>
+  </header>
+  <div class="post-content">
 
 <h1 id="express">Express</h1>
 
@@ -214,23 +195,24 @@ app.use(bodyParser.json())
     res.end(JSON.stringify(req.body, null, 2))
 })
 </code></pre>
+</div>
+  
+  
+  
+  
+  
+</article>
 
-    </section>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
 </main>
-
-        <footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  
-  
-  <section class="copyright">&copy; 2019 qiqi12138</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+  <span>&copy; 2019 <a href="https://qiqi12138.github.io">qiqi12138</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-
-
-
-    </body>
+<script src="https://qiqi12138.github.io/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
 </html>
+
